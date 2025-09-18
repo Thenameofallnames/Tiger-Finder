@@ -65,13 +65,56 @@ body{
 }
 
 /* Dropdown Nav Bar */
+.hidden-checkbox {
+        display: none;
+}
+
+.clickable-area{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#myCheckbox:checked + .clickable-area + nav{
+    display: block;
+}
+
 nav{
+    display: none;
     float: left;
     width: 7em;
+    padding: 5px;
 }
 
 nav ul{
     margin: 0;
     padding: 0;
-    
+    width: 7em;
+    background: #ddd;
+}
+nav li{
+    position: relative;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul ul {
+    position: relative;
+    top: 0;
+    left: 7em;
+    display: block;
+}
+
+nav li a {
+    display: block;
+    padding: 0.25em 0 0.25em 0.5em;
+    text-decoration: none;
+}
+
+nav li:hover {
+    background: #6F99F2;
+}
+
+nav li.submenu:hover {
+    background-color: #EDD;
 }
