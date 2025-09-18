@@ -1,0 +1,52 @@
+
+    Basic Documentation
+
+    App Concept:
+        Club Finder/Quiz
+    Who Benefits:
+        FHS students looking for clubs
+    Why is it important:
+        It allows people to find clubs that will potentially help them make friends, and progress in their future carrears by learning
+        key skills.
+
+Roles & Tools:
+    Tools:
+        VS Code
+    Roles:
+        Project Manager - Bo
+        Lead Developer - Ben
+        Ui/Ux Designer - Adam
+        Tester/Documenter - Eric
+
+Core Features:
+    Must Have:
+            -Basic search and filter functions
+            -Account creation systems for at least club leaders to save information and for club leads to edit their pages
+    Nice To Have:
+            -Regular User accounts
+            -Club Quiz
+            -Favoriting System where clubs are stored in the tab for each account
+
+    Stretch Goals:
+            -Guest account system
+            -Web JS/email notifications
+
+
+    Design and Wireframes:
+        - All on paper
+
+adamtheboss78@gmail.com
+bowlirob001@hsestudents.org
+deakieri000@hsestudents.org
+Smithben005@hsestudents.org
+
+Timeline
+Sep 08 - Sep 12 - Foundations - Answer questions and get basics set up / learn html
+Sep 15 - Sep 19 - Start Coding Home Page and skeleton
+Sep 22 - Sep 26 - Finish Home page basic code and start work on other pages
+Sep 29 - Oct 03 - Code other pages
+Oct 06 - Oct 10 - Build code and Test
+Oct 13 - Oct 17 - Build code and Test
+Oct 20 - Oct 24 - Secondary Features and refine design 
+Oct 27 - Oct 31 - Build code, secondary features, design, bug fixes
+Nov 03 - Nov 07 - Finalize project 
