@@ -69,3 +69,9 @@ nav{
     float: left;
     width: 7em;
 }
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    
+}
