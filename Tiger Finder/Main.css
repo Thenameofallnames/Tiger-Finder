@@ -15,7 +15,7 @@ body{
       display: grid;
       grid-template-columns: repeat(6, 200px);
       gap: 20px;
-      background: #ddd;
+      background: #FFFAF0;
       padding: 20px;
       border-radius: 20px; 
       margin: 10px
