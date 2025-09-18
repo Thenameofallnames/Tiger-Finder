@@ -67,8 +67,14 @@ body{
 #Blue1{
     color: #002f87;
 }
+#Blue2{
+    color:#1a6aff;
+}
 #Grey{
-    color: #b7bfcc;
+    color: #cccccc;
+}
+#darkGrey{
+    color: #373737
 }
 #florWhite{
     color: #FFFAF0;
