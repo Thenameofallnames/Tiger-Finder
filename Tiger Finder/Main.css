@@ -62,3 +62,9 @@ body{
 #Grey{
     color: #b7bfcc;
 }
+
+/* Dropdown Nav Bar */
+nav{
+    float: left;
+    width: 7em;
+}
