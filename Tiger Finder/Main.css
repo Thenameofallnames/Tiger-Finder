@@ -1,37 +1,8 @@
-
-body{
+body {
     font-style: Helvetica;
+    background: #FFFAF0;
 }
-#body2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100h;
-      margin: 0;
-      background: #ea0029;
-    }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(6, 200px);
-      gap: 20px;
-      background: #FFFAF0;
-      padding: 20px;
-      border-radius: 20px; 
-      margin: 10px
-    }
-
-    .item {
-      background-color: #b7bfcc;
-      color: white;
-      font-size: 1.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 15px; 
-      height: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
     
 #searchBar {
     width: 85%;
@@ -45,66 +16,79 @@ body{
     border-radius: 12px;
 }
 
-
 .mainBody {
     display: absolute;
     Justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
-#headBody {
-    display: absolute;
+.mainBody {
+    font-size:large;
 }
 
 /*color schemme data*/
-#Red1{
+#Red1 {
     color: #ea0029;
 }
-#Red2{
-    color: #99001c; 
+
+#Red2 {
+    color: #99001c;
 }
-#Red3{
+
+#Red3 {
     color: #db0032;
 }
-#Blue1{
+
+#Blue1 {
     color: #002f87;
 }
-#Blue2{
-    color:#1a6aff;
+
+#Blue2 {
+    color: #1a6aff;
 }
-#Grey{
+
+#Grey {
     color: #cccccc;
 }
-#darkGrey{
+
+#darkGrey {
     color: #373737
 }
-#florWhite{
+
+#florWhite {
     color: #FFFAF0;
 }
-#White{
+
+#White {
     color: #F2F3F4
 }
 
 /* Dropdown Nav Bar */
 
-button{
+button {
     display: block;
     cursor: pointer;
     padding: 0.5em;
 }
 
-nav{
+#myCheckbox:checked+.clickable-area+nav {
+    display: block;
+}
+
+nav {
     display: none;
     float: left;
     width: 5em;
 }
 
-nav ul{
+nav ul {
     margin: 0;
     padding: 0;
     width: 5em;
     background: #ddd;
 }
 
-nav li{
+nav li {
     position: relative;
     list-style: none;
     margin: 1;
@@ -127,6 +111,14 @@ nav li:hover {
     background: #b7bfcc;
 }
 
-nav ul.level1 li.sub:hover ul.level2{
+nav ul.level1 li.sub:hover ul.level2 {
     display: block;
+}
+
+#dropDown img{
+    width: 5vw;
+    aspect-ratio: 1/1;
+    left: 2%;
+    margin: none;
+    padding: none;
 }
