@@ -1,0 +1,35 @@
+body {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      background: #ea0029;
+      
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(6, 200px);
+      gap: 20px;
+      background: #FFFAF0;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 10px;
+      position: relative;
+    }
+
+    .container li {
+      background-color: #b7bfcc;
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      height: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      list-style: none; /* removes bullets */
+    }
+.title {
+    position: absolute;
+    justify-content: center;
+}
