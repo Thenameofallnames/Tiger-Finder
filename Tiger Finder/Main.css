@@ -87,15 +87,14 @@ body{
 
 button{
     display: block;
-    padding: 10px;
     cursor: pointer;
+    padding: 0.5em;
 }
 
 nav{
     display: none;
     float: left;
     width: 5em;
-    padding: 5px;
 }
 
 nav ul{

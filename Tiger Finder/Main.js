@@ -1,3 +1,4 @@
+//dropdown menu function
 function dropDown() {
     const nav = document.querySelector('nav');
     if (nav.style.display === 'block') {
