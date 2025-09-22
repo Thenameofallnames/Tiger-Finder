@@ -84,18 +84,11 @@ body{
 }
 
 /* Dropdown Nav Bar */
-.hidden-checkbox {
-    display: none;
-}
 
-.clickable-area{
+button{
     display: block;
     padding: 10px;
     cursor: pointer;
-}
-
-#myCheckbox:checked + .clickable-area + nav{
-    display: block;
 }
 
 nav{
