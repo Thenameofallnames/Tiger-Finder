@@ -1,6 +1,6 @@
-
-body{
+body {
     font-style: Helvetica;
+    background: #FFFAF0;
 }
 
     
@@ -16,74 +16,80 @@ body{
     border-radius: 12px;
 }
 
-
 .mainBody {
     display: absolute;
     Justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
-#headBody {
-    display: absolute;
+.mainBody {
+    font-size: ;
 }
 
 /*color schemme data*/
-#Red1{
+#Red1 {
     color: #ea0029;
 }
-#Red2{
-    color: #99001c; 
+
+#Red2 {
+    color: #99001c;
 }
-#Red3{
+
+#Red3 {
     color: #db0032;
 }
-#Blue1{
+
+#Blue1 {
     color: #002f87;
 }
-#Blue2{
-    color:#1a6aff;
+
+#Blue2 {
+    color: #1a6aff;
 }
-#Grey{
+
+#Grey {
     color: #cccccc;
 }
-#darkGrey{
+
+#darkGrey {
     color: #373737
 }
-#florWhite{
+
+#florWhite {
     color: #FFFAF0;
 }
-#White{
+
+#White {
     color: #F2F3F4
 }
 
 /* Dropdown Nav Bar */
-.hidden-checkbox {
-    display: none;
-}
 
-.clickable-area{
+button {
     display: block;
-    padding: 10px;
+    padding: none;
     cursor: pointer;
 }
 
-#myCheckbox:checked + .clickable-area + nav{
+#myCheckbox:checked+.clickable-area+nav {
     display: block;
 }
 
-nav{
+nav {
     display: none;
     float: left;
     width: 5em;
     padding: 5px;
 }
 
-nav ul{
+nav ul {
     margin: 0;
     padding: 0;
     width: 5em;
     background: #ddd;
 }
 
-nav li{
+nav li {
     position: relative;
     list-style: none;
     margin: 1;
@@ -106,6 +112,14 @@ nav li:hover {
     background: #b7bfcc;
 }
 
-nav ul.level1 li.sub:hover ul.level2{
+nav ul.level1 li.sub:hover ul.level2 {
     display: block;
+}
+
+#dropDown img{
+    width: 5vw;
+    aspect-ratio: 1/1;
+    left: 2%;
+    margin: none;
+    padding: none;
 }
