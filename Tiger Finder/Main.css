@@ -69,10 +69,8 @@ button {
     display: block;
     cursor: pointer;
     padding: 0.5em;
-}
-
-#myCheckbox:checked+.clickable-area+nav {
-    display: block;
+    border: none;
+    background-color: #fff;
 }
 
 nav {
@@ -113,12 +111,4 @@ nav li:hover {
 
 nav ul.level1 li.sub:hover ul.level2 {
     display: block;
-}
-
-#dropDown img{
-    width: 5vw;
-    aspect-ratio: 1/1;
-    left: 2%;
-    margin: none;
-    padding: none;
 }
