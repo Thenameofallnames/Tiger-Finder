@@ -46,16 +46,14 @@ body {
     border-radius: 12px;
 }
 
-
-.mainBody {
+#headBody {
     display: absolute;
     Justify-content: center;
     margin-left: 100px;
     margin-right: 100px;
 }
-
-#headBody {
-    display: absolute;
+.mainBody {
+    font-size: ;
 }
 
 /*color schemme data*/
