@@ -46,7 +46,8 @@ body {
     border-radius: 12px;
 }
 
-#headBody {
+
+.mainBody {
     display: absolute;
     Justify-content: center;
     margin-left: 100px;
@@ -97,7 +98,7 @@ body {
 
 button {
     display: block;
-    padding: 10px;
+    padding: none;
     cursor: pointer;
 }
 
@@ -144,4 +145,12 @@ nav li:hover {
 
 nav ul.level1 li.sub:hover ul.level2 {
     display: block;
+}
+
+#dropDown img{
+    width: 5vw;
+    aspect-ratio: 1/1;
+    left: 2%;
+    margin: none;
+    padding: none;
 }
