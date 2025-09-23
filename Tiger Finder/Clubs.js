@@ -6,3 +6,4 @@ function createClubs(clubnumber) {
         clubList.appendChild(liElement);
       }
     }
+
