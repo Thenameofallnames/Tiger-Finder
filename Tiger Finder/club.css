@@ -1,6 +1,6 @@
 body { 
 
-display: flex; 
+display: block;
 
 justify-content: center; 
 
@@ -18,7 +18,7 @@ background: #ea0029;
 
 display: grid; 
 
-grid-template-columns: repeat(6, 200px); 
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
 gap: 20px; 
 
