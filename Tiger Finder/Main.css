@@ -3,7 +3,7 @@ body {
     background: #FFFAF0;
 }
 
-    
+/*Search Bar*/    
 #searchBar {
     width: 85%;
     height: 5%;
@@ -15,6 +15,17 @@ body {
     padding: 8px;
     border-radius: 12px;
 }
+/*Filter Button*/
+#filterIcon {
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    margin: auto;
+    padding: 8px;
+    aspect-ratio: 1/1;
+    width: 3vw;
+}
+
 
 .mainBody {
     display: absolute;
