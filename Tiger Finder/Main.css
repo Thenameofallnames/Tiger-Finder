@@ -99,7 +99,7 @@ body {
     cursor: pointer;
     padding: 0.5em;
     border: none;
-    background-color: none;
+    background-color: transparent;
 }
 
 nav {
