@@ -1,6 +1,5 @@
 body {
     font-style: Helvetica;
-    background: #FFFAF0;
 }
 
     
@@ -16,15 +15,26 @@ body {
     border-radius: 12px;
 }
 
-.mainBody {
+#headBody {
     display: absolute;
     Justify-content: center;
     margin-left: 100px;
     margin-right: 100px;
 }
 .mainBody {
+    font-size:larger;
+}
+h3.mainBody{
     font-size:large;
 }
+#quizDiv{
+    background-color: #b7bfcc;
+    border-style:solid;
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: #373737;
+}
+
 
 /*color schemme data*/
 #Red1 {
