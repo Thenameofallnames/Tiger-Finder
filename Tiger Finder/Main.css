@@ -94,8 +94,9 @@ h3.mainBody {
     display: flex;
     margin: 0 auto;
     text-align: center;
-    width: 80%;
+    width: 90%;
     height: 280px;
+    margin-bottom: 20px;
 }
 
 
