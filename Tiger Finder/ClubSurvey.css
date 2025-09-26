@@ -1,0 +1,14 @@
+.info {
+    display: flex;
+    position: relative;
+}
+
+#title {
+    text-align: center;
+    font-size: 2em;
+}
+
+#description {
+    text-align: center;
+    font-size: 1.2em;
+}
