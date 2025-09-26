@@ -19,7 +19,7 @@ body {
 #filterIcon {
     position: absolute;
     top: 2%;
-    left: 95%;
+    left: 94.5%;
     margin: auto;
     padding: 8px;
     aspect-ratio: 1/1;
@@ -56,13 +56,21 @@ body {
 
 #filterOverlay {
     display: none;
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
     background-color: white;
     position: absolute;
-    left: 10%;
+    left: 45%;
     top: 10%;
+    border-radius: 20px;
 
+}
+.filterBox {
+    aspect-ratio: 1/1;
+    width: 1.9vw;
+}
+.checkboxLabel {
+    font-size: 2.5em;
 }
 
 
