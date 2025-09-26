@@ -10,12 +10,13 @@
 <body>
     <div class = "topBar">
     <!--Drop Down Menu-->
-    <button onclick="dropDown()">
+    <button onclick="dropDown()" id="dropDownButton">
         <img src="dropdownMain.png" id = "dropDown" width="50" height="50">
     </button>
     <nav>
         <ul class="level1">
             <li><a href="Main.html">Home</a></li>
+            <li><a href="ClubSurvey.html">Club Survey</a></li>
             <li class="sub"><a href="">Clubs</a>
                 <ul class="level2">
                     <li><a href="Clubs.html">Club List</a></li>
@@ -35,6 +36,16 @@
 
     <!--Search Bar-->
     <input id="searchBar" type="text" placeholder="Search for clubs">
+
+
+    <!--Filter Icon-->
+    <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
+    
+    <!--Filter Overlay-->
+    <div id = "filterOverlay">
+    <h2>Hello!</h2>
+    <p>This is an overlay screen.</p>
+    </div>
 </div>
 </body>
 </html>
