@@ -9,10 +9,10 @@ function dropDown() {
 }
 function filterOverlay() {
     const overlay = document.getElementById('filterOverlay');
-    if (overlay.style.display === "block") {
-        overlay.style.display = "none";
+    if (overlay.style.display === 'block') {
+        overlay.style.display = 'none';
     } else {
-        overlay.style.display = "block";
+        overlay.style.display = 'block';
     }
     
 }

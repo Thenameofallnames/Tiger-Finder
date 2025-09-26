@@ -10,7 +10,7 @@ body {
     position: absolute;
     font-size: 1.4rem;
     top: 2%;
-    left: 8%;
+    left: 7.5%;
     margin: auto;
     padding: 8px;
     border-radius: 12px;
@@ -25,6 +25,8 @@ body {
     padding: 8px;
     aspect-ratio: 1/1;
     width: 3vw;
+    cursor: pointer;
+    border: none;
 }
 #filterOverlay {
     display: none;
@@ -34,15 +36,9 @@ body {
     position: absolute;
     left: 10%;
     top: 10%;
-    
+
 }
-#closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-}
+
 
 
 .mainBody {
