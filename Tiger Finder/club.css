@@ -59,9 +59,23 @@ font-style: helvetica ;
  
 .clubBoxesFontSize {
  
-    font-size: clamp(16px, 4vw, 24px);
+    font-size: clamp(16px, 4vw, 18px);
    
 }
 .clubBoxesEmailSize {
     font-size: clamp(12px, 3vw, 16px);
+}
+.favorite-btn {
+  display: flex;
+  position: right;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  
+}
+.favorite-btn.favorited {
+  color: gold; /* Star turns gold when active */
 }
