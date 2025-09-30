@@ -1,9 +1,8 @@
 body {
     font-style: Helvetica;
-    background: #FFFAF0;
 }
 
-/*Search Bar*/    
+/*Search Bar*/
 #searchBar {
     width: 85%;
     height: 5%;
@@ -20,7 +19,7 @@ body {
 #filterIcon {
     position: absolute;
     top: 2%;
-    left: 95%;
+    left: 94.5%;
     margin: auto;
     padding: 8px;
     aspect-ratio: 1/1;
@@ -28,6 +27,7 @@ body {
     cursor: pointer;
     border: none;
 }
+
 #filterOverlay {
     display: none;
     width: 80%;
@@ -41,15 +41,72 @@ body {
 
 
 
+/*Filter*/
+#filterIcon {
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    margin: auto;
+    padding: 8px;
+    aspect-ratio: 1/1;
+    width: 3vw;
+    cursor: pointer;
+    border: none;
+}
+
+#filterOverlay {
+    display: none;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    position: absolute;
+    left: 45%;
+    top: 10%;
+    border-radius: 20px;
+
+}
+.filterBox {
+    aspect-ratio: 1/1;
+    width: 1.9vw;
+}
+.checkboxLabel {
+    font-size: 2.5em;
+}
+
+
+
 .mainBody {
     display: absolute;
     Justify-content: center;
     margin-left: 100px;
     margin-right: 100px;
 }
+
 .mainBody {
-    font-size:large;
+    font-size: larger;
 }
+
+h3.mainBody {
+    font-size: large;
+}
+
+#quizDiv {
+    background-color: #b7bfcc;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: #373737;
+}
+
+#topImage {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
 
 /*color schemme data*/
 #Red1 {
@@ -148,7 +205,7 @@ nav ul.level1 li.sub:hover ul.level2 {
     display: relative;
     text-align: center;
     margin: 0 auto;
-    width: 80%;
+    width: 85%;
 }
 
 .bigButtons #surveyButton {
