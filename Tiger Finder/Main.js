@@ -6,6 +6,9 @@ function dropDown() {
     } else {
         nav.style.display = 'block';
     }
+
+    const main = document.querySelector('.mainBody');
+    main.classList.toggle('blurred');
 }
 function filterOverlay() {
     const overlay = document.getElementById('filterOverlay');
@@ -14,5 +17,7 @@ function filterOverlay() {
     } else {
         overlay.style.display = 'block';
     }
-    
+
+    const main = document.querySelector('.mainBody');
+    main.classList.toggle('blurred');
 }
