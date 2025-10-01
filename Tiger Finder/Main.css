@@ -15,6 +15,7 @@ body {
     border-radius: 12px;
 }
 
+
 /*Filter*/
 #filterIcon {
     position: absolute;
@@ -30,47 +31,49 @@ body {
 
 #filterOverlay {
     display: none;
-    width: 80%;
-    height: 80%;
-    background-color: white;
+    width: 40%;
+    height: auto;
+    background-color: floralwhite;
     position: absolute;
-    left: 10%;
-    top: 10%;
-
-}
-
-
-
-/*Filter*/
-#filterIcon {
-    position: absolute;
-    top: 2%;
-    left: 95%;
-    margin: auto;
-    padding: 8px;
-    aspect-ratio: 1/1;
-    width: 3vw;
-    cursor: pointer;
-    border: none;
-}
-
-#filterOverlay {
-    display: none;
-    width: 50%;
-    height: 50%;
-    background-color: white;
-    position: absolute;
-    left: 45%;
+    left: 55%;
     top: 10%;
     border-radius: 20px;
+    border-color: #99001c;
+    border-width: 5px;
+    border-style: solid;
+    padding: 10px;
+     box-sizing: border-box;
 
 }
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.filter-catagory {
+    background: floralwhite;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-catagory h3 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
 .filterBox {
     aspect-ratio: 1/1;
-    width: 1.9vw;
+    width: 1.4vw;
+    margin-right: 5px;
 }
-.checkboxLabel {
-    font-size: 2.5em;
+
+.filter-catagory label{
+    font-size: 1.75em;
+    padding-bottom: 5px;
 }
 
 

@@ -9,47 +9,67 @@
 </head>
 
 <body>
-<div class = "topBar">
-    <!--Drop Down Menu-->
-    <button onclick="dropDown()" id="dropDownButton">
-        <img src="dropdownMain.png" id = "dropDownButton" width="50" height="50">
-    </button>
-    <nav>
-        <ul class="level1">
-            <li><a href="Main.html">Home</a></li>
-            <li><a href="ClubSurvey.html">Club Survey</a></li>
-            <li class="sub"><a href="">Clubs</a>
-                <ul class="level2">
-                    <li><a href="Clubs.html">Club List</a></li>
-                    <li><a href="Favorites.html">My Favorites</a></li>
-                </ul>
-            </li>
-            <li class="sub"><a href="">Account</a>
-                <ul class="level2">
-                    <li><a href="Account.html">My Account</a></li>
-                    <li><a href="">Account Settings</a></li>
-                    <li><a href="">Log Out</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <div class="topBar">
+        <!--Drop Down Menu-->
+        <button onclick="dropDown()" id="dropDownButton">
+            <img src="dropdownMain.png" id="dropDownButton" width="50" height="50">
+        </button>
+        <nav>
+            <ul class="level1">
+                <li><a href="Main.html">Home</a></li>
+                <li><a href="ClubSurvey.html">Club Survey</a></li>
+                <li class="sub"><a href="">Clubs</a>
+                    <ul class="level2">
+                        <li><a href="Clubs.html">Club List</a></li>
+                        <li><a href="Favorites.html">My Favorites</a></li>
+                    </ul>
+                </li>
+                <li class="sub"><a href="">Account</a>
+                    <ul class="level2">
+                        <li><a href="Account.html">My Account</a></li>
+                        <li><a href="">Account Settings</a></li>
+                        <li><a href="">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
 
         <!--Search Bar-->
         <input id="searchBar" type="text" placeholder="Search for clubs">
 
-    <!--Filter Icon-->
-    <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-    
-    <!--Filter Overlay-->
-    <div id = "filterOverlay">
-    <h2>Filter Clubs</h2>
-    <p>This is an overlay screen.</p>
-    <input type = "checkbox" id = "filter1" name = "filter1" class = "filterBox" value = false><span class="checkboxLabel">Academic</span>
+        <!--Filter Icon-->
+        <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
 
+        <!--Filter Overlay-->
+        <div id="filterOverlay">
+            <h2>Filter Clubs</h2>
+            <div class="filter-grid">
+                <div class="filter-catagory">
+                    <h3>Catagory1</h3>
+                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Catagory2</h3>
+                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Catagory3</h3>
+                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Days</h3>
+                    <label><input type="checkbox" class="filterBox"> Monday</label>
+                    <label><input type="checkbox" class="filterBox"> Tuesday</label>
+                    <label><input type="checkbox" class="filterBox"> Wednesday</label>
+                    <label><input type="checkbox" class="filterBox"> Thursday</label>
+                    <label><input type="checkbox" class="filterBox"> Friday</label>
+                    <label><input type="checkbox" class="filterBox"> Saturday</label>
+                    <label><input type="checkbox" class="filterBox"> Sunday</label>
+                </div>
+            </div>
+        </div>
     </div>
-    
-</div>
 
     <!--Main body starts here-->
     <div class="mainBody" id="headBody">
@@ -62,13 +82,14 @@
             <button>Club Survey</button>
         </a>
         <div class="inlineButtons">
-        <a href="Clubs.html" id="clubListButton">
-            <button>Club List</button>
-        </a>
-        <a href="Favorites.html" id="favoritesButton">
-            <button>Favorites</button>
-        </a>
+            <a href="Clubs.html" id="clubListButton">
+                <button>Club List</button>
+            </a>
+            <a href="Favorites.html" id="favoritesButton">
+                <button>Favorites</button>
+            </a>
         </div>
     </div>
 </body>
+
 </html>
