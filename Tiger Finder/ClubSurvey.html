@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="Main.css" />
     <link rel="stylesheet" type="text/css" href="ClubSurvey.css">
     <script src="main.js"></script>
+    <script src="ClubSurvey.js"></script>
     <title>Club Survey</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <ul class="level1">
             <li><a href="Main.html">Home</a></li>
             <li><a href="ClubSurvey.html">Club Survey</a></li>
-            <li class="sub"><a href="">Clubs</a>
+            <li class="sub"><a href="Clubs.html">Clubs</a>
                 <ul class="level2">
                     <li><a href="Clubs.html">Club List</a></li>
                     <li><a href="Favorites.html">My Favorites</a></li>
@@ -32,10 +33,49 @@
             </li>
         </ul>
     </nav>
-    <div class="mainBody" id="headBody">
+    <div class="mainBody blur" id="headBody">
         <div class = "Info">
             <h1 id="title">Club Survey</h1>
             <p id="description">Please fill out the following survey to help us recommend clubs that best fit your interests.</p>
+            <br>
+            <ul id="questions">
+                <li id="question1">What kind of club are you interested in? (Select all that apply)</li>
+                <ul>
+                    <li><input type="checkbox" id="activity" name="sports" value="sports" onclick="checkClickedQ1()">
+                        <label for="activity">Activities</label></li>
+                    <li><input type="checkbox" id="arts" name="arts" value="arts" onclick="checkClickedQ1()">
+                        <label for="arts">Arts & Culture</label></li>
+                    <li><input type="checkbox" id="academic" name="academic" value="academic" onclick="checkClickedQ1()">
+                        <label for="academic">Academic</label></li>
+                    <li><input type="checkbox" id="volunteer" name="volunteer" value="volunteer" onclick="checkClickedQ1()">
+                        <label for="volunteer">Volunteer/Service</label></li>
+                    <li><input type="checkbox" id="social" name="social" value="social" onclick="checkClickedQ1()">
+                        <label for="social">Social</label></li>
+                </ul>
+                <br>
+                <li id="question2">When can you meet for clubs?</li>
+                <ul>
+                    <li><input type="checkbox" id="mornings" name="mornings" value="mornings" onclick="checkClickedQ2()">
+                        <label for="mornings">Mornings</label></li>
+                    <li><input type="checkbox" id="afternoon" name="afternoon" value="afternoon" onclick="checkClickedQ2()">
+                        <label for="afternoon">After School</label></li>
+                </ul>
+                <br>
+                <li id="question3">What days can you meet for clubs?</li>
+                <ul>
+                    <li><input type="checkbox" id="monday" name="monday" value="monday" onclick="checkClickedQ3()">
+                        <label for="monday">Monday</label></li>
+                    <li><input type="checkbox" id="tuesday" name="tuesday" value="tuesday" onclick="checkClickedQ3()">
+                        <label for="tuesday">Tuesday</label></li>
+                    <li><input type="checkbox" id="wednesday" name="wednesday" value="wednesday" onclick="checkClickedQ3()">
+                        <label for="wednesday">Wednesday</label></li>
+                    <li><input type="checkbox" id="thursday" name="thursday" value="thursday" onclick="checkClickedQ3()">
+                        <label for="thursday">Thursday</label></li>
+                    <li><input type="checkbox" id="friday" name="friday" value="friday" onclick="checkClickedQ3()">
+                        <label for="friday">Friday</label></li>
+                </ul>
+                <br>
+
         </div>
     </div>
 </body>

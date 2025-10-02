@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <!--Drop Down Menu-->
     <button onclick="dropDown()" id="dropDownButton">
         <img src="dropdownMain.png" id = "dropDownButton" width="50" height="50">
@@ -19,7 +20,7 @@
         <ul class="level1">
             <li><a href="Main.html">Home</a></li>
             <li><a href="ClubSurvey.html">Club Survey</a></li>
-            <li class="sub"><a href="">Clubs</a>
+            <li class="sub"><a href="Clubs.html">Clubs</a>
                 <ul class="level2">
                     <li><a href="Clubs.html">Club List</a></li>
                     <li><a href="Favorites.html">My Favorites</a></li>
@@ -35,11 +36,12 @@
         </ul>
     </nav>
 
-    
-  <h1 id="clubTitle">Favorited Clubs</h1>
- <div class="container" id="favoriteList"></div>
+    <!--Main Body-->
+    <div class="blur">
+        <h1 id="clubTitle">Favorited Clubs</h1>
+        <div class="container" id="favoriteList"></div>
 
-  <script src="favorites.js"></script>
-
+        <script src="favorites.js"></script>
+    </div>
 </body>
 </html>
