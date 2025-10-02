@@ -42,7 +42,8 @@ body {
     border-width: 5px;
     border-style: solid;
     padding: 10px;
-     box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1000000;
 
 }
 
