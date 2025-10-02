@@ -43,7 +43,7 @@ body {
     border-style: solid;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 1000000;
+    z-index: 10;
 }
 
 .filter-grid {
@@ -52,23 +52,28 @@ body {
     gap: 20px;
 }
 
-#filterOverlay {
-    display: none;
-    width: 50%;
-    height: 50%;
-    background-color: white;
-    position: absolute;
-    left: 45%;
-    top: 10%;
-    border-radius: 20px;
-
+.filter-catagory {
+    background: floralwhite;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
+
+.filter-catagory h3 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
 .filterBox {
     aspect-ratio: 1/1;
-    width: 1.9vw;
+    width: 1.4vw;
+    margin-right: 5px;
 }
-.checkboxLabel {
-    font-size: 2.5em;
+
+.filter-catagory label{
+    font-size: 1.75em;
+    padding-bottom: 5px;
 }
 
 
