@@ -7,7 +7,7 @@ function dropDown() {
         nav.style.display = 'block';
     }
 
-    const main = document.querySelector('.mainBody');
+    const main = document.querySelector(".blur");
     main.classList.toggle('blurred');
 }
 function filterOverlay() {
@@ -18,6 +18,6 @@ function filterOverlay() {
         overlay.style.display = 'block';
     }
 
-    const main = document.querySelector('.mainBody');
+    const main = document.querySelector(".blur");
     main.classList.toggle('blurred');
 }
