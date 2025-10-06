@@ -7,6 +7,7 @@ checkClickedQ1(){
     const social = document.getElementById("social");
 }
 
+
 checkClickedQ2(){
 
 }
