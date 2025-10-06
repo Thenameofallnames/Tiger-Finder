@@ -87,30 +87,31 @@ function createClubs() {
   clubs.forEach(club => {
     const liElement = document.createElement("li");
     liElement.innerHTML = `
-     <button class="favorite-btn">click me</button>
+     <button class="favorite-btn">⭐</button>
       <h3 class="clubBoxesFontSize">${club.club}</h3>
       <p class="clubBoxesFontSize">${club.staff}</p>
       <p class = "clubBoxesEmailSize">${club.email}
     `;
     liElement.querySelector(".favorite-btn").addEventListener("click", (e) => {
   e.target.classList.toggle("favorited");
-
   // If it's favorited, save to localStorage
   if (e.target.classList.contains("favorited")) {
     // Get existing favorites or start fresh
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    e.target.textContent = "🌟";
 
     // Add this club if not already in favorites
     if (!favorites.some(fav => fav.club === club.club)) {
       favorites.push(club);
     }
-
+    
     localStorage.setItem("favorites", JSON.stringify(favorites));
   } else {
     // If unfavorited, remove from localStorage
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     favorites = favorites.filter(fav => fav.club !== club.club);
     localStorage.setItem("favorites", JSON.stringify(favorites));
+    e.target.textContent = "⭐";
   }
 });
     clubList.appendChild(liElement);

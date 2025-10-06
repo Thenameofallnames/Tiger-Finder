@@ -70,12 +70,13 @@ font-style: helvetica ;
   position: right;
   top: 5px;
   right: 10px;
-  background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
-  
+  width: 30px;
 }
+
+
 .favorite-btn.favorited {
   color: gold; /* Star turns gold when active */
 }
