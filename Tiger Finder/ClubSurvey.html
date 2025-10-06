@@ -27,7 +27,6 @@
             <li class="sub"><a href="">Account</a>
                 <ul class="level2">
                     <li><a href="Account.html">My Account</a></li>
-                    <li><a href="">Account Settings</a></li>
                     <li><a href="">Log Out</a></li>
                 </ul>
             </li>
@@ -41,17 +40,23 @@
             <ul id="questions">
                 <li id="question1">What kind of club are you interested in? (Select all that apply)</li>
                 <ul>
-                    <li><input type="checkbox" id="activity" name="sports" value="sports" onclick="checkClickedQ1()">
+                    <li><input type="checkbox" id="activity" name="activity" value="activity" onclick="checkClickedQ1()">
                         <label for="activity">Activities</label></li>
-                    <li><input type="checkbox" id="arts" name="arts" value="arts" onclick="checkClickedQ1()">
-                        <label for="arts">Arts & Culture</label></li>
                     <li><input type="checkbox" id="academic" name="academic" value="academic" onclick="checkClickedQ1()">
                         <label for="academic">Academic</label></li>
                     <li><input type="checkbox" id="volunteer" name="volunteer" value="volunteer" onclick="checkClickedQ1()">
                         <label for="volunteer">Volunteer/Service</label></li>
-                    <li><input type="checkbox" id="social" name="social" value="social" onclick="checkClickedQ1()">
-                        <label for="social">Social</label></li>
                 </ul>
+                <br class="subQuestion1">
+                <li class="subQuestion1">What kind of activity?</li>
+                    <ul class="subQuestion1">
+                        <li><input type="checkbox" id="sports" name="sports" value="sports" onclick="checkClickedQ1()">
+                        <label for="sports">Sports</label></li>
+                        <li><input type="checkbox" id="arts" name="arts" value="arts" onclick="checkClickedQ1()">
+                        <label for="arts">Arts</label></li>
+                        <li><input type="checkbox" id="games" name="games" value="games" onclick="checkClickedQ1()">
+                        <label for="games">Games</label></li>
+                    </ul>
                 <br>
                 <li id="question2">When can you meet for clubs?</li>
                 <ul>
