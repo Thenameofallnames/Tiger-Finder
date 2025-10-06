@@ -85,40 +85,57 @@ function createClubs() {
 
 
   clubs.forEach(club => {
-    const liElement = document.createElement("li");
-    liElement.innerHTML = `
-     <button class="favorite-btn">⭐</button>
-      <h3 class="clubBoxesFontSize">${club.club}</h3>
-      <p class="clubBoxesFontSize">${club.staff}</p>
-      <p class = "clubBoxesEmailSize">${club.email}
-    `;
-    liElement.querySelector(".favorite-btn").addEventListener("click", (e) => {
-  e.target.classList.toggle("favorited");
-  // If it's favorited, save to localStorage
-  if (e.target.classList.contains("favorited")) {
-    // Get existing favorites or start fresh
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    e.target.textContent = "🌟";
+  const liElement = document.createElement("li");
+  liElement.innerHTML = `
+    <img 
+      src="star.png" 
+      alt="favorite star" 
+      class="favorite-star" 
+      style="width:25px; height:25px; cursor:pointer;"
+    >
+    <h3 class="clubBoxesFontSize">${club.club}</h3>
+    <p class="clubBoxesFontSize">${club.staff}</p>
+    <p class="clubBoxesEmailSize">${club.email}</p>
+  `;
 
-    // Add this club if not already in favorites
-    if (!favorites.some(fav => fav.club === club.club)) {
-      favorites.push(club);
-    }
-    
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  } else {
-    // If unfavorited, remove from localStorage
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    favorites = favorites.filter(fav => fav.club !== club.club);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    e.target.textContent = "⭐";
+  const star = liElement.querySelector(".favorite-star");
+
+  // check if this club is already favorited (from localStorage)
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  if (favorites.some(fav => fav.club === club.club)) {
+    star.src = "goldStar.jpeg"; // use filled star for favorited
+
+    star.classList.add("favorited");
   }
-});
-    clubList.appendChild(liElement);
-  });
-}
 
+  star.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent other click actions
+    const target = e.target;
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    target.classList.toggle("favorited");
+
+    if (target.classList.contains("favorited")) {
+      target.src = "goldStar.jpeg";
+
+      // add to favorites if not already there
+      if (!favorites.some(fav => fav.club === club.club)) {
+        favorites.push(club);
+      }
+    } else {
+      target.src = "star.png";
+      // remove from favorites
+      favorites = favorites.filter(fav => fav.club !== club.club);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  });
+
+  clubList.appendChild(liElement);
+});
+}
 createClubs();
+
 
 
 
