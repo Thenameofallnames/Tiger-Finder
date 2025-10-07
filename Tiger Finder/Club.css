@@ -41,13 +41,13 @@ position: relative;
   color: black; 
   font-size: 1.2rem; 
   display: flex; 
-  flex-direction: column;   /* stack children vertically */
-  justify-content: flex-start; /* align to top */
+  flex-direction: column;   
+  justify-content: flex-start; 
   border-radius: 15px; 
   height: 300px; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   list-style: none; 
-  padding: 15px;             /* spacing inside the box */
+  padding: 15px;            
   text-align: center; 
 }
 #clubTitle { 
@@ -78,5 +78,63 @@ font-style: helvetica ;
 
 
 .favorite-btn.favorited {
-  color: gold; /* Star turns gold when active */
+  color: gold; 
+}
+.club-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  position: relative; 
+  overflow: visible;  
+}
+
+.club-box {
+  position: relative;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  overflow: visible;
+  z-index: 1; 
+}
+
+.club-box:hover {
+  transform: scale(1.03);
+  z-index: 10; 
+}
+
+/* Tooltip box */
+.club-description {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  background: #333;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 220px;
+  text-align: left;
+  z-index: 9999; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 0.9em;
+  line-height: 1.4;
+  white-space: normal;
+  word-wrap: break-word;
+  
+}
+
+
+.club-box:hover .club-description {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.club-box:nth-child(6n):hover .club-description {
+  left: auto;
+  right: 105%;
 }

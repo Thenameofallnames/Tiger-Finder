@@ -58,6 +58,32 @@
     <script>
         createClubs();
     </script>
+    <script>
+       
+window.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.getElementById("searchBar");
+  const clubList = document.getElementById("clubList");
+
+  // filter the visible clubs
+  searchBar.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+
+    // Loop through all club boxes 
+    const clubItems = clubList.querySelectorAll("li");
+    clubItems.forEach(item => {
+      const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
+      const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
+
+      // Show only if it matches the search term
+      if (clubName.includes(searchTerm) || staffName.includes(searchTerm)) {
+        item.style.display = "block";  
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+});
+    </script>
     </div>
 
 </body>
