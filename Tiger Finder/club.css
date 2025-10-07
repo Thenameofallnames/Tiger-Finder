@@ -67,7 +67,7 @@ font-style: helvetica ;
 }
 .favorite-btn {
   display: flex;
-  position: right;
+  position: left;
   top: 5px;
   right: 10px;
   border: none;

@@ -109,16 +109,16 @@ function createClubs() {
   {"staff": "Young, Kate", "club": "Million Meal Movement", "email": "kyoung@hse.k12.in.us"}
 ]
 
-// Sort clubs alphabetically, with numeric names first
+
 clubs.sort((a, b) => {
   const nameA = a.club.toLowerCase();
   const nameB = b.club.toLowerCase();
 
-  const startsWithNumberA = /^\d/.test(nameA);
-  const startsWithNumberB = /^\d/.test(nameB);
+  const Astart = /^\d/.test(nameA);
+  const Bstart = /^\d/.test(nameB);
 
-  if (startsWithNumberA && !startsWithNumberB) return -1;
-  if (!startsWithNumberA && startsWithNumberB) return 1;
+  if (Astart && !Bstart) return -1;
+  if (!Astart && Bstart) return 1;
 
   return nameA.localeCompare(nameB);
 });
@@ -150,7 +150,7 @@ function createClubs() {
 
     const star = liElement.querySelector(".favorite-star");
 
-    // check if this club is already favorited (from localStorage)
+   
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     if (favorites.some(fav => fav.club === club.club)) {
       star.src = "goldStar.jpeg";
