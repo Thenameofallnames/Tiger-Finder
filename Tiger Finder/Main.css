@@ -71,7 +71,7 @@ body {
     margin-right: 5px;
 }
 
-.filter-catagory label{
+.filter-catagory label {
     font-size: 1.75em;
     padding-bottom: 5px;
 }
@@ -190,11 +190,11 @@ nav li {
     list-style: none;
 }
 
-nav ul.level1 li{
+nav ul.level1 li {
     border-bottom: 1px solid black;
 }
 
-nav ul.level2 li{
+nav ul.level2 li {
     border-bottom: 1px solid black;
 }
 
@@ -249,7 +249,7 @@ nav ul.level1 li.sub:hover ul.level2 {
     border-radius: 12px;
 }
 
-.bigButtons .inlineButtons{
+.bigButtons .inlineButtons {
     display: flex;
     text-align: center;
     margin: 0 auto;
