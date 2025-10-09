@@ -50,3 +50,12 @@ Oct 13 - Oct 17 - Build code and Test
 Oct 20 - Oct 24 - Secondary Features and refine design 
 Oct 27 - Oct 31 - Build code, secondary features, design, bug fixes
 Nov 03 - Nov 07 - Finalize project 
+
+
+-Seasonal
+-time meeting
+-leaving school
+-frequency
+
+
+-search by teacher name
