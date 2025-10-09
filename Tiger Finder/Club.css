@@ -1,70 +1,59 @@
-body { 
 
-display: block;
-
-justify-content: center; 
-
-align-items: center; 
-
-margin: 10; 
-
-background: #cccccc; 
-
-} 
-
- 
-
-.container { 
-
-display: grid; 
-
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-gap: 20px; 
-
-background: #FFFAF0; 
-
-padding: 20px; 
-
-border-radius: 20px; 
-
-margin: 10px; 
-
-position: relative; 
-
-} 
-
- 
-
-.container li { 
-  background-color: #b7bfcc; 
-  color: black; 
-  font-size: 1.2rem; 
-  display: flex; 
-  flex-direction: column;   /* stack children vertically */
-  justify-content: flex-start; /* align to top */
-  border-radius: 15px; 
-  height: 300px; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-  list-style: none; 
-  padding: 15px;             /* spacing inside the box */
-  text-align: center; 
+body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 10;
+  background: #cccccc;
 }
-#clubTitle { 
-display: flex;
-justify-content: center;
-font-size: 50pt;
-font-style: helvetica ;
-} 
- 
+
+
+/* Grid container for club boxes */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  background: #FFFAF0;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  position: relative;
+}
+
+
+/* Individual club box styling */
+.container li {
+  background-color: #b7bfcc;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 15px;
+  text-align: center;
+}
+/* Club title styling */
+#clubTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 50pt;
+  font-style: helvetica;
+}
+/* Club name font size styling */
 .clubBoxesFontSize {
- 
-    font-size: clamp(16px, 4vw, 18px);
-   
+
+  font-size: clamp(16px, 4vw, 18px);
+
 }
+/* Club email styling */
 .clubBoxesEmailSize {
-    font-size: clamp(12px, 3vw, 16px);
+  font-size: clamp(12px, 3vw, 16px);
 }
+/* Favorite button styling */
 .favorite-btn {
   display: flex;
   position: right;
@@ -76,7 +65,66 @@ font-style: helvetica ;
   width: 30px;
 }
 
-
+/* Favorited state styling */
 .favorite-btn.favorited {
-  color: gold; /* Star turns gold when active */
+  color: gold;
+}
+/* Tooltip container */
+.club-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: visible;
+}
+/* Individual club box */
+.club-box {
+  position: relative;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  overflow: visible;
+  z-index: 1;
+}
+/* Hover effect */
+.club-box:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+/* Club description tooltip */
+.club-description {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  background: #333;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 220px;
+  text-align: left;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 0.9em;
+  line-height: 1.4;
+  white-space: normal;
+  word-wrap: break-word;
+
+}
+
+/* Fade-in animation */
+.club-box:hover .club-description {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.club-box:nth-child(6n):hover .club-description {
+  left: auto;
+  right: 105%;
 }
