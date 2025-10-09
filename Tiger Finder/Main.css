@@ -78,7 +78,7 @@ body {
 
 
 
-
+/*Main Body*/
 .mainBody {
     display: absolute;
     Justify-content: center;
@@ -298,4 +298,29 @@ nav ul.level1 li.sub:hover ul.level2 {
     background: #db0032;
     cursor: pointer;
     border-radius: 12px;
+}
+
+/* Login */
+#loginButton Button{
+    display: none;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 4vw;
+    color: #fff;
+    background: #db0032;
+    cursor: pointer;
+    border-radius: 12px;
+}
+#logoutButton Button{
+    display: block;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 4vw;
+    color: #fff;
+    background: #db0032;
+    cursor: pointer;
+    border-radius: 12px;
+    text-decoration: none;
 }

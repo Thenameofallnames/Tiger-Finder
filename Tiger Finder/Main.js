@@ -21,3 +21,6 @@ function filterOverlay() {
     const main = document.querySelector(".blur");
     main.classList.toggle('blurred');
 }
+function loginLogout(){
+    
+}
