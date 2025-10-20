@@ -18,12 +18,10 @@ function checkClickedQ1() {
     }
 }
 
-/*
-checkClickedQ2(){
+function checkClickedQ2(){
 
 }
 
-checkClickedQ3(){
+function checkClickedQ3(){
 
 }
-*/

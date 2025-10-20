@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="topBar">
+    <!--Drop Down Menu-->
+    <button onclick="dropDown()" id="dropDownButton">
+        <img src="dropdownMain.png" id="dropDownButton" width="50" height="50">
+    </button>
+    <nav>
+        <ul class="level1">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="ClubSurvey.html">Club Survey</a></li>
+            <li class="sub"><a href="Clubs.html">Clubs</a>
+                <ul class="level2">
+                    <li><a href="Clubs.html">Club List</a></li>
+                    <li><a href="Favorites.html">My Favorites</a></li>
+                </ul>
+            </li>
+            <li class="sub"><a href="">Account</a>
+                <ul class="level2">
+                    <li><a href="Account.html">My Account</a></li>
+                    <li><a href="">Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    </div>
+
+    <div class="mainBody blur" id="headBody">
+        <h1>Here are the clubs that fit you best!</h1>
+    </div>
+
+</body>
+</html>
