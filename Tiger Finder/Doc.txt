@@ -30,7 +30,7 @@ Core Features:
     Stretch Goals:
             -Guest account system
             -Web JS/email notifications
-
+            -Add dark mode
 
     Design and Wireframes:
         - All on paper
