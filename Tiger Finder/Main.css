@@ -2,13 +2,13 @@ body {
     font-style: Helvetica;
 }
 
-/*.topBar {
+.topBar {
     position: sticky;
     background-color: #002f87;
     top: 0px;
     padding: 10px 0px;
 }
-*/
+
 /*Search Bar*/
 #searchBar {
     width: 85%;
@@ -110,7 +110,7 @@ body {
     border-color: #373737;
 }
 
-#topImage {
+.topImage {
     display: flex;
     margin: 0 auto;
     text-align: center;
