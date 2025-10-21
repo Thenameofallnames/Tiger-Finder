@@ -30,7 +30,7 @@
                 <li class="sub"><a href="">Account</a>
                     <ul class="level2">
                         <li><a href="Account.html">My Account</a></li>
-                        <li><a href="">Log Out</a></li>
+                        <li><a href="Login.html">Log Out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -45,44 +45,102 @@
 
         <!--Filter Overlay-->
         <div id="filterOverlay">
-            <h2>Hello!</h2>
-            <p>This is an overlay screen.</p>
+            <div class="filter-grid">
+                <div class="filter-catagory">
+                    <h3>Club Type</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAcademic"
+                            onclick="saveCheckboxStates()">Academic</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxService"
+                            onclick="saveCheckboxStates()">Service</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSports"
+                            onclick="saveCheckboxStates()">Sports</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxArt"
+                            onclick="saveCheckboxStates()">Art</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxGames"
+                            onclick="saveCheckboxStates()">Games</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Meeting Time</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxBefore"
+                            onclick="saveCheckboxStates()">Before School</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAfter"
+                            onclick="saveCheckboxStates()">After School</label>
+                </div>
+                <!--
+                <div class="filter-catagory">
+                    <h3>Meeting Frequency</h3>
+                    <label><input type="checkbox" class="filterBox">Monthy</label>
+                    <label><input type="checkbox" class="filterBox">Biweekly</label>
+                    <label><input type="checkbox" class="filterBox">Weekly</label>
+                    <label><input type="checkbox" class="filterBox">Varied</label>
+                </div>
+                -->
+                <div class="filter-catagory">
+                    <h3>Meeting Days</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxMonday" onclick="saveCheckboxStates()">
+                        Monday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxTuesday" onclick="saveCheckboxStates()">
+                        Tuesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWednesday"
+                            onclick="saveCheckboxStates()"> Wednesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxThursday"
+                            onclick="saveCheckboxStates()"> Thursday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxFriday"
+                            onclick="saveCheckboxStates()">Friday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSaturday"
+                            onclick="saveCheckboxStates()"> Saturday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSunday" onclick="saveCheckboxStates()">
+                        Sunday</label>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <br>
-        <div class="blur">
-            <h1 id="clubTitle">Clubs</h1>
-
-
-
-            <ul id="clubList" class="container"></ul>
-            <script>
-                createClubs();
-            </script>
-            <!--Search Bar Functionality -->
-            <script>
-                window.addEventListener("DOMContentLoaded", () => {
-                    const searchBar = document.getElementById("searchBar");
-                    const clubList = document.getElementById("clubList");
+    <br>
+    <div class="blur">
+        <h1 id="clubTitle">Clubs</h1>
 
 
-                    searchBar.addEventListener("input", (e) => {
-                        const searchTerm = e.target.value.toLowerCase();
 
-                        const clubItems = clubList.querySelectorAll("li");
-                        clubItems.forEach(item => {
-                            const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
-                            const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
+        <ul id="clubList" class="container"></ul>
+        <script>
+            createClubs();
+        </script>
+        <!--Search Bar Functionality -->
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const searchBar = document.getElementById("searchBar");
+                const clubList = document.getElementById("clubList");
 
-                            if (clubName.includes(searchTerm) || staffName.includes(searchTerm)) {
-                                item.style.display = "block";
-                            } else {
-                                item.style.display = "none";
-                            }
-                        });
+                function filterClubs(term) {
+                    const searchTerm = term.toLowerCase();
+                    const clubItems = clubList.querySelectorAll("li");
+
+                    clubItems.forEach(item => {
+                        const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
+                        const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
+
+                        if (clubName.includes(searchTerm) || staffName.includes(searchTerm)) {
+                            item.style.display = "flex";
+                        } else {
+                            item.style.display = "none";
+                        }
                     });
+                }
+
+                // Load saved search term and immediately filter
+                const savedSearch = localStorage.getItem("searchTerm") || "";
+                searchBar.value = savedSearch;
+                filterClubs(savedSearch);
+
+                // Save and re-filter when typing
+                searchBar.addEventListener("input", (e) => {
+                    const term = e.target.value;
+                    localStorage.setItem("searchTerm", term);
+                    filterClubs(term);
                 });
-            </script>
-        </div>
+            });
+        </script>
+    </div>
 
 </body>

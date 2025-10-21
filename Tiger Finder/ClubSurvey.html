@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="topBar">
     <!--Drop Down Menu-->
     <button onclick="dropDown()" id="dropDownButton">
         <img src="dropdownMain.png" id="dropDownButton" width="50" height="50">
@@ -34,6 +35,7 @@
             </li>
         </ul>
     </nav>
+    </div>
     <div class="mainBody blur" id="headBody">
         <div class="Info">
             <h1 id="title">Club Survey</h1>
@@ -59,13 +61,16 @@
                 <br class="subQuestion1">
                 <li class="subQuestion1">What kind of activity?</li>
                 <ul class="subQuestion1">
-                    <li><input type="checkbox" id="sports" name="sports" value="sports" onclick="checkClickedQ1()">
+                    <li><input type="checkbox" id="sports" name="sports" value="sports"
+                        onclick="checkClickedQ1()">
                         <label for="sports">Sports</label>
                     </li>
-                    <li><input type="checkbox" id="arts" name="arts" value="arts" onclick="checkClickedQ1()">
+                    <li><input type="checkbox" id="arts" name="arts" value="arts"
+                        onclick="checkClickedQ1()">
                         <label for="arts">Arts</label>
                     </li>
-                    <li><input type="checkbox" id="games" name="games" value="games" onclick="checkClickedQ1()">
+                    <li><input type="checkbox" id="games" name="games" value="games"
+                        onclick="checkClickedQ1()">
                         <label for="games">Games</label>
                     </li>
                 </ul>
@@ -73,39 +78,47 @@
                 <li id="question2">When can you meet for clubs?</li>
                 <ul>
                     <li><input type="checkbox" id="mornings" name="mornings" value="mornings"
-                            onclick="checkClickedQ2()">
-                        <label for="mornings">Mornings</label>
+                        onclick="checkClickedQ2()">
+                        <label for="mornings">Before School</label>
                     </li>
                     <li><input type="checkbox" id="afternoon" name="afternoon" value="afternoon"
-                            onclick="checkClickedQ2()">
+                        onclick="checkClickedQ2()">
                         <label for="afternoon">After School</label>
                     </li>
                 </ul>
                 <br>
                 <li id="question3">What days can you meet for clubs?</li>
                 <ul>
-                    <li><input type="checkbox" id="monday" name="monday" value="monday" onclick="checkClickedQ3()">
+                    <li><input type="checkbox" id="monday" name="monday" value="monday"
+                        onclick="checkClickedQ3()">
                         <label for="monday">Monday</label>
                     </li>
-                    <li><input type="checkbox" id="tuesday" name="tuesday" value="tuesday" onclick="checkClickedQ3()">
+                    <li><input type="checkbox" id="tuesday" name="tuesday" value="tuesday"
+                        onclick="checkClickedQ3()">
                         <label for="tuesday">Tuesday</label>
                     </li>
                     <li><input type="checkbox" id="wednesday" name="wednesday" value="wednesday"
-                            onclick="checkClickedQ3()">
+                        onclick="checkClickedQ3()">
                         <label for="wednesday">Wednesday</label>
                     </li>
                     <li><input type="checkbox" id="thursday" name="thursday" value="thursday"
-                            onclick="checkClickedQ3()">
+                        onclick="checkClickedQ3()">
                         <label for="thursday">Thursday</label>
                     </li>
-                    <li><input type="checkbox" id="friday" name="friday" value="friday" onclick="checkClickedQ3()">
+                    <li><input type="checkbox" id="friday" name="friday" value="friday"
+                        onclick="checkClickedQ3()">
                         <label for="friday">Friday</label>
+                    </li>
+                    <li><input type="checkbox" id="weekend" name="weekend" value="weekedn"
+                        onclick="checkClickedQ3()">
+                        <label for="weekend">Weekends</label>
                     </li>
                 </ul>
                 <br>
-
+            <a href="ClubResults.html" id="submitButton"><button>Submit</button></a>
         </div>
     </div>
+
 </body>
 
 </html>

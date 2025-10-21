@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Main.css"/>
     <script src="Main.js"></script>
     <title>Account Page</title>
 </head>
-
 <body>
-    <div class="topBar">
+    <div class = "topBar">
         <!--Drop Down Menu-->
         <button onclick="dropDown()" id="dropDownButton">
-            <img src="dropdownMain.png" id="dropDownButton" width="50" height="50">
+            <img src="dropdownMain.png" id = "dropDownButton" width="50" height="50">
         </button>
         <nav>
             <ul class="level1">
@@ -28,6 +26,7 @@
                 <li class="sub"><a href="">Account</a>
                     <ul class="level2">
                         <li><a href="Account.html">My Account</a></li>
+                        <li><a href="">Account Settings</a></li>
                         <li><a href="">Log Out</a></li>
                     </ul>
                 </li>
@@ -41,7 +40,7 @@
 
         <!--Filter Icon-->
         <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-
+        
         <!--Filter Overlay-->
         <div id="filterOverlay">
             <h2>Filter Clubs</h2>
@@ -79,9 +78,13 @@
 
     <!--Main body starts here-->
     <div class="mainBody blur" id="headBody">
-        <h1>Account Page</h1>
+        <a href="Login.html" id="loginButton">
+             <button>Log In</button>
+        </a>
+        <a href="Login.html" id="logoutButton">
+             <button>Log Out</button>
+        </a>
         
     </div>
 </body>
-
 </html>
