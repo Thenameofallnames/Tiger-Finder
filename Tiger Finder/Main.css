@@ -1,14 +1,16 @@
 body {
     font-style: Helvetica;
 }
-
+/*
 .topBar {
     position: sticky;
     background-color: #002f87;
+    width: 100%;
     top: 0px;
+    left: 0px;
     padding: 10px 0px;
 }
-
+*/
 /*Search Bar*/
 #searchBar {
     width: 85%;
@@ -308,7 +310,7 @@ nav ul.level1 li.sub:hover ul.level2 {
 }
 
 /* Login */
-#loginButton Button{
+#loginButton Button {
     display: none;
     justify-content: center;
     width: 100%;
@@ -319,7 +321,8 @@ nav ul.level1 li.sub:hover ul.level2 {
     cursor: pointer;
     border-radius: 12px;
 }
-#logoutButton Button{
+
+#logoutButton Button {
     display: block;
     justify-content: center;
     width: 100%;
