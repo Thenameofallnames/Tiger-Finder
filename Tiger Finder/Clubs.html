@@ -40,10 +40,10 @@
         <!--Search Bar-->
         <input id="searchBar" type="text" placeholder="Search for clubs">
 
-    <!--Filter Icon-->
-    <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-    
-    <!--Filter Overlay-->
+        <!--Filter Icon-->
+        <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
+
+        <!--Filter Overlay-->
         <div id="filterOverlay">
             <h2>Filter Clubs</h2>
             <div class="filter-grid">
@@ -102,11 +102,10 @@
                     const searchBar = document.getElementById("searchBar");
                     const clubList = document.getElementById("clubList");
 
-
-                    searchBar.addEventListener("input", (e) => {
-                        const searchTerm = e.target.value.toLowerCase();
-
+                    function filterClubs(term) {
+                        const searchTerm = term.toLowerCase();
                         const clubItems = clubList.querySelectorAll("li");
+
                         clubItems.forEach(item => {
                             const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
                             const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
@@ -117,9 +116,20 @@
                                 item.style.display = "none";
                             }
                         });
+                    }
+
+                    // Load saved search term and immediately filter
+                    const savedSearch = localStorage.getItem("searchTerm") || "";
+                    searchBar.value = savedSearch;
+                    filterClubs(savedSearch);
+
+                    // Save and re-filter when typing
+                    searchBar.addEventListener("input", (e) => {
+                        const term = e.target.value;
+                        localStorage.setItem("searchTerm", term);
+                        filterClubs(term);
                     });
                 });
             </script>
         </div>
-
 </body>
