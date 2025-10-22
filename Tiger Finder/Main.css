@@ -4,7 +4,7 @@ body {
 
 .topBar {
     position: fixed;
-    background-color: #db0032;
+    background-color: #002f87;
     top: 0%;
     width: 100%;
     left: 0px;
@@ -25,6 +25,11 @@ body {
     border-radius: 12px;
 }
 
+#tigerIcon{
+    position: relative;
+    margin: auto;
+    left: 6vw;
+}
 
 /*Filter*/
 #filterIcon {
