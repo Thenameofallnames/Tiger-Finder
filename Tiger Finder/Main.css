@@ -1,21 +1,22 @@
 body {
     font-style: Helvetica;
 }
-/*
+
 .topBar {
-    position: sticky;
-    background-color: #002f87;
+    position: fixed;
+    background-color: #db0032;
+    top: 0%;
     width: 100%;
-    top: 0px;
     left: 0px;
-    padding: 10px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-*/
+
 /*Search Bar*/
-#searchBar {
+.searchBar {
     width: 85%;
-    height: 5%;
-    position: absolute;
+    height: 75%;
+    position: relative;
     font-size: 1.4rem;
     top: 2%;
     left: 7.5%;
