@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Main.css" />
     <link rel="stylesheet" type="text/css" href="ClubSurvey.css">
-    <script src="main.js"></script>
     <script src="ClubSurvey.js"></script>
     <title>Club Survey</title>
 </head>
@@ -45,22 +44,6 @@
             <ul id="questions">
                 <li id="question1">What kind of club are you interested in? (Select all that apply)</li>
                 <ul>
-                    <li><input type="checkbox" id="activity" name="activity" value="activity"
-                            onclick="checkClickedQ1()">
-                        <label for="activity">Activities</label>
-                    </li>
-                    <li><input type="checkbox" id="academic" name="academic" value="academic"
-                            onclick="checkClickedQ1()">
-                        <label for="academic">Academic</label>
-                    </li>
-                    <li><input type="checkbox" id="volunteer" name="volunteer" value="volunteer"
-                            onclick="checkClickedQ1()">
-                        <label for="volunteer">Volunteer/Service</label>
-                    </li>
-                </ul>
-                <br class="subQuestion1">
-                <li class="subQuestion1">What kind of activity?</li>
-                <ul class="subQuestion1">
                     <li><input type="checkbox" id="sports" name="sports" value="sports"
                         onclick="checkClickedQ1()">
                         <label for="sports">Sports</label>
@@ -72,6 +55,14 @@
                     <li><input type="checkbox" id="games" name="games" value="games"
                         onclick="checkClickedQ1()">
                         <label for="games">Games</label>
+                    </li>
+                    <li><input type="checkbox" id="academic" name="academic" value="academic"
+                            onclick="checkClickedQ1()">
+                        <label for="academic">Academic</label>
+                    </li>
+                    <li><input type="checkbox" id="volunteer" name="volunteer" value="volunteer"
+                            onclick="checkClickedQ1()">
+                        <label for="volunteer">Volunteer/Service</label>
                     </li>
                 </ul>
                 <br>
@@ -119,9 +110,10 @@
         </div>
 
     <div id="resultsSection" class="Info">
-        <h1>Here are the clubs that fit you best!</h1>
-
+        <h1>Here are some suggested clubs for you!</h1>
+        <a id="retakeButton" href="ClubSurvey.html"><button>Retake Survey</button></a>
         <ul id="clubList" class="container"></ul>
+
         </div>
     </div>
 
