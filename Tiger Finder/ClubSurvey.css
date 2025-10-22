@@ -16,3 +16,36 @@
 .subQuestion1 {
     display: none;
 }
+
+/* Grid container for club boxes */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  background: #CCCCCC;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  position: relative;
+}
+
+
+/* Individual club box styling */
+.container li {
+  background-color: #b7bfcc;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 15px;
+  text-align: center;
+}
+
+#resultsSection {
+    display: none;
+}

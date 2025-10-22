@@ -81,7 +81,7 @@
                         onclick="checkClickedQ2()">
                         <label for="mornings">Before School</label>
                     </li>
-                    <li><input type="checkbox" id="afternoon" name="afternoon" value="afternoon"
+                    <li><input type="checkbox" id="afternoons" name="afternoons" value="afternoons"
                         onclick="checkClickedQ2()">
                         <label for="afternoon">After School</label>
                     </li>
@@ -115,7 +115,13 @@
                     </li>
                 </ul>
                 <br>
-            <a href="ClubResults.html" id="submitButton"><button>Submit</button></a>
+            <a id="submitButton" onclick="results()"><button>Submit</button></a>
+        </div>
+
+    <div id="resultsSection" class="Info">
+        <h1>Here are the clubs that fit you best!</h1>
+
+        <ul id="clubList" class="container"></ul>
         </div>
     </div>
 
