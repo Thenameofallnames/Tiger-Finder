@@ -5,11 +5,12 @@ body {
 .topBar {
     position: fixed;
     background-color: #002f87;
-    top: 0%;
+    top: 0vh;
     width: 100%;
     left: 0px;
     padding-top: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+    z-index: 9999999999;
 }
 
 /*Search Bar*/
@@ -18,14 +19,14 @@ body {
     height: 75%;
     position: relative;
     font-size: 1.4rem;
-    top: 2%;
-    left: 7.5%;
-    margin: auto;
+    left: 6vw;
     padding: 8px;
     border-radius: 12px;
+    top: -2vh;
+    margin: auto;   
 }
 
-#tigerIcon{
+#tigerIcon {
     position: relative;
     margin: auto;
     left: 6vw;
@@ -33,7 +34,7 @@ body {
 
 /*Filter*/
 #filterIcon {
-    position: absolute;
+    position: relative;
     top: 2%;
     left: 94.5%;
     margin: auto;
@@ -339,4 +340,8 @@ nav ul.level1 li.sub:hover ul.level2 {
     cursor: pointer;
     border-radius: 12px;
     text-decoration: none;
+}
+#clubsBody{
+    margin-top: 15vh;
+    z-index: 0;
 }
