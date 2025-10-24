@@ -933,29 +933,69 @@ function createClubs() {
   }
 ]
 
-  // Sort clubs alphabetically 
-  clubs.sort((a, b) => {
-    const nameA = a.club.toLowerCase();
-    const nameB = b.club.toLowerCase();
+  // Sort clubs alphabetically
+clubs.sort((a, b) => {
+  const nameA = a.club.toLowerCase();
+  const nameB = b.club.toLowerCase();
 
-    const Astart = /^\d/.test(nameA);
-    const Bstart = /^\d/.test(nameB);
+  const Astart = /^\d/.test(nameA);
+  const Bstart = /^\d/.test(nameB);
 
-    if (Astart && !Bstart) return -1;
-    if (!Astart && Bstart) return 1;
+  if (Astart && !Bstart) return -1;
+  if (!Astart && Bstart) return 1;
+  return nameA.localeCompare(nameB);
+});
 
-    return nameA.localeCompare(nameB);
-  });
-  // Create club boxes
-  function createClubs() {
-    const clubList = document.getElementById("clubList");
-    clubList.innerHTML = "";
+// Create club boxes with filters
+function createClubs() {
+  const clubList = document.getElementById("clubList");
+  clubList.innerHTML = "";
 
-    clubs.forEach(club => {
-      const liElement = document.createElement("li");
-      liElement.classList.add("club-box");
+  // === Collect selected filters ===
+  const selectedTypes = [];
+  const selectedTimes = [];
+  const selectedDays = [];
 
-      liElement.innerHTML = `
+  if (document.getElementById("checkboxAcademic").checked) selectedTypes.push("Academic");
+  if (document.getElementById("checkboxService").checked) selectedTypes.push("Service");
+  if (document.getElementById("checkboxSports").checked) selectedTypes.push("Sports");
+  if (document.getElementById("checkboxArt").checked) selectedTypes.push("Arts");
+  if (document.getElementById("checkboxGames").checked) selectedTypes.push("Games");
+
+  if (document.getElementById("checkboxBefore").checked) selectedTimes.push("Before");
+  if (document.getElementById("checkboxAfter").checked) selectedTimes.push("After");
+
+  if (document.getElementById("checkboxMonday").checked) selectedDays.push("Monday");
+  if (document.getElementById("checkboxTuesday").checked) selectedDays.push("Tuesday");
+  if (document.getElementById("checkboxWednesday").checked) selectedDays.push("Wednesday");
+  if (document.getElementById("checkboxThursday").checked) selectedDays.push("Thursday");
+  if (document.getElementById("checkboxFriday").checked) selectedDays.push("Friday");
+  if (document.getElementById("checkboxSaturday").checked) selectedDays.push("Saturday");
+  if (document.getElementById("checkboxSunday").checked) selectedDays.push("Sunday");
+
+  const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
+
+  // === Filter clubs ===
+  const filteredClubs = anyFilters
+    ? clubs.filter(club =>
+        (selectedTypes.length === 0 || selectedTypes.includes(club.Type)) &&
+        (selectedTimes.length === 0 || selectedTimes.includes(club.Time)) &&
+        (selectedDays.length === 0 || selectedDays.includes(club.Day))
+      )
+    : clubs.slice(); // no filters → show all
+
+  // === Show message if no clubs match ===
+  if (filteredClubs.length === 0) {
+    clubList.innerHTML = "<p class='no-results'>No clubs found.</p>";
+    return;
+  }
+
+  // === Create club boxes ===
+  filteredClubs.forEach(club => {
+    const liElement = document.createElement("li");
+    liElement.classList.add("club-box");
+
+    liElement.innerHTML = `
       <img 
         src="star.png" 
         alt="favorite star" 
@@ -965,49 +1005,56 @@ function createClubs() {
       <h3 class="clubBoxesFontSize">${club.club}</h3>
       <p class="clubBoxesFontSize">${club.staff}</p>
       <p class="clubBoxesEmailSize">${club.email}</p>
-
-      
       <div class="club-description">
         ${club.description || "No description available."}
       </div>
     `;
 
-      const star = liElement.querySelector(".favorite-star");
-      // favoriteing functionality
-      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-      if (favorites.some(fav => fav.club === club.club)) {
-        star.src = "goldStar.jpeg";
-        star.classList.add("favorited");
+    // === Favorites logic ===
+    const star = liElement.querySelector(".favorite-star");
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.some(fav => fav.club === club.club)) {
+      star.src = "goldStar.jpeg";
+      star.classList.add("favorited");
+    }
+
+    star.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const target = e.target;
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      target.classList.toggle("favorited");
+
+      if (target.classList.contains("favorited")) {
+        target.src = "goldStar.jpeg";
+        if (!favorites.some(fav => fav.club === club.club)) favorites.push(club);
+      } else {
+        target.src = "star.png";
+        favorites = favorites.filter(fav => fav.club !== club.club);
       }
 
-      star.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const target = e.target;
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-        target.classList.toggle("favorited");
-
-        if (target.classList.contains("favorited")) {
-          target.src = "goldStar.jpeg";
-          if (!favorites.some(fav => fav.club === club.club)) {
-            favorites.push(club);
-          }
-        } else {
-          target.src = "star.png";
-          favorites = favorites.filter(fav => fav.club !== club.club);
-        }
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-      });
-
-      clubList.appendChild(liElement);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
     });
-  }
 
-  createClubs();
+    clubList.appendChild(liElement);
+  });
 }
 
+// === Initial load ===
+document.addEventListener("DOMContentLoaded", () => {
+  createClubs();
 
+  // Re-run when any checkbox changes
+  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    cb.addEventListener("change", () => {
+      localStorage.setItem(cb.id, cb.checked);
+      createClubs();
+    });
 
-
-
+    // Load saved state
+    const saved = localStorage.getItem(cb.id);
+    if (saved !== null) cb.checked = saved === "true";
+  });
+});
+}
