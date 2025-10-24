@@ -933,7 +933,7 @@ function createClubs() {
   }
 ]
 
-  // Sort clubs alphabetically
+  // Sort clubs
 clubs.sort((a, b) => {
   const nameA = a.club.toLowerCase();
   const nameB = b.club.toLowerCase();
@@ -951,7 +951,7 @@ function createClubs() {
   const clubList = document.getElementById("clubList");
   clubList.innerHTML = "";
 
-  // === Collect selected filters ===
+  // Collect selected filters
   const selectedTypes = [];
   const selectedTimes = [];
   const selectedDays = [];
@@ -975,7 +975,7 @@ function createClubs() {
 
   const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
 
-  // === Filter clubs ===
+  // Filter clubs 
   const filteredClubs = anyFilters
     ? clubs.filter(club =>
         (selectedTypes.length === 0 || selectedTypes.includes(club.Type)) &&
@@ -984,13 +984,13 @@ function createClubs() {
       )
     : clubs.slice(); // no filters → show all
 
-  // === Show message if no clubs match ===
+  // No clubs found failsafe
   if (filteredClubs.length === 0) {
     clubList.innerHTML = "<p class='no-results'>No clubs found.</p>";
     return;
   }
 
-  // === Create club boxes ===
+  // Club boxes
   filteredClubs.forEach(club => {
     const liElement = document.createElement("li");
     liElement.classList.add("club-box");
@@ -1010,7 +1010,6 @@ function createClubs() {
       </div>
     `;
 
-    // === Favorites logic ===
     const star = liElement.querySelector(".favorite-star");
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -1041,7 +1040,7 @@ function createClubs() {
   });
 }
 
-// === Initial load ===
+// Initial load
 document.addEventListener("DOMContentLoaded", () => {
   createClubs();
 
