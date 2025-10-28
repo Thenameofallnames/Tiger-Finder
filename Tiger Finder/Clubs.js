@@ -970,8 +970,7 @@ function createClubs() {
   if (document.getElementById("checkboxWednesday").checked) selectedDays.push("Wednesday");
   if (document.getElementById("checkboxThursday").checked) selectedDays.push("Thursday");
   if (document.getElementById("checkboxFriday").checked) selectedDays.push("Friday");
-  if (document.getElementById("checkboxSaturday").checked) selectedDays.push("Saturday");
-  if (document.getElementById("checkboxSunday").checked) selectedDays.push("Sunday");
+  if (document.getElementById("checkboxWeekend").checked) selectedDays.push("Weekend");
 
   const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
 
