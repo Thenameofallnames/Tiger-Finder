@@ -4,37 +4,49 @@ body {
 
 .topBar {
     position: fixed;
-    background-color: #002f87;
-    top: 0vh;
+    top: 0;
+    left: 0;
     width: 100%;
-    left: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: #002f87;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2vw;
     z-index: 9999999999;
+    box-sizing: border-box;
+}
+
+#dropDownButton{
+    flex: 2;
+    height: 3vw;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    cursor: pointer;
 }
 
 /*Search Bar*/
 .searchBar {
-    width: 75%;
-    height: 75%;
-    position: relative;
-    font-size: 1.4rem;
-    left: 6vw;
-    padding: 8px;
+    flex: 1;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     border-radius: 12px;
-    top: -2vh;
-    margin: auto;
+    border: none;
+    outline: none;
+    min-width: 200px;
+    max-width: 800px;
 }
 
 #tigerIcon {
-    position: flex;
-    margin: auto;
-    top: 90%;
+    height: 3vw;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    cursor: pointer;
 }
 
 /*Filter*/
 #filterIcon {
-    position: relative;
+    position: flex;
     top: 2%;
     left: 94.5%;
     margin: auto;
