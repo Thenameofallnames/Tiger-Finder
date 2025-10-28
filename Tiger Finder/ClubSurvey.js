@@ -28,56 +28,71 @@ const selectedDays = [];
 
 function checkClickedQ1() {
   selectedTypes.length = 0; // Clear the array before updating selections
-  
+
     const academic = document.getElementById("academic");
     const volunteer = document.getElementById("volunteer");
     const arts = document.getElementById("arts");
     const sports = document.getElementById("sports");
     const games = document.getElementById("games");
+    const ans1 = document.getElementById("1");
+    const ans2 = document.getElementById("2");
+    const ans3 = document.getElementById("3");
+    const ans4 = document.getElementById("4");
+    const ans5 = document.getElementById("5");
 
         if (arts.checked) {
           selectedTypes.push("Arts");
+          ans2.style.backgroundColor = "#70a2ff7a";
         } else {
           const index = selectedTypes.indexOf("Arts");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
+          ans2.style.backgroundColor = "";
         }
 
         if (sports.checked) { 
           selectedTypes.push("Sports"); 
+          ans1.style.backgroundColor = "#70a2ff7a";
         } else {
           const index = selectedTypes.indexOf("Sports");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
+          ans1.style.backgroundColor = "";
         }
 
         if (games.checked) {
-          selectedTypes.push("Games"); }
-        else {
+          selectedTypes.push("Games"); 
+          ans3.style.backgroundColor = "#70a2ff7a";
+        } else {
           const index = selectedTypes.indexOf("Games");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
+          ans3.style.backgroundColor = "";
         }
 
         if (academic.checked) {
           selectedTypes.push("Academic");
+          ans4.style.backgroundColor = "#70a2ff7a";
         } else {
           const index = selectedTypes.indexOf("Academic");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
+          ans4.style.backgroundColor = "";
         }
 
         if (volunteer.checked) {
           selectedTypes.push("Service");
+          ans5.style.backgroundColor = "#70a2ff7a";
         } else {
           const index = selectedTypes.indexOf("Service");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
+          ans5.style.backgroundColor = "";
         }
 
 }
@@ -87,23 +102,29 @@ function checkClickedQ2(){
 
     const mornings = document.getElementById("mornings");
     const afternoons = document.getElementById("afternoons");
+    const ans6 = document.getElementById("6");
+    const ans7 = document.getElementById("7");
 
     if (mornings.checked) {
       selectedTimes.push("Before");
+      ans6.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedTimes.indexOf("Before");
       if (index > -1) {
         selectedTimes.splice(index, 1);
       }
+      ans6.style.backgroundColor = "";
     }
 
     if (afternoons.checked) {
       selectedTimes.push("After");
+      ans7.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedTimes.indexOf("After");
       if (index > -1) {
         selectedTimes.splice(index, 1);
       }
+      ans7.style.backgroundColor = "";
     }
 
 }
@@ -117,59 +138,78 @@ function checkClickedQ3(){
     const thursdays = document.getElementById("thursday");
     const fridays = document.getElementById("friday");
     const weekends = document.getElementById("weekend");
+    const ans8 = document.getElementById("8");
+    const ans9 = document.getElementById("9");
+    const ans10 = document.getElementById("10");
+    const ans11 = document.getElementById("11");
+    const ans12 = document.getElementById("12");
+    const ans13 = document.getElementById("13");
+
 
     if (mondays.checked) {
       selectedDays.push("Monday");
+      ans8.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Monday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans8.style.backgroundColor = "";
     }
 
     if (tuesdays.checked) {
       selectedDays.push("Tuesday");
+      ans9.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Tuesday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans9.style.backgroundColor = "";
     }
 
     if (wednesdays.checked) {
       selectedDays.push("Wednesday");
+      ans10.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Wednesday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans10.style.backgroundColor = "";
     }
 
     if (thursdays.checked) {
       selectedDays.push("Thursday");
+      ans11.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Thursday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans11.style.backgroundColor = "";
     }
 
     if (fridays.checked) {
       selectedDays.push("Friday");
+      ans12.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Friday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans12.style.backgroundColor = "";
     }
 
     if (weekends.checked) {
       selectedDays.push("Weekend");
+      ans13.style.backgroundColor = "#70a2ff7a";
     } else {
       const index = selectedDays.indexOf("Weekend");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
+      ans13.style.backgroundColor = "";
     }
 
 }
@@ -186,7 +226,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Antoni, Austin & Gardner, Elijah",
     "club": "Rugby (Girls)",
     "email": "austinantoni@gmail.com & egardner@hse.k12.in.us",
-    "description": "hi this is a description",
+    "description": "We are a competitive high school girls rugby club open to all backgrounds and skill levels for FHS, HSE, and other Fishers area students. Through its fun and fast paced action, we believe that rugby can shape student athletes into strong, confident, and capable individuals, both on and off the field. Our USA Rugby certified coaches will teach you this game from ground up, improve your fitness, and help you compete in games against teams across the state. We have two main seasons: Fall 7s and Spring 15s. Practices commonly run after school on Mondays and Wednesdays with games on the weekends. For more information on our club and how you can be a part of it, go to rugby.myathletics.com or email mudsockrugby@gmail.com. You can also find us on Instagram and Facebook @mudsockhsgirlsrugby",
     "Time": "After",
     "Type": "Sports",
     "Day": "Monday"
@@ -232,10 +272,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Bockenfeld, Matt",
     "club": "Muslim Student Association (MSA)",
     "email": "mbockenfeld@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "MSA is a club where students gather to learn more about Islam, plan community events and service projects, and enjoy one another's company. The club is open to all students. ",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Brown, Lisa",
@@ -250,10 +290,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Buckman, Bill",
     "club": "Poker Club",
     "email": "mbuckman@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "This club will meet Wednesday mornings (dates communicated through StudentSquare) to play variations of the traditional game, Poker. In Poker club, no gambling is involved. Instead, members will play recreationally, with allergy-safe candy as a prize.  The poker chips, playing cards, etc. will be supplied by the club.",
+    "Time" : "Before",
+    "Type" : "Games",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Carson, Beth",
@@ -268,10 +308,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Chan, Brooke",
     "club": "Disney Lorcana TCG Club",
     "email": "bchan@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Students play the Disney Lorcana trading card game and socialize",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Monday",
   },
   {
     "staff": "Chan, Brooke",
@@ -301,13 +341,13 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Day" : "",
   },
   {
-    "staff": "Curtis, Steven",
+    "staff": "Curtis, Steven & Kapitan, Jacob",
     "club": "Dungeons & Dragons Club",
-    "email": "scurtis@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "email": "scurtis@hse.k12.in.us & jkapitan@hse.k12.in.us",
+    "description" : "Students gather every other week after school until 4:30 to play in Dungeons and Dragons campaigns.  Campaigns are run by fellow club members in small groups.  All levels of expertise are welcome so if you’ve ever wanted to learn how to play, please come join us!",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
   },
   {
     "staff": "Czech, Mike",
@@ -340,10 +380,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Druelinger, Sarah",
     "club": "Ping Pong Club",
     "email": "sdruelinger@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We play ping pong on most Red Mondays.  The club is for anyone who would like to play!",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Monday",
   },
   {
     "staff": "Farrand, Angela",
@@ -364,13 +404,13 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Day" : "",
   },
   {
-    "staff": "Ferguson, Heather",
+    "staff": "Ferguson, Heather & Noyes, Summer",
     "club": "Senior Smile Society",
-    "email": "hferguson@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "email": "hferguson@hse.k12.in.us & snoyes@hse.k12.in.us",
+    "description" : "Our club creates art and writes letters to residents in nursing/assisted living homes.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Friday",
   },
   {
     "staff": "French, Brigham",
@@ -400,22 +440,13 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Day" : "",
   },
   {
-    "staff": "Greisinger, Jessica",
+    "staff": "Greisinger, Jessica & Geisinger, Robin",
     "club": "Swiss-Mix Club (formerly German Club)",
-    "email": "jgeisinger@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
-  {
-    "staff": "Geisinger, Robin",
-    "club": "Swiss-Mix Club (formerly German Club)",
-    "email": "rgeisinger@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "email": "jgeisinger@hse.k12.in.us & rgeisinger@hse.k12.in.us",
+    "description" : "For French and German students. We blend the best of French and German culture via foods, Field trips, movies, games",
+    "Time" : "Before" || "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
   },
   {
     "staff": "Goodwin, Danielle",
@@ -529,19 +560,19 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Isom, Renee",
     "club": "3D Printing Club",
     "email": "risom@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We work to share 3D designs and printing those on the school 3d printers",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Isom, Renee",
     "club": "Cultural Connections Club",
     "email": "risom@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "The Cultural Connections Club celebrates the varied cultures here at FHS and creates an International Fair in the Spring.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
   },
   {
     "staff": "Isom, Renee",
@@ -556,10 +587,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Isom, Renee",
     "club": "Future Black Leaders",
     "email": "risom@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We are a club that promotes leadership, building community through service.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Isom, Renee",
@@ -591,15 +622,6 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
   {
     "staff": "Kapitan, Jacob",
     "club": "Bible Study Group",
-    "email": "jkapitan@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
-  {
-    "staff": "Kapitan, Jacob",
-    "club": "Dungeons & Dragons Club",
     "email": "jkapitan@hse.k12.in.us",
     "description" : "",
     "Time" : "",
@@ -682,19 +704,19 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Horn, Sara",
     "club": "Women in S.T.E.M.",
     "email": "shorn@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Women in STEM intends to empower young women who are actively pursuing STEM careers by inviting female speakers who have underwent similar experiences. This club also strives to encourage younger students in the school district to be confident in math and science by promoting STEM education.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Friday",
   },
   {
     "staff": "Kuhn, Lance",
     "club": "Chemistry Club",
     "email": "lkuhn@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Chemistry Club does demonstrations and experiments not done in chemistry classes and prepares for a springtime chemistry competition that is open to all students.",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Day" : "Friday",
   },
   {
     "staff": "Laffin, Bill",
@@ -763,10 +785,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "McCabe, Shanna",
     "club": "CATS (Creating Action Through Service)",
     "email": "smccabe@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "This organization is dedicated to teaching K-6th grade students in HSE school district about service and how they can become active members of their community. ",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Monday",
   },
   {
     "staff": "McCabe, Shanna",
@@ -814,15 +836,6 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Day" : "",
   },
   {
-    "staff": "Noyes, Summer",
-    "club": "Senior Smile Society",
-    "email": "snoyes@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
-  {
     "staff": "Ondish, Kelsey",
     "club": "Improv Club",
     "email": "kondish@hse.k12.in.us",
@@ -836,10 +849,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Ondish, Kelsey",
     "club": "LLS Club (Leukemia & Lymphoma Society)",
     "email": "kondish@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "LLS is a nonprofit organization dedicated to fighting blood cancers (leukemia, lymphoma, hodgkin’s disease, and myeloma)We raise money to fund research, patient support services, and advocacy efforts. We also spread awareness about LLS as well play games and make new friends. Teams across Indiana who have raised the most money for LLS are crowned Student Visionary of the Year.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Tuesday",
   },
   {
     "staff": "Paternoster, Liz",
@@ -863,10 +876,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Rund, Emma",
     "club": "Drama Club / Theatre Fishers",
     "email": "erund@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Drama Club is club for students who like theatre, do theatre, or want to learn more about theatre. We do workshops and themed events to create opportunities to learn more about theatre outside of what we do at school.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
   },
   {
     "staff": "Schooley, Patrick",
@@ -881,10 +894,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Schuh, Tori",
     "club": "Best Buddies",
     "email": "vschuh@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Thursday",
   },
   {
     "staff": "Schulhof, Beth",
@@ -968,22 +981,22 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Day" : "Varies",
   },
   {
-    "staff": "Steange, Susanne",
+    "staff": "Strange, Susanne",
     "club": "Gymnastics",
     "email": "strangesusie@gmail.com",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We train for Gymnastics, condition and choreograph routines on all 4 women's apparatus. We do weight training at FHS. We practice x2 days off site at a gymnastics club. Pre- season starts September/October. Official season starts in November. Meets/ competitions run Jan. - March/ April. ",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Varies",
   },
   {
     "staff": "Swaim, Matt",
     "club": "Tiger Ambassadors",
     "email": "mswaim@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : " Tiger Ambassadors is a student-run organization that helps new students feel welcome at FHS. Ambassadors are matched with new students to help these students make a positive connection at FHS. We want to make new students feel welcome and to make FHS an inclusive environment.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Thomas, William",
@@ -1014,12 +1027,12 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
   },
   {
     "staff": "Tribolet, Braden",
-    "club": "Tiger Spirit Leaders",
+    "club": "Tiger Cage",
     "email": "btribolet@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Our club oversees the student body during athletic events or other events that we organize. We plan, organize, and execute everything that happens at sporting events. We help bring the school together and provide a great experience for our students.",
+    "Time" : "Before",
+    "Type" : "Sports",
+    "Day" : "Varies",
   },
   {
     "staff": "Turner, Dave",
@@ -1043,10 +1056,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Tysen, Jessica",
     "club": "Bowling Club",
     "email": "jessicanstevens@gmail.com",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We are the FHS Bowling Team that consists of an all girls team & an all boys team. We are competing in the White River Valley 1 conference against 11 other Indiana High Schools and our season is from September to February. Practices occur on Tuesdays at Pinheads from 4:30-6:00 pm.  The estimated cost is $150 per student and gently used equipment is available upon request. Find us on instagram at fishershighschoolbowling for more information.",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Friday",
   },
   {
     "staff": "Vanlandingham, Renee",
@@ -1079,10 +1092,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "Votaw, Lauren",
     "club": "Fellowship of Christian Athletes (FCA)",
     "email": "lvotaw@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "F.C.A. is open to any student looking for fellowship with other students who enjoy sports through games, a devotional, and prayer. Donuts are always free! ",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Walker, Sarah",
@@ -1119,6 +1132,24 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Time" : "After",
     "Type" : "Service",
     "Day" : "Tuesday",
+  },
+  {
+    "staff" : "Horn, Sarah & Rund, Emma",
+    "club": "Speech and Debate Team",
+    "email" : "",
+    "description" : "The Fishers Speech & Debate team competes in public speaking tournaments throughout the state and on the national circuit. Students can compete in theatrical performances, broadcasting, platform speaking, and multiple types of debate.",
+    "Time": "After",
+    "Type" : "Academic",
+    "Days" : "Weekend",
+  },
+  {
+    "staff" : "Laffin, Bill",
+    "club" : "Girls Lacrosse",
+    "email" : "blaffin@hse.k12.in.us",
+    "description" : "",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Days" : "Varies",
   }
 ]
 

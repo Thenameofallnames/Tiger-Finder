@@ -160,6 +160,9 @@ body {
 }
 
 /* Dropdown Nav Bar */
+a:active, a:focus, a:hover, a:visited, a:link{
+    color: black;
+}
 
 #dropDownButton {
     display: flex;

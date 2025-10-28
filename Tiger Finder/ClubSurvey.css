@@ -13,10 +13,6 @@
     font-size: 1.2em;
 }
 
-.subQuestion1 {
-    display: none;
-}
-
 /* Grid container for club boxes */
 .container {
   display: grid;
@@ -139,5 +135,104 @@
 }
 
 #resultsSection {
+    text-align: center;
     display: none;
 }
+
+
+/* Survey Questions */
+#surverySection {
+    text-align: left;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#surveySection ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#surveySection #question1 li {
+    display: flex;
+    margin-bottom: 1%;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1.5px solid black;
+    font-size: 5vh;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question1 li:hover {
+    background: #70a2ff7a;
+}
+
+#surveySection #question2 li {
+    display: flex;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 1%;
+    border: 1.5px solid black;
+    font-size: 5vh;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question2 li:hover {
+    background: #70a2ff7a;
+}
+
+
+#surveySection #question3 li {
+    display: flex;
+    margin-bottom: 1%;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1.5px solid black;
+    font-size: 5vh;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question3 li:hover {
+    background: #70a2ff7a;
+}
+
+/* Question Title Styling */
+.Question {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.buttons {
+    display: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1.5px solid black;
+}
+
+a.buttons {
+    text-decoration: none;
+}  
