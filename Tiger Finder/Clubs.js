@@ -21,6 +21,7 @@ function createClubs() {
     "Type" : "",
     "Day" : "",
   },
+  /*
   {
     "staff": "Bandura, Jacob",
     "club": "",
@@ -30,6 +31,7 @@ function createClubs() {
     "Type" : "",
     "Day" : "",
   },
+  */
   {
     "staff": "Barfield, Alexis", 
     "club": "Alaska Native and Native American Club",
@@ -142,19 +144,19 @@ function createClubs() {
     "staff": "Delucenay, Katie",
     "club": "Baking Club",
     "email": "kdelucenay@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Students meet and work in groups to make baked-type items.  There is a fee for joining to purchase food. ",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Thursday",
   },
   {
     "staff": "Delucenay, Katie",
     "club": "Off the Clock (OTC)",
     "email": "kdelucenay@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Students meet after school to unwind.  Play games, take walks and other activities to unwind from school.",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Monday",
   },
   {
     "staff": "Druelinger, Sarah",
@@ -403,28 +405,28 @@ function createClubs() {
     "staff": "Kapitan, Jacob",
     "club": "Bible Study Group",
     "email": "jkapitan@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Students can meet together to read and discuss passages from the Bible. Sometimes a leader has prepared a passage to discuss, and other times involve walking through a text together. Students are welcome to bring their own Bible or Bible app, and any faith or level of involvement is welcome.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Monday",
   },
   {
     "staff": "Kapitan, Jacob",
     "club": "E-Sports Club",
     "email": "jkapitan@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "We have an opportunity to build teams for different competitive eSports games, compete in leagues, and play together at the school. Students can make new friends that share interests and hone their skills throughout the year. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Thursday",
   },
   {
     "staff": "Kapitan, Jacob",
     "club": "Pokemon Club",
     "email": "jkapitan@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Come join some fellow fanatics to play and discuss everything Pokemon! Students can bring a copy of a game from any generation and are welcome to play together or link up for battling, trading, shiny hunting, and adventuring. Students can also play and plan outings for Pokemon GO, or bring physical TCG cards or the TCG Pocket app to join the fun in other ways. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Friday",
   },
   {
     "staff": "Keithley, Maxwell",
@@ -930,10 +932,10 @@ function createClubs() {
     "Time" : "After",
     "Type" : "Sports",
     "Days" : "Varies",
-  }
+  },
 ]
 
-  // Sort clubs
+// Sort clubs
 clubs.sort((a, b) => {
   const nameA = a.club.toLowerCase();
   const nameB = b.club.toLowerCase();
@@ -1004,9 +1006,7 @@ function createClubs() {
       <h3 class="clubBoxesFontSize">${club.club}</h3>
       <p class="clubBoxesFontSize">${club.staff}</p>
       <p class="clubBoxesEmailSize">${club.email}</p>
-      <div class="club-description">
-        ${club.description || "No description available."}
-      </div>
+      
     `;
 
     const star = liElement.querySelector(".favorite-star");
@@ -1017,6 +1017,7 @@ function createClubs() {
       star.classList.add("favorited");
     }
 
+    // Favorite star toggle
     star.addEventListener("click", (e) => {
       e.stopPropagation();
       const target = e.target;
@@ -1033,6 +1034,17 @@ function createClubs() {
       }
 
       localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
+
+    // Description overlay (click anywhere else on box)
+    liElement.addEventListener("click", () => {
+      document.getElementById("overlayTitle").textContent = club.club;
+      document.getElementById("overlayStaff").textContent = `Staff: ${club.staff}`;
+      document.getElementById("overlayEmail").textContent = `Email: ${club.email}`;
+      document.getElementById("overlayDescription").textContent =
+        club.description || "No description available.";
+
+      document.getElementById("descriptionOverlay").classList.remove("hidden");
     });
 
     clubList.appendChild(liElement);
@@ -1053,6 +1065,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load saved state
     const saved = localStorage.getItem(cb.id);
     if (saved !== null) cb.checked = saved === "true";
+  });
+
+ 
+  const overlay = document.getElementById("descriptionOverlay");
+  const closeOverlay = document.getElementById("closeOverlay");
+
+  closeOverlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+  });
+
+//close overlay
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
   });
 });
 }

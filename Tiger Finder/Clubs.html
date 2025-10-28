@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <div class="topBar">
         <!--Drop Down Menu-->
         <button onclick="dropDown()" id="dropDownButton">
@@ -97,11 +98,15 @@
         </div>
 
         <br>
+            
         <div class="blur">
             <h1 id="clubTitle">Clubs</h1>
-
-
-
+            
+                <a href="https://docs.google.com/forms/d/1hOObxXLJGflC10so4TUrSxYnWWgg1IlV28uNZAJoV3E/edit"> 
+                    <button>If your club is not present or does not have details fill out this form</button>
+                </a>
+            
+            <br>
             <ul id="clubList" class="container"></ul>
             <script>
                 createClubs();
@@ -142,4 +147,14 @@
                 });
             </script>
         </div>
+        <!-- Overlay for club description -->
+<div id="descriptionOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <span id="closeOverlay" class="close-btn">&times;</span>
+    <h2 id="overlayTitle"></h2>
+    <p id="overlayStaff"></p>
+    <p id="overlayEmail"></p>
+    <div id="overlayDescription"></div>
+  </div>
+</div>
 </body>
