@@ -75,7 +75,7 @@ function createClubs() {
     "description" : "This club will meet Wednesday mornings (dates communicated through StudentSquare) to play variations of the traditional game, Poker. In Poker club, no gambling is involved. Instead, members will play recreationally, with allergy-safe candy as a prize.  The poker chips, playing cards, etc. will be supplied by the club.",
     "Time" : "Before",
     "Type" : "Games",
-    "Day" : "Wedneday",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Carson, Beth",
@@ -198,10 +198,10 @@ function createClubs() {
     "staff": "French, Brigham",
     "club": "Chess Club",
     "email": "bfrench@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
   },
   {
     "staff": "French, Brigham",
