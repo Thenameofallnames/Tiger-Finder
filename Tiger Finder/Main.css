@@ -27,16 +27,19 @@ body {
 }
 
 #tigerIcon {
-    position: flex;
+    position: relative;
+    display: flex;
     margin: auto;
     top: 90%;
+    height: 5%;
+    left: 12vh;
 }
 
 /*Filter*/
 #filterIcon {
     position: relative;
-    top: 2%;
-    left: 94.5%;
+    top: 2vh;
+    left: 94.5vw;
     margin: auto;
     padding: 8px;
     aspect-ratio: 1/1;
@@ -175,7 +178,7 @@ body {
     left: 1.25%;
     aspect-ratio: 1/1;
     width: 5vw;
-    height: 5vh;
+    height: 10vh;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -347,7 +350,8 @@ nav ul.level1 li.sub:hover ul.level2 {
     z-index: 0;
 }
 
-
+/*Carousel CSS (kinda broken, thanks clanker*/
+/*this first part has me fucked up because I don't really understand keyframes I used a tut*/
 @keyframes tonext {
     75% {
         left: 0;
@@ -402,13 +406,13 @@ nav ul.level1 li.sub:hover ul.level2 {
     }
 }
 
-body {
+/*body {
     max-width: 37.5rem;
     margin: 0 auto;
     padding: 0 1.25rem;
     font-family: 'Lato', sans-serif;
 }
-
+*/
 * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent;
@@ -442,12 +446,14 @@ li {
 
 .carousel {
     position: relative;
+    /*width: 40vw;*/
+    height: 40vh;
     padding-top: 75%;
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
 }
 
-.carousel__viewport {
+.carouselViewport {
     position: absolute;
     top: 0;
     right: 0;
@@ -460,7 +466,7 @@ li {
     scroll-snap-type: x mandatory;
 }
 
-.carousel__slide {
+.carouselSlide {
     position: relative;
     flex: 0 0 100%;
     width: 100%;
@@ -468,11 +474,11 @@ li {
     counter-increment: item;
 }
 
-.carousel__slide:nth-child(even) {
+.carouselSlide:nth-child(even) {
     background-color: #99f;
 }
 
-.carousel__slide:before {
+.carouselSlide:before {
     content: counter(item);
     position: absolute;
     top: 50%;
@@ -482,7 +488,7 @@ li {
     font-size: 2em;
 }
 
-.carousel__snapper {
+.carouselSnapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -492,30 +498,30 @@ li {
 }
 
 @media (hover: hover) {
-    .carousel__snapper {
+    .carouselSnapper {
         animation-name: tonext, snap;
         animation-timing-function: ease;
         animation-duration: 4s;
         animation-iteration-count: infinite;
     }
 
-    .carousel__slide:last-child .carousel__snapper {
+    .carouselSlide:last-child .carouselSnapper {
         animation-name: tostart, snap;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .carousel__snapper {
+    .carouselSnapper {
         animation-name: none;
     }
 }
 
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
+.carousel:hover .carouselSnapper,
+.carousel:focus-within .carouselSnapper {
     animation-name: none;
 }
 
-.carousel__navigation {
+.carouselNavigation {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -523,12 +529,12 @@ li {
     text-align: center;
 }
 
-.carousel__navigation-list,
-.carousel__navigation-item {
+.carouselNavigation-list,
+.carouselNavigation-item {
     display: inline-block;
 }
 
-.carousel__navigation-button {
+.carouselNavigation-button {
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -542,8 +548,8 @@ li {
 
 .carousel::before,
 .carousel::after,
-.carousel__prev,
-.carousel__next {
+.carouselPrev,
+.carouselNext {
     position: absolute;
     top: 0;
     margin-top: 37.5%;
@@ -556,12 +562,12 @@ li {
 }
 
 .carousel::before,
-.carousel__prev {
+.carouselPrev {
     left: -1rem;
 }
 
 .carousel::after,
-.carousel__next {
+.carouselNext {
     right: -1rem;
 }
 
