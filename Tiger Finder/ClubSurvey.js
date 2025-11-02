@@ -421,10 +421,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "French, Brigham",
     "club": "Chess Club",
     "email": "bfrench@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
   },
   {
     "staff": "French, Brigham",
@@ -500,7 +500,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
   },
   {
     "staff": "Harris, Ryan",
-    "club": "Badminton Club",
+    "club": "Badminton Cub",
     "email": "rharris@hse.k12.in.us",
     "description" : "",
     "Time" : "",
@@ -1155,6 +1155,15 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Time" : "After",
     "Type" : "Sports",
     "Days" : "Varies",
+  },
+  {
+    "staff" : "Hufty, Rebecca & Ingwersen, Erin",
+    "club" : "Math Team",
+    "email" : "Rhufty@hse.k12.in.us & Eingwersen@hse.k12.in.us",
+    "description" : "",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Days" : "Wednesday",
   },
 ]
 
