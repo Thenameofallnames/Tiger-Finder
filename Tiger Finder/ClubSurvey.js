@@ -1,59 +1,216 @@
+//dropdown menu function
+function dropDown() {
+    const nav = document.querySelector('nav');
+    if (nav.style.display === 'block') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';
+    }
+
+    const main = document.querySelector(".blur");
+    main.classList.toggle('blurred');
+}
+function filterOverlay() {
+    const overlay = document.getElementById('filterOverlay');
+    if (overlay.style.display === 'block') {
+        overlay.style.display = 'none';
+    } else {
+        overlay.style.display = 'block';
+    }
+
+    const main = document.querySelector(".blur");
+    main.classList.toggle('blurred');
+}
+
 const selectedTypes = [];
 const selectedTimes = [];
 const selectedDays = [];
 
 function checkClickedQ1() {
-    const activity = document.getElementById("activity");
+  selectedTypes.length = 0; // Clear the array before updating selections
+
     const academic = document.getElementById("academic");
     const volunteer = document.getElementById("volunteer");
     const arts = document.getElementById("arts");
     const sports = document.getElementById("sports");
     const games = document.getElementById("games");
+    const ans1 = document.getElementById("1");
+    const ans2 = document.getElementById("2");
+    const ans3 = document.getElementById("3");
+    const ans4 = document.getElementById("4");
+    const ans5 = document.getElementById("5");
 
-    const subQuestions = document.getElementsByClassName("subQuestion1");
-
-    if (activity.checked) {
-        // Loop through the collection of elements and set display to "block" for each
-        for (let i = 0; i < subQuestions.length; i++) {
-            subQuestions[i].style.display = "block";
+        if (arts.checked) {
+          selectedTypes.push("Arts");
+          ans2.style.backgroundColor = "#70a2ff7a";
+        } else {
+          const index = selectedTypes.indexOf("Arts");
+          if (index > -1) {
+            selectedTypes.splice(index, 1);
+          }
+          ans2.style.backgroundColor = "";
         }
-    } else {
-        // Optional: Hide the subquestions if "activity" is unchecked
-        for (let i = 0; i < subQuestions.length; i++) {
-            subQuestions[i].style.display = "none";
+
+        if (sports.checked) { 
+          selectedTypes.push("Sports"); 
+          ans1.style.backgroundColor = "#70a2ff7a";
+        } else {
+          const index = selectedTypes.indexOf("Sports");
+          if (index > -1) {
+            selectedTypes.splice(index, 1);
+          }
+          ans1.style.backgroundColor = "";
         }
 
-    }
+        if (games.checked) {
+          selectedTypes.push("Games"); 
+          ans3.style.backgroundColor = "#70a2ff7a";
+        } else {
+          const index = selectedTypes.indexOf("Games");
+          if (index > -1) {
+            selectedTypes.splice(index, 1);
+          }
+          ans3.style.backgroundColor = "";
+        }
 
-        if (arts.checked) selectedTypes.push("Arts");
-        if (sports.checked) selectedTypes.push("Sports");
-        if (games.checked) selectedTypes.push("Games");
-        if (academic.checked) selectedTypes.push("Academic");
-        if (volunteer.checked) selectedTypes.push("Volunteer");
+        if (academic.checked) {
+          selectedTypes.push("Academic");
+          ans4.style.backgroundColor = "#70a2ff7a";
+        } else {
+          const index = selectedTypes.indexOf("Academic");
+          if (index > -1) {
+            selectedTypes.splice(index, 1);
+          }
+          ans4.style.backgroundColor = "";
+        }
+
+        if (volunteer.checked) {
+          selectedTypes.push("Service");
+          ans5.style.backgroundColor = "#70a2ff7a";
+        } else {
+          const index = selectedTypes.indexOf("Service");
+          if (index > -1) {
+            selectedTypes.splice(index, 1);
+          }
+          ans5.style.backgroundColor = "";
+        }
 
 }
 
 function checkClickedQ2(){
+  selectedDays.length = 0; // Clear the array before updating selections
+
     const mornings = document.getElementById("mornings");
     const afternoons = document.getElementById("afternoons");
+    const ans6 = document.getElementById("6");
+    const ans7 = document.getElementById("7");
 
-    if (mornings.checked) selectedTimes.push("Mornings");
-    if (afternoons.checked) selectedTimes.push("Afternoons");
+    if (mornings.checked) {
+      selectedTimes.push("Before");
+      ans6.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedTimes.indexOf("Before");
+      if (index > -1) {
+        selectedTimes.splice(index, 1);
+      }
+      ans6.style.backgroundColor = "";
+    }
+
+    if (afternoons.checked) {
+      selectedTimes.push("After");
+      ans7.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedTimes.indexOf("After");
+      if (index > -1) {
+        selectedTimes.splice(index, 1);
+      }
+      ans7.style.backgroundColor = "";
+    }
 
 }
 
 function checkClickedQ3(){
+  selectedTimes.length = 0; // Clear the array before updating selections
+
     const mondays = document.getElementById("monday");
     const tuesdays = document.getElementById("tuesday");
     const wednesdays = document.getElementById("wednesday");
     const thursdays = document.getElementById("thursday");
     const fridays = document.getElementById("friday");
+    const weekends = document.getElementById("weekend");
+    const ans8 = document.getElementById("8");
+    const ans9 = document.getElementById("9");
+    const ans10 = document.getElementById("10");
+    const ans11 = document.getElementById("11");
+    const ans12 = document.getElementById("12");
+    const ans13 = document.getElementById("13");
 
-    if (mondays.checked) selectedDays.push("Mondays");
-    if (tuesdays.checked) selectedDays.push("Tuesdays");
-    if (wednesdays.checked) selectedDays.push("Wednesdays");
-    if (thursdays.checked) selectedDays.push("Thursdays");
-    if (fridays.checked) selectedDays.push("Fridays");
+
+    if (mondays.checked) {
+      selectedDays.push("Monday");
+      ans8.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Monday");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans8.style.backgroundColor = "";
+    }
+
+    if (tuesdays.checked) {
+      selectedDays.push("Tuesday");
+      ans9.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Tuesday");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans9.style.backgroundColor = "";
+    }
+
+    if (wednesdays.checked) {
+      selectedDays.push("Wednesday");
+      ans10.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Wednesday");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans10.style.backgroundColor = "";
+    }
+
+    if (thursdays.checked) {
+      selectedDays.push("Thursday");
+      ans11.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Thursday");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans11.style.backgroundColor = "";
+    }
+
+    if (fridays.checked) {
+      selectedDays.push("Friday");
+      ans12.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Friday");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans12.style.backgroundColor = "";
+    }
+
+    if (weekends.checked) {
+      selectedDays.push("Weekend");
+      ans13.style.backgroundColor = "#70a2ff7a";
+    } else {
+      const index = selectedDays.indexOf("Weekend");
+      if (index > -1) {
+        selectedDays.splice(index, 1);
+      }
+      ans13.style.backgroundColor = "";
+    }
 
 }
 
@@ -61,116 +218,954 @@ function checkClickedQ3(){
 function results() {
     createClubs(selectedTypes, selectedTimes, selectedDays);
     document.getElementById("resultsSection").style.display = "block";
+    
+    const scrollTarget = document.getElementById("resultsSection");
+    scrollTarget.scrollIntoView({ behavior: "smooth" });
 }
 
 function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) {
   const clubs = [
-    { "staff": "Antoni, Austin", "club": "Rugby (Girls)", "email": "austinantoni@gmail.com", "description": "hi this is a description", "type": "Sports", "day": "Wednesdays", "time": "Afternoons" },
-    { "staff": "Armey, Julie", "club": "Orchestra Club", "email": "jarmey@hse.k12.in.us", "type": "Arts", "day": "Wednesdays", "time": "Mornings" },
-    { "staff": "Bandura, Jacob", "club": "No Name", "email": "jbandura@hse.k12.in.us", "type": "Sports", "day": "Mondays", "time": "Afternoons" },
-    { "staff": "Barfield, Alexis", "club": "Alaska Native and Native American Club", "email": "abarfield@hse.k12.in.us", "type": "Volunteer", "day": "Fridays", "time": "Afternoons" },
-    { "staff": "Black, Scott", "club": "Asian Student Union", "email": "sdblack@hse.k12.in.us", "type": "Volunteer", "day": "Tuesdays", "time": "Afternoons" },
-    { "staff": "Bockenfeld, Matt", "club": "Muslim Student Association (MSA)", "email": "mbockenfeld@hse.k12.in.us" },
-    { "staff": "Brown, Lisa", "club": "Art Club", "email": "lgbrown@hse.k12.in.us" },
-    { "staff": "Buckman, Bill", "club": "Poker Club", "email": "mbuckman@hse.k12.in.us" },
-    { "staff": "Carson, Beth", "club": "Care Crafts Project", "email": "acarson@hse.k12.in.us" },
-    { "staff": "Chan, Brooke", "club": "Disney Lorcana TCG Club", "email": "bchan@hse.k12.in.us" },
-    { "staff": "Chan, Brooke", "club": "Magic: The Gathering", "email": "bchan@hse.k12.in.us"},
-    { "staff": "Chop, Dahnya", "club": "French Club", "email": "dchop@hse.k12.in.us" },
-    { "staff": "Curtis, Liz", "club": "GSA", "email": "lcurtis@hse.k12.in.us" },
-    { "staff": "Curtis, Steven", "club": "Dungeons & Dragons Club", "email": "scurtis@hse.k12.in.us" },
-    { "staff": "Czech, Mike", "club": "School of Rock", "email": "mczech@hse.k12.in.us" },
-    { "staff": "Delucenay, Katie", "club": "Baking Club", "email": "kdelucenay@hse.k12.in.us" },
-    { "staff": "Delucenay, Katie", "club": "Off the Clock (OTC)", "email": "kdelucenay@hse.k12.in.us" },
-    { "staff": "Druelinger, Sarah", "club": "Ping Pong Club", "email": "sdruelinger@hse.k12.in.us" },
-    { "staff": "Farrand, Angela", "club": "American Sign Language (ASL) Club", "email": "afarrand@hse.k12.in.us" },
-    { "staff": "Manoharan, Vennila", "club": "Crochet Club", "email": "vmanoharan@hse.k12.in.us" },
-    { "staff": "Ferguson, Heather", "club": "Senior Smile Society", "email": "hferguson@hse.k12.in.us" },
-    { "staff": "French, Brigham", "club": "Chess Club", "email": "bfrench@hse.k12.in.us" },
-    { "staff": "French, Brigham", "club": "AI Club", "email": "bfrench@hse.k12.in.us" },
-    { "staff": "Gardner, Elijah", "club": "Rugby (Girls)", "email": "egardner@hse.k12.in.us" },
-    { "staff": "Gastineau, Chelley", "club": "Bring Change to Mind", "email": "cgastineau@hse.k12.in.us" },
-    { "staff": "Greisinger, Jessica", "club": "Swiss-Mix Club (formerly German Club)", "email": "jgeisinger@hse.k12.in.us" },
-    { "staff": "Geisinger, Robin", "club": "Swiss-Mix Club (formerly German Club)", "email": "rgeisinger@hse.k12.in.us" },
-    { "staff": "Goodwin, Danielle", "club": "Unified Dance", "email": "dgoodwin@hse.k12.in.us" },
-    { "staff": "Gutting, Stephanie", "club": "Harry Potter Club", "email": "sgutting@hse.k12.in.us" },
-    { "staff": "Gutting, Stephanie", "club": "Spanish Club", "email": "sgutting@hse.k12.in.us" },
-    { "staff": "Gutting, Stephanie", "club": "Unified Dance", "email": "sgutting@hse.k12.in.us" },
-    { "staff": "Hamilton, Terri", "club": "Student Organ Donor Advocates (SODA)", "email": "thamilton@hse.k12.in.us" },
-    { "staff": "Harris, Ryan", "club": "Badminton Cub", "email": "rharris@hse.k12.in.us" },
-    { "staff": "Harris, Ryan", "club": "Computer Science Club", "email": "rharris@hse.k12.in.us" },
-    { "staff": "Harris, Ryan", "club": "Cricket Club", "email": "rharris@hse.k12.in.us" },
-    { "staff": "Harris, Ryan", "club": "Desi Student Association", "email": "rharris@hse.k12.in.us" },
-    { "staff": "Harris, Ryan", "club": "Sports Trading Card Club", "email": "rharris@hse.k12.in.us" },
-    { "staff": "Helmkamp, Michelle", "club": "Spanish Club", "email": "mhelmkamp@hse.k12.in.us" },
-    { "staff": "Huppenthal, Suzie", "club": "Do Something Club", "email": "shuppenthal@hse.k12.in.us" },
-    { "staff": "Isom, Renee", "club": "3D Printing Club", "email": "risom@hse.k12.in.us" },
-    { "staff": "Isom, Renee", "club": "Cultural Connections Club", "email": "risom@hse.k12.in.us" },
-    { "staff": "Isom, Renee", "club": "FHS Reads Book Club", "email": "risom@hse.k12.in.us" },
-    { "staff": "Isom, Renee", "club": "Future Black Leaders", "email": "risom@hse.k12.in.us" },
-    { "staff": "Isom, Renee", "club": "Roll the Tape", "email": "risom@hse.k12.in.us" },
-    { "staff": "Jacobs, Kelli", "club": "Anime Club", "email": "kjacobs@hse.k12.in.us" },
-    { "staff": "Jordan, Monica", "club": "Rock Climbing Club", "email": "mrjordan@hse.k12.in.us" },
-    { "staff": "Kapitan, Jacob", "club": "Bible Study Group", "email": "jkapitan@hse.k12.in.us" },
-    { "staff": "Kapitan, Jacob", "club": "Dungeons & Dragons Club", "email": "jkapitan@hse.k12.in.us" },
-    { "staff": "Kapitan, Jacob", "club": "E-Sports Club", "email": "jkapitan@hse.k12.in.us" },
-    { "staff": "Kapitan, Jacob", "club": "Pokemon Club", "email": "jkapitan@hse.k12.in.us" },
-    { "staff": "Keithley, Maxwell", "club": "Environmental Club", "email": "mkeithley@hse.k12.in.us" },
-    { "staff": "Kixmiller, Lori", "club": "Student Government (Sponsor)", "email": "lkixmiller@hse.k12.in.us" },
-    { "staff": "Knapp, Erin", "club": "2000s Fun!", "email": "eknapp@hse.k12.in.us" },
-    { "staff": "Knapp, Erin", "club": "Create for Kids", "email": "eknapp@hse.k12.in.us" },
-    { "staff": "Knapp, Erin", "club": "Yoga Club", "email": "eknapp@hse.k12.in.us" },
-    { "staff": "Kohler, Chad", "club": "Marching Band", "email": "ckohler@hse.k12.in.us" },
-    { "staff": "Horn, Sara", "club": "Women in S.T.E.M.", "email": "shorn@hse.k12.in.us" },
-    { "staff": "Kuhn, Lance", "club": "Chemistry Club", "email": "lkuhn@hse.k12.in.us" },
-    { "staff": "Laffin, Bill", "club": "Ski Club", "email": "blaffin@hse.k12.in.us" },
-    { "staff": "Lawrence, Samuel", "club": "Future Farmers of America (FFA)", "email": "slawrence@hse.k12.in.us" },
-    { "staff": "Lidy, Shelley", "club": "Better Help Club", "email": "slidy@hse.k12.in.us" },
-    { "staff": "Luna, Madeleine", "club": "Badminton Club", "email": "mluna@hse.k12.in.us" },
-    { "staff": "Lyons, Suzanne", "club": "Orchestra Club", "email": "slyons@hse.k12.in.us" },
-    { "staff": "Macmillan, Jordan", "club": "FHS \"Pubs\" Club (Publications)", "email": "jmacmillan@hse.k12.in,us" },
-    { "staff": "Masterson, Ray", "club": "Music & Sound Recording Club", "email": "rmasterson@hse.k12.in.us" },
-    { "staff": "McCabe, Shanna", "club": "CATS (Creating Action Through Service)", "email": "smccabe@hse.k12.in.us" },
-    { "staff": "McCabe, Shanna", "club": "FHS Reads Book Club", "email": "smccabe@hse.k12.in.us" },
-    { "staff": "Meador, Taylor", "club": "Aura8 Dance Club", "email": "tmeador@hse.k12.in.us" },
-    { "staff": "Meador, Taylor", "club": "K-Pop Club", "email": "tmeador@hse.k12.in.us" },
-    { "staff": "Meador, Taylor", "club": "ENL Club", "email": "tmeador@hse.k12.in.us" },
-    { "staff": "Miller, Audra", "club": "I'm Just a Girl", "email": "almiller@hse.k12.in.us" },
-    { "staff": "Noyes, Summer", "club": "Senior Smile Society", "email": "snoyes@hse.k12.in.us" },
-    { "staff": "Ondish, Kelsey", "club": "Improv Club", "email": "kondish@hse.k12.in.us" },
-    { "staff": "Ondish, Kelsey", "club": "LLS Club (Leukemia & Lymphoma Society)", "email": "kondish@hse.k12.in.us" },
-    { "staff": "Paternoster, Liz", "club": "We The People (Head Coach)", "email": "lpaternoster@hse.k12.in.us" },
-    { "staff": "Placzek, Sharon", "club": "Hispanic Heritage Club", "email": "splaczek@hse.k12.in.us" },
-    { "staff": "Rund, Emma", "club": "Drama Club / Theatre Fishers", "email": "erund@hse.k12.in.us" },
-    { "staff": "Schooley, Patrick", "club": "Champions Together", "email": "pschooley@hse.k12.in.us" },
-    { "staff": "Schuh, Tori", "club": "Best Buddies", "email": "vschuh@hse.k12.in.us" },
-    { "staff": "Schulhof, Beth", "club": "Pickleball Club", "email": "eschulhof@hse.k12.in.us" },
-    { "staff": "Seland, Glenn", "club": "Animation Club", "email": "gseland@hse.k12.in.us" },
-    { "staff": "Seland, Glenn", "club": "Film Club", "email": "gseland@hse.k12.in.us" },
-    { "staff": "Shafer, Gretchen", "club": "Gratitude Bowls", "email": "gshafer@hse.k12.in.us" },
-    { "staff": "Shuck, Jamison", "club": "African Association Culture Club", "email": "jshuck@hse.k12.in.us" },
-    { "staff": "Smith, Andy", "club": "Tech Crew / Theatre Fishers", "email": "asmith@hse.k12.in.us" },
-    { "staff": "Snyder, Tammy", "club": "STEMsters", "email": "tsnyder@hse.k12.in.us" },
-    { "staff": "Snyder, Tammy", "club": "CRU (Student Venture)", "email": "tsnyder@hse.k12.in.us" },
-    { "staff": "Spencer, Tammie", "club": "Animal Alliance", "email": "tspencer@hse.k12.in.us" },
-    { "staff": "Steange, Susanne", "club": "Gymnastics", "email": "strangesusie@gmail.com" },
-    { "staff": "Swaim, Matt", "club": "Tiger Ambassadors", "email": "mswaim@hse.k12.in.us" },
-    { "staff": "Thomas, William", "club": "East African Student Association", "email": "wthomas@hse.k12.in.us" },
-    { "staff": "Thompson-Mejias, Terri", "club": "Euchre Club", "email": "tthompsonmejias@hse.k12.in.us" },
-    { "staff": "Thompson-Mejias, Terri", "club": "Latino Student Union", "email": "tthompsonmejias@hse.k12.in.us" },
-    { "staff": "Tribolet, Braden", "club": "Tiger Spirit Leaders", "email": "btribolet@hse.k12.in.us" },
-    { "staff": "Turner, Dave", "club": "Economics Club", "email": "dturner@hse.k12.in.us" },
-    { "staff": "Turner, Dave", "club": "Investment Club", "email": "dturner@hse.k12.in.us" },
-    { "staff": "Tysen, Jessica", "club": "Bowling Club", "email": "jessicanstevens@gmail.com" },
-    { "staff": "Vanlandingham, Renee", "club": "Fishers Tutors", "email": "rvanlandingham@hse.k12.in.us" },
-    { "staff": "VanTrees, Leah", "club": "W.R.I.T.E. Club", "email": "lvantrees@hse.k12.in.us" },
-    { "staff": "Vaughn, Alisa", "club": "ENL Math Tutoring", "email": "avaughn@hse.k12.in.us" },
-    { "staff": "Votaw, Lauren", "club": "Fellowship of Christian Athletes (FCA)", "email": "lvotaw@hse.k12.in.us" },
-    { "staff": "Walker, Sarah", "club": "MED LIFE", "email": "swalker@hse.k12.in.us" },
-    { "staff": "Werbe, Jim", "club": "Intramural Basketball", "email": "jwerbe@hse.k12.in.us" },
-    { "staff": "White, Jessica", "club": "Key Club", "email": "jlwhite@hse.k12.in.us" },
-    { "staff": "Young, Kate", "club": "Million Meal Movement", "email": "kyoung@hse.k12.in.us" }
-  ]
+  {
+    "staff": "Antoni, Austin & Gardner, Elijah",
+    "club": "Rugby (Girls)",
+    "email": "austinantoni@gmail.com & egardner@hse.k12.in.us",
+    "description": "We are a competitive high school girls rugby club open to all backgrounds and skill levels for FHS, HSE, and other Fishers area students. Through its fun and fast paced action, we believe that rugby can shape student athletes into strong, confident, and capable individuals, both on and off the field. Our USA Rugby certified coaches will teach you this game from ground up, improve your fitness, and help you compete in games against teams across the state. We have two main seasons: Fall 7s and Spring 15s. Practices commonly run after school on Mondays and Wednesdays with games on the weekends. For more information on our club and how you can be a part of it, go to rugby.myathletics.com or email mudsockrugby@gmail.com. You can also find us on Instagram and Facebook @mudsockhsgirlsrugby",
+    "Time": "After",
+    "Type": "Sports",
+    "Day": "Monday"
+
+  },
+  {
+    "staff": "Armey, Julie",
+    "club": "Orchestra Club",
+    "email": "jarmey@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  /*
+  {
+    "staff": "Bandura, Jacob",
+    "club": "",
+    "email": "jbandura@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  */
+  {
+    "staff": "Barfield, Alexis", 
+    "club": "Alaska Native and Native American Club",
+    "email": "abarfield@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Black, Scott",
+    "club": "Asian Student Union",
+    "email": "sdblack@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Bockenfeld, Matt",
+    "club": "Muslim Student Association (MSA)",
+    "email": "mbockenfeld@hse.k12.in.us",
+    "description" : "MSA is a club where students gather to learn more about Islam, plan community events and service projects, and enjoy one another's company. The club is open to all students. ",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Brown, Lisa",
+    "club": "Art Club",
+    "email": "lgbrown@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Buckman, Bill",
+    "club": "Poker Club",
+    "email": "mbuckman@hse.k12.in.us",
+    "description" : "This club will meet Wednesday mornings (dates communicated through StudentSquare) to play variations of the traditional game, Poker. In Poker club, no gambling is involved. Instead, members will play recreationally, with allergy-safe candy as a prize.  The poker chips, playing cards, etc. will be supplied by the club.",
+    "Time" : "Before",
+    "Type" : "Games",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Carson, Beth",
+    "club": "Care Crafts Project",
+    "email": "acarson@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Chan, Brooke",
+    "club": "Disney Lorcana TCG Club",
+    "email": "bchan@hse.k12.in.us",
+    "description" : "Students play the Disney Lorcana trading card game and socialize",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "Chan, Brooke",
+    "club": "Magic: The Gathering",
+    "email": "bchan@hse.k12.in.us",
+    "description" : "Students play the Magic: The Gathering trading card game, discuss strategies and cards, and socialize.",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Chop, Dahnya",
+    "club": "French Club",
+    "email": "dchop@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Curtis, Liz",
+    "club": "GSA",
+    "email": "lcurtis@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Curtis, Steven & Kapitan, Jacob",
+    "club": "Dungeons & Dragons Club",
+    "email": "scurtis@hse.k12.in.us & jkapitan@hse.k12.in.us",
+    "description" : "Students gather every other week after school until 4:30 to play in Dungeons and Dragons campaigns.  Campaigns are run by fellow club members in small groups.  All levels of expertise are welcome so if you’ve ever wanted to learn how to play, please come join us!",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff": "Czech, Mike",
+    "club": "School of Rock",
+    "email": "mczech@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Delucenay, Katie",
+    "club": "Baking Club",
+    "email": "kdelucenay@hse.k12.in.us",
+    "description" : "Students meet and work in groups to make baked-type items.  There is a fee for joining to purchase food. ",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Thursday",
+  },
+  {
+    "staff": "Delucenay, Katie",
+    "club": "Off the Clock (OTC)",
+    "email": "kdelucenay@hse.k12.in.us",
+    "description" : "Students meet after school to unwind.  Play games, take walks and other activities to unwind from school.",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "Druelinger, Sarah",
+    "club": "Ping Pong Club",
+    "email": "sdruelinger@hse.k12.in.us",
+    "description" : "We play ping pong on most Red Mondays.  The club is for anyone who would like to play!",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "Farrand, Angela",
+    "club": "American Sign Language (ASL) Club",
+    "email": "afarrand@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Manoharan, Vennila",
+    "club": "Crochet Club",
+    "email": "vmanoharan@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Ferguson, Heather & Noyes, Summer",
+    "club": "Senior Smile Society",
+    "email": "hferguson@hse.k12.in.us & snoyes@hse.k12.in.us",
+    "description" : "Our club creates art and writes letters to residents in nursing/assisted living homes.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Friday",
+  },
+  {
+    "staff": "French, Brigham",
+    "club": "Chess Club",
+    "email": "bfrench@hse.k12.in.us",
+    "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff": "French, Brigham",
+    "club": "AI Club",
+    "email": "bfrench@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Gastineau, Chelley",
+    "club": "Bring Change to Mind",
+    "email": "cgastineau@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Greisinger, Jessica & Geisinger, Robin",
+    "club": "Swiss-Mix Club (formerly German Club)",
+    "email": "jgeisinger@hse.k12.in.us & rgeisinger@hse.k12.in.us",
+    "description" : "For French and German students. We blend the best of French and German culture via foods, Field trips, movies, games",
+    "Time" : "Before" || "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Goodwin, Danielle",
+    "club": "Unified Dance",
+    "email": "dgoodwin@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Gutting, Stephanie",
+    "club": "Harry Potter Club",
+    "email": "sgutting@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Gutting, Stephanie",
+    "club": "Spanish Club",
+    "email": "sgutting@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Gutting, Stephanie",
+    "club": "Unified Dance",
+    "email": "sgutting@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Hamilton, Terri",
+    "club": "Student Organ Donor Advocates (SODA)",
+    "email": "thamilton@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Harris, Ryan",
+    "club": "Badminton Cub",
+    "email": "rharris@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Harris, Ryan",
+    "club": "Computer Science Club",
+    "email": "rharris@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Harris, Ryan",
+    "club": "Cricket Club",
+    "email": "rharris@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Harris, Ryan",
+    "club": "Desi Student Association",
+    "email": "rharris@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Harris, Ryan",
+    "club": "Sports Trading Card Club",
+    "email": "rharris@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Helmkamp, Michelle",
+    "club": "Spanish Club",
+    "email": "mhelmkamp@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Huppenthal, Suzie",
+    "club": "Do Something Club",
+    "email": "shuppenthal@hse.k12.in.us",
+    "description" : "It is based on DoSomething.org which empowers young people who want to build a better world. Instead of complaining, you do \"something\" to fix the problem. We have cleaned the school, done clothing drives, helped at the humane society and nursing homes. Be the change!",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff": "Isom, Renee",
+    "club": "3D Printing Club",
+    "email": "risom@hse.k12.in.us",
+    "description" : "We work to share 3D designs and printing those on the school 3d printers",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Isom, Renee",
+    "club": "Cultural Connections Club",
+    "email": "risom@hse.k12.in.us",
+    "description" : "The Cultural Connections Club celebrates the varied cultures here at FHS and creates an International Fair in the Spring.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Isom, Renee",
+    "club": "FHS Reads Book Club",
+    "email": "risom@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Isom, Renee",
+    "club": "Future Black Leaders",
+    "email": "risom@hse.k12.in.us",
+    "description" : "We are a club that promotes leadership, building community through service.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Isom, Renee",
+    "club": "Roll the Tape",
+    "email": "risom@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Jacobs, Kelli",
+    "club": "Anime Club",
+    "email": "kjacobs@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Jordan, Monica",
+    "club": "Rock Climbing Club",
+    "email": "mrjordan@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Kapitan, Jacob",
+    "club": "Bible Study Group",
+    "email": "jkapitan@hse.k12.in.us",
+    "description" : "Students can meet together to read and discuss passages from the Bible. Sometimes a leader has prepared a passage to discuss, and other times involve walking through a text together. Students are welcome to bring their own Bible or Bible app, and any faith or level of involvement is welcome.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "Kapitan, Jacob",
+    "club": "E-Sports Club",
+    "email": "jkapitan@hse.k12.in.us",
+    "description" : "We have an opportunity to build teams for different competitive eSports games, compete in leagues, and play together at the school. Students can make new friends that share interests and hone their skills throughout the year. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Thursday",
+  },
+  {
+    "staff": "Kapitan, Jacob",
+    "club": "Pokemon Club",
+    "email": "jkapitan@hse.k12.in.us",
+    "description" : "Come join some fellow fanatics to play and discuss everything Pokemon! Students can bring a copy of a game from any generation and are welcome to play together or link up for battling, trading, shiny hunting, and adventuring. Students can also play and plan outings for Pokemon GO, or bring physical TCG cards or the TCG Pocket app to join the fun in other ways. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Friday",
+  },
+  {
+    "staff": "Keithley, Maxwell",
+    "club": "Environmental Club",
+    "email": "mkeithley@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Kixmiller, Lori",
+    "club": "Student Government (Sponsor)",
+    "email": "lkixmiller@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Knapp, Erin",
+    "club": "2000s Fun!",
+    "email": "eknapp@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Knapp, Erin",
+    "club": "Create for Kids",
+    "email": "eknapp@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Knapp, Erin",
+    "club": "Yoga Club",
+    "email": "eknapp@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Kohler, Chad",
+    "club": "Marching Band",
+    "email": "ckohler@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Horn, Sara",
+    "club": "Women in S.T.E.M.",
+    "email": "shorn@hse.k12.in.us",
+    "description" : "Women in STEM intends to empower young women who are actively pursuing STEM careers by inviting female speakers who have underwent similar experiences. This club also strives to encourage younger students in the school district to be confident in math and science by promoting STEM education.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Friday",
+  },
+  {
+    "staff": "Kuhn, Lance",
+    "club": "Chemistry Club",
+    "email": "lkuhn@hse.k12.in.us",
+    "description" : "Chemistry Club does demonstrations and experiments not done in chemistry classes and prepares for a springtime chemistry competition that is open to all students.",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Day" : "Friday",
+  },
+  {
+    "staff": "Laffin, Bill",
+    "club": "Ski Club",
+    "email": "blaffin@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Lawrence, Samuel",
+    "club": "Future Farmers of America (FFA)",
+    "email": "slawrence@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Lidy, Shelley",
+    "club": "Better Help Club",
+    "email": "slidy@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Luna, Madeleine",
+    "club": "Badminton Club",
+    "email": "mluna@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Lyons, Suzanne",
+    "club": "Orchestra Club",
+    "email": "slyons@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Macmillan, Jordan",
+    "club": "FHS \"Pubs\" Club (Publications)",
+    "email": "jmacmillan@hse.k12.in,us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Masterson, Ray",
+    "club": "Music & Sound Recording Club",
+    "email": "rmasterson@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "McCabe, Shanna",
+    "club": "CATS (Creating Action Through Service)",
+    "email": "smccabe@hse.k12.in.us",
+    "description" : "This organization is dedicated to teaching K-6th grade students in HSE school district about service and how they can become active members of their community. ",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "McCabe, Shanna",
+    "club": "FHS Reads Book Club",
+    "email": "smccabe@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Meador, Taylor",
+    "club": "Aura8 Dance Club",
+    "email": "tmeador@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Meador, Taylor",
+    "club": "K-Pop Club",
+    "email": "tmeador@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Meador, Taylor",
+    "club": "ENL Club",
+    "email": "tmeador@hse.k12.in.us",
+    "description" : "ENL Ambassadors is a service-based leadership program designed to engage ENL and immigrant students as leaders at FHS. The main goals of the club are to assist newly enrolled students who do not speak English fluently, tutor English learners, and promote cultural awareness in our community. Members must be bilingual and have been enrolled in an ENL program at some point.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Miller, Audra",
+    "club": "I'm Just a Girl",
+    "email": "almiller@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Ondish, Kelsey",
+    "club": "Improv Club",
+    "email": "kondish@hse.k12.in.us",
+    "description": "",
+    "Time": "After",
+    "Type": "Arts",
+    "Day": "Tuesday"
+
+  },
+  {
+    "staff": "Ondish, Kelsey",
+    "club": "LLS Club (Leukemia & Lymphoma Society)",
+    "email": "kondish@hse.k12.in.us",
+    "description" : "LLS is a nonprofit organization dedicated to fighting blood cancers (leukemia, lymphoma, hodgkin’s disease, and myeloma)We raise money to fund research, patient support services, and advocacy efforts. We also spread awareness about LLS as well play games and make new friends. Teams across Indiana who have raised the most money for LLS are crowned Student Visionary of the Year.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff": "Paternoster, Liz",
+    "club": "We The People (Head Coach)",
+    "email": "lpaternoster@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Placzek, Sharon",
+    "club": "Hispanic Heritage Club",
+    "email": "splaczek@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Rund, Emma",
+    "club": "Drama Club / Theatre Fishers",
+    "email": "erund@hse.k12.in.us",
+    "description" : "Drama Club is club for students who like theatre, do theatre, or want to learn more about theatre. We do workshops and themed events to create opportunities to learn more about theatre outside of what we do at school.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Schooley, Patrick",
+    "club": "Champions Together",
+    "email": "pschooley@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Schuh, Tori",
+    "club": "Best Buddies",
+    "email": "vschuh@hse.k12.in.us",
+    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Thursday",
+  },
+  {
+    "staff": "Schulhof, Beth",
+    "club": "Pickleball Club",
+    "email": "eschulhof@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Seland, Glenn",
+    "club": "Animation Club",
+    "email": "gseland@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Seland, Glenn",
+    "club": "Film Club",
+    "email": "gseland@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Shafer, Gretchen",
+    "club": "Gratitude Bowls",
+    "email": "gshafer@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Shuck, Jamison",
+    "club": "African Association Culture Club",
+    "email": "jshuck@hse.k12.in.us",
+    "description" : "This club is a space for any Africans, students of African descent, or anyone who simply wants to learn more about African culture. It’s open to all. The goal is to bring people together for community and education. We play games, learn from each other, share cultural foods, watch African movies, find ways to help local African businesses, etc.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff": "Smith, Andy",
+    "club": "Tech Crew / Theatre Fishers",
+    "email": "asmith@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Snyder, Tammy",
+    "club": "STEMsters",
+    "email": "tsnyder@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Snyder, Tammy",
+    "club": "CRU (Student Venture)",
+    "email": "tsnyder@hse.k12.in.us",
+    "description" : "Who We Are: Cru is a caring community of people who want to help each other take the next step in their journey toward Jesus. Whether you’re exploring faith or looking to grow deeper, you’re welcome here.What We Do at Our Weekly MeetingsEach week, we gather in small groups to connect, grow, and encourage one another. We spend time building meaningful relationships, talking about life, reading the Bible, and having honest conversations about faith. It’s a space to be real, ask questions, and experience how Jesus makes a difference in everyday life.Wherever you are on your journey, we’d love to walk with you.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Monday",
+  },
+  {
+    "staff": "Spencer, Tammie",
+    "club": "Animal Alliance",
+    "email": "tspencer@hse.k12.in.us",
+    "description" : "Animal Alliance is a club that exposes its members to a variety of animal-based volunteer opportunities in the greater Indianapolis area. We typically volunteer twice a month (with a varying schedule). We have hosted volunteer opportunities at the Hamilton County Humane Society, Oinking Acres, Koteewi Stables, and others!Join the Remind (@animala) for information on club meetings/volunteer opportunities!",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Strange, Susanne",
+    "club": "Gymnastics",
+    "email": "strangesusie@gmail.com",
+    "description" : "We train for Gymnastics, condition and choreograph routines on all 4 women's apparatus. We do weight training at FHS. We practice x2 days off site at a gymnastics club. Pre- season starts September/October. Official season starts in November. Meets/ competitions run Jan. - March/ April. ",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Swaim, Matt",
+    "club": "Tiger Ambassadors",
+    "email": "mswaim@hse.k12.in.us",
+    "description" : " Tiger Ambassadors is a student-run organization that helps new students feel welcome at FHS. Ambassadors are matched with new students to help these students make a positive connection at FHS. We want to make new students feel welcome and to make FHS an inclusive environment.",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Thomas, William",
+    "club": "East African Student Association",
+    "email": "wthomas@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Thompson-Mejias, Terri",
+    "club": "Euchre Club",
+    "email": "tthompsonmejias@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Thompson-Mejias, Terri",
+    "club": "Latino Student Union",
+    "email": "tthompsonmejias@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Tribolet, Braden",
+    "club": "Tiger Cage",
+    "email": "btribolet@hse.k12.in.us",
+    "description" : "Our club oversees the student body during athletic events or other events that we organize. We plan, organize, and execute everything that happens at sporting events. We help bring the school together and provide a great experience for our students.",
+    "Time" : "Before",
+    "Type" : "Sports",
+    "Day" : "Varies",
+  },
+  {
+    "staff": "Turner, Dave",
+    "club": "Economics Club",
+    "email": "dturner@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Turner, Dave",
+    "club": "Investment Club",
+    "email": "dturner@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Tysen, Jessica",
+    "club": "Bowling Club",
+    "email": "jessicanstevens@gmail.com",
+    "description" : "We are the FHS Bowling Team that consists of an all girls team & an all boys team. We are competing in the White River Valley 1 conference against 11 other Indiana High Schools and our season is from September to February. Practices occur on Tuesdays at Pinheads from 4:30-6:00 pm.  The estimated cost is $150 per student and gently used equipment is available upon request. Find us on instagram at fishershighschoolbowling for more information.",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Day" : "Friday",
+  },
+  {
+    "staff": "Vanlandingham, Renee",
+    "club": "Fishers Tutors",
+    "email": "rvanlandingham@hse.k12.in.us",
+    "description": "FHS Tutors is a club that connects tutors with kids across HSE Schools. We tutor at Riverside JH every Wednesday from 4-5pm, and at Fishers JH from 4-5pm. Additionally, you can sign up to be an in-school tutor and be paired with a high school student who requests a tutor. Please join the Remind with code @tutorsfhs",
+    "Time": "After",
+    "Type": "Service",
+    "Day": "Varies"
+  },
+  {
+    "staff": "VanTrees, Leah",
+    "club": "W.R.I.T.E. Club",
+    "email": "lvantrees@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Vaughn, Alisa",
+    "club": "ENL Math Tutoring",
+    "email": "avaughn@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Votaw, Lauren",
+    "club": "Fellowship of Christian Athletes (FCA)",
+    "email": "lvotaw@hse.k12.in.us",
+    "description" : "F.C.A. is open to any student looking for fellowship with other students who enjoy sports through games, a devotional, and prayer. Donuts are always free! ",
+    "Time" : "Before",
+    "Type" : "Service",
+    "Day" : "Wednesday",
+  },
+  {
+    "staff": "Walker, Sarah",
+    "club": "MED LIFE",
+    "email": "swalker@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Werbe, Jim",
+    "club": "Intramural Basketball",
+    "email": "jwerbe@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "White, Jessica",
+    "club": "Key Club",
+    "email": "jlwhite@hse.k12.in.us",
+    "description" : "",
+    "Time" : "",
+    "Type" : "",
+    "Day" : "",
+  },
+  {
+    "staff": "Young, Kate",
+    "club": "Million Meal Movement",
+    "email": "kyoung@hse.k12.in.us",
+    "description" : "Million Meal Movement works to raise money and supplies to help food insecure people in Hamilton County and beyond. We raise money throughout the year to hold a meal packing event on the Day of Service, where we pack 15-20,000 meals in one day!",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Tuesday",
+  },
+  {
+    "staff" : "Horn, Sarah & Rund, Emma",
+    "club": "Speech and Debate Team",
+    "email" : "",
+    "description" : "The Fishers Speech & Debate team competes in public speaking tournaments throughout the state and on the national circuit. Students can compete in theatrical performances, broadcasting, platform speaking, and multiple types of debate.",
+    "Time": "After",
+    "Type" : "Academic",
+    "Days" : "Weekend",
+  },
+  {
+    "staff" : "Laffin, Bill",
+    "club" : "Girls Lacrosse",
+    "email" : "blaffin@hse.k12.in.us",
+    "description" : "",
+    "Time" : "After",
+    "Type" : "Sports",
+    "Days" : "Varies",
+  },
+  {
+    "staff" : "Hufty, Rebecca & Ingwersen, Erin",
+    "club" : "Math Team",
+    "email" : "Rhufty@hse.k12.in.us & Eingwersen@hse.k12.in.us",
+    "description" : "",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Days" : "Wednesday",
+  },
+]
 
   // Sort clubs alphabetically 
   clubs.sort((a, b) => {
@@ -190,8 +1185,22 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     const clubList = document.getElementById("clubList");
     clubList.innerHTML = "";
 
-    clubs.forEach(club => {
-     if (selectedTypes.includes(club.type) || selectedDays.includes(club.day) || selectedTimes.includes(club.time)) {
+    const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
+    // Filter clubs 
+    const filteredClubs = anyFilters
+    ? clubs.filter(club =>
+        (selectedTypes.length === 0 || selectedTypes.includes(club.Type)) &&
+        (selectedTimes.length === 0 || selectedTimes.includes(club.Time)) &&
+        (selectedDays.length === 0 || selectedDays.includes(club.Day))
+      ):clubs.splice(); // No filters, show no clubs
+
+  //if no filters, show message
+  if (filteredClubs.length === 0) {
+    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>Fill out the survey to see suggested clubs!</p>";
+    return;
+  }
+
+    filteredClubs.forEach(club => {
       const liElement = document.createElement("li");
       liElement.classList.add("club-box");
 
@@ -205,44 +1214,60 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
       <h3 class="clubBoxesFontSize">${club.club}</h3>
       <p class="clubBoxesFontSize">${club.staff}</p>
       <p class="clubBoxesEmailSize">${club.email}</p>
-
       
-      <div class="club-description">
-        ${club.description || "No description available."}
-      </div>
     `;
     
 
-      const star = liElement.querySelector(".favorite-star");
-      // favoriteing functionality
-      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-      if (favorites.some(fav => fav.club === club.club)) {
-        star.src = "goldStar.jpeg";
-        star.classList.add("favorited");
+    const star = liElement.querySelector(".favorite-star");
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.some(fav => fav.club === club.club)) {
+      star.src = "goldStar.jpeg";
+      star.classList.add("favorited");
+    }
+
+    // Favorite star toggle
+    star.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const target = e.target;
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      target.classList.toggle("favorited");
+
+      if (target.classList.contains("favorited")) {
+        target.src = "goldStar.jpeg";
+        if (!favorites.some(fav => fav.club === club.club)) favorites.push(club);
+      } else {
+        target.src = "star.png";
+        favorites = favorites.filter(fav => fav.club !== club.club);
       }
 
-      star.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const target = e.target;
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-        target.classList.toggle("favorited");
-
-        if (target.classList.contains("favorited")) {
-          target.src = "goldStar.jpeg";
-          if (!favorites.some(fav => fav.club === club.club)) {
-            favorites.push(club);
-          }
-        } else {
-          target.src = "star.png";
-          favorites = favorites.filter(fav => fav.club !== club.club);
-        }
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-      });
-
-      clubList.appendChild(liElement);
-     }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
     });
+
+    // Description overlay (click anywhere else on box)
+    liElement.addEventListener("click", () => {
+      document.getElementById("overlayTitle").textContent = club.club;
+      document.getElementById("overlayStaff").textContent = `Staff: ${club.staff}`;
+      document.getElementById("overlayEmail").textContent = `Email: ${club.email}`;
+      document.getElementById("overlayDescription").textContent =
+        club.description || "No description available.";
+
+      document.getElementById("descriptionOverlay").classList.remove("hidden");
+    });
+
+    clubList.appendChild(liElement);
+  }
+  );
+  const overlay = document.getElementById("descriptionOverlay");
+  const closeOverlay = document.getElementById("closeOverlay");
+
+  closeOverlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+  });
+
+//close overlay
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
 }
-    

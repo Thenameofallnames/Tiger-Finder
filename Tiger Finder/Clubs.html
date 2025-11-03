@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <div class="topBar">
         <!--Drop Down Menu-->
         <button onclick="dropDown()" id="dropDownButton">
@@ -42,48 +43,61 @@
 
         <!--Filter Icon-->
         <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-    
         <!--Filter Overlay-->
         <div id="filterOverlay">
             <h2>Filter Clubs</h2>
             <div class="filter-grid">
                 <div class="filter-catagory">
-                    <h3>Catagory1</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                    <h3>Club Type</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAcademic"
+                            onclick="saveCheckboxStates()">Academic</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxService"
+                            onclick="saveCheckboxStates()">Service</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSports"
+                            onclick="saveCheckboxStates()">Sports</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxArt"
+                            onclick="saveCheckboxStates()">Art</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxGames"
+                            onclick="saveCheckboxStates()">Games</label>
                 </div>
                 <div class="filter-catagory">
-                    <h3>Catagory2</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                    <h3>Meeting Time</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxBefore"
+                            onclick="saveCheckboxStates()">Before School</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAfter"
+                            onclick="saveCheckboxStates()">After School</label>
                 </div>
+                <!--
                 <div class="filter-catagory">
-                    <h3>Catagory3</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
+                    <h3>Meeting Frequency</h3>
+                    <label><input type="checkbox" class="filterBox">Monthy</label>
+                    <label><input type="checkbox" class="filterBox">Biweekly</label>
+                    <label><input type="checkbox" class="filterBox">Weekly</label>
+                    <label><input type="checkbox" class="filterBox">Varied</label>
                 </div>
+                -->
                 <div class="filter-catagory">
-                    <h3>Days</h3>
-                    <label><input type="checkbox" class="filterBox"> Monday</label>
-                    <label><input type="checkbox" class="filterBox"> Tuesday</label>
-                    <label><input type="checkbox" class="filterBox"> Wednesday</label>
-                    <label><input type="checkbox" class="filterBox"> Thursday</label>
-                    <label><input type="checkbox" class="filterBox"> Friday</label>
-                    <label><input type="checkbox" class="filterBox"> Saturday</label>
-                    <label><input type="checkbox" class="filterBox"> Sunday</label>
+                    <h3>Meeting Days</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxMonday" onclick = "saveCheckboxStates()"> Monday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxTuesday" onclick = "saveCheckboxStates()"> Tuesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWednesday" onclick = "saveCheckboxStates()"> Wednesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxThursday" onclick = "saveCheckboxStates()"> Thursday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxFriday" onclick = "saveCheckboxStates()"> Friday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWeekend" onclick = "saveCheckboxStates()"> Weekend</label>
                 </div>
             </div>
         </div>
     </div>
         <br>
-        <div class="blur" id="clubsBody">
+            
+        <div class="blur">
             <h1 id="clubTitle">Clubs</h1>
-    
-
-
+            
+                <a href="https://docs.google.com/forms/d/1hOObxXLJGflC10so4TUrSxYnWWgg1IlV28uNZAJoV3E/edit" class="btn"> 
+                    <button id="btn">If your club is not present or does not have details fill out this form</button>
+                </a>
+            
+            <br>
             <ul id="clubList" class="container"></ul>
             <script>
                 createClubs();
@@ -94,11 +108,10 @@
                     const searchBar = document.getElementById("searchBar");
                     const clubList = document.getElementById("clubList");
 
-
-                    searchBar.addEventListener("input", (e) => {
-                        const searchTerm = e.target.value.toLowerCase();
-
+                    function filterClubs(term) {
+                        const searchTerm = term.toLowerCase();
                         const clubItems = clubList.querySelectorAll("li");
+
                         clubItems.forEach(item => {
                             const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
                             const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
@@ -109,9 +122,30 @@
                                 item.style.display = "none";
                             }
                         });
+                    }
+
+                    // Load saved search term and immediately filter
+                    const savedSearch = localStorage.getItem("searchTerm") || "";
+                    searchBar.value = savedSearch;
+                    filterClubs(savedSearch);
+
+                    // Save and re-filter when typing
+                    searchBar.addEventListener("input", (e) => {
+                        const term = e.target.value;
+                        localStorage.setItem("searchTerm", term);
+                        filterClubs(term);
                     });
                 });
             </script>
         </div>
-
+        <!-- Overlay for club description -->
+<div id="descriptionOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <span id="closeOverlay" class="close-btn">&times;</span>
+    <h2 id="overlayTitle"></h2>
+    <p id="overlayStaff"></p>
+    <p id="overlayEmail"></p>
+    <div id="overlayDescription"></div>
+  </div>
+</div>
 </body>

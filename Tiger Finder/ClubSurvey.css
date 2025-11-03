@@ -13,26 +13,23 @@
     font-size: 1.2em;
 }
 
-.subQuestion1 {
-    display: none;
-}
-
 /* Grid container for club boxes */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  background: #CCCCCC;
+  background:  #db0032;
   padding: 20px;
   border-radius: 20px;
-  margin: 10px;
+  margin-top: 10px;
   position: relative;
+  border: 1.5px solid black;
 }
 
 
 /* Individual club box styling */
 .container li {
-  background-color: #b7bfcc;
+  background-color: white;
   color: black;
   font-size: 1.2rem;
   display: flex;
@@ -45,7 +42,213 @@
   padding: 15px;
   text-align: center;
 }
+/* Club title styling */
+#clubTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 50pt;
+  font-style: helvetica;
+}
+/* Club name font size styling */
+.clubBoxesFontSize {
+
+  font-size: clamp(16px, 4vw, 18px);
+
+}
+/* Club email styling */
+.clubBoxesEmailSize {
+  font-size: clamp(12px, 3vw, 16px);
+}
+/* Favorite button styling */
+.favorite-btn {
+  display: flex;
+  position: right;
+  top: 5px;
+  right: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  width: 30px;
+}
+
+/* Favorited state styling */
+.favorite-btn.favorited {
+  color: gold;
+}
+
+
+
+
+
+
+#popup-box {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  max-width: 400px;
+  text-align: center;
+}
+
+#popup-box button {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+/* Overlay background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hidden {
+  display: none;
+}
+
+/* desc box */
+.overlay-content {
+  background: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
 
 #resultsSection {
+    text-align: center;
     display: none;
 }
+
+
+/* Survey Questions */
+#surverySection {
+    text-align: left;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    height: auto;
+}
+
+#surveySection ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#surveySection #question1 li {
+    display: flex;
+    margin-bottom: 1%;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1.5px solid black;
+    font-size: 3vw;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question1 li:hover {
+    background: #70a2ffad;
+}
+
+#surveySection #question2 li {
+    display: flex;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 1%;
+    border: 1.5px solid black;
+    font-size: 3vw;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question2 li:hover {
+    background: #70a2ffad;
+}
+
+
+#surveySection #question3 li {
+    display: flex;
+    margin-bottom: 1%;
+    padding: 1%;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1.5px solid black;
+    font-size: 3vw;
+    height: 6vh;
+    align-items: center;
+}
+
+#surveySection #question3 li:hover {
+    background: #70a2ff7a;
+}
+
+/* Question Title Styling */
+.Question {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.buttons {
+    display: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #db0032;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1.5px solid black;
+}
+
+a.buttons {
+    text-decoration: none;
+}  

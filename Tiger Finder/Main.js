@@ -12,10 +12,10 @@ function dropDown() {
 }
 function filterOverlay() {
     const overlay = document.getElementById('filterOverlay');
-    if (overlay.style.display === 'block') {
+    if (overlay.style.display === 'flex') {
         overlay.style.display = 'none';
     } else {
-        overlay.style.display = 'block';
+        overlay.style.display = 'flex';
     }
 
     const main = document.querySelector(".blur");
