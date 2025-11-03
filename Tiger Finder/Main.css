@@ -7,7 +7,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #002f87;
+    background-color: #99001c;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,6 +26,8 @@ body {
 
 /*Search Bar*/
 .searchBar {
+    display: flex;
+    position: relative;
     flex: 1;
     margin: 0 1rem;
     padding: 0.5rem 1rem;
@@ -34,7 +36,9 @@ body {
     border: none;
     outline: none;
     min-width: 200px;
-    max-width: 800px;
+    max-width: 1300px;
+    left: 5%;
+    height: 50px;
 }
 
 #tigerIcon {
@@ -53,14 +57,16 @@ body {
 /*Filter*/
 #filterIcon {
     position: relative;
-    top: 2vh;
-    left: 94.5vw;
+    display: flex;
+    top: .25vh;
+    left: 50px;
     margin: auto;
     padding: 8px;
     aspect-ratio: 1/1;
-    width: 3vw;
+    width: 4vw;
     cursor: pointer;
     border: none;
+    z-index: 999999999999;
 }
 
 #filterOverlay {
@@ -261,6 +267,7 @@ nav ul.level1 li.sub:hover ul.level2 {
     text-align: center;
     margin: 0 auto;
     width: 85%;
+    padding-top: 30%;
 }
 
 .bigButtons #surveyButton {
@@ -462,29 +469,29 @@ li {
 .carousel {
     position: relative;
     width: 40vw;
-    height: 20vh;
-    padding-top: 75%;
+    /*height: 10%;*/
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
+    left: 25%;
 }
 
 .carouselViewport {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    /*height: 50%;*/    
     display: flex;
     overflow-x: scroll;
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    text-decoration: none;
+         
 }
 
 .carouselSlide {
     position: relative;
+    display: flex;
     flex: 0 0 100%;
-    width: 100%;
+    width: 50%;
     height: 20%;
     background-color: #f99;
     counter-increment: item;
@@ -506,9 +513,11 @@ li {
 
 .carouselSnapper {
     position: absolute;
+    justify-content: center;
+    text-align: center;
     top: 0;
     left: 0;
-    width: 100%;
+    /*width: 50%;*/
     height: 100%;
     scroll-snap-align: center;
 }
@@ -537,20 +546,20 @@ li {
     animation-name: none;
 }
 
-/*.carouselNavigation {
+.carouselNavigation {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    height: 50%;
 }
-*/
+
 .carouselNavigation-list,
 .carouselNavigation-item {
     display: inline-block;
 }
 
-.carouselNavigation-button {
+/*.carouselNavigation-button {
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -561,7 +570,7 @@ li {
     font-size: 0;
     transition: transform 0.1s;
 }
-
+*/
 .carousel::before,
 .carousel::after,
 .carouselPrev,
