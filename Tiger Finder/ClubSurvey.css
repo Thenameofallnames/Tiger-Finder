@@ -176,13 +176,13 @@
     background: #ffffff;
     border-radius: 12px;
     border: 1.5px solid black;
-    font-size: 5vh;
+    font-size: 3vw;
     height: 6vh;
     align-items: center;
 }
 
 #surveySection #question1 li:hover {
-    background: #70a2ff7a;
+    background: #70a2ffad;
 }
 
 #surveySection #question2 li {
@@ -192,13 +192,13 @@
     border-radius: 12px;
     margin-bottom: 1%;
     border: 1.5px solid black;
-    font-size: 5vh;
+    font-size: 3vw;
     height: 6vh;
     align-items: center;
 }
 
 #surveySection #question2 li:hover {
-    background: #70a2ff7a;
+    background: #70a2ffad;
 }
 
 
@@ -209,7 +209,7 @@
     background: #ffffff;
     border-radius: 12px;
     border: 1.5px solid black;
-    font-size: 5vh;
+    font-size: 3vw;
     height: 6vh;
     align-items: center;
 }

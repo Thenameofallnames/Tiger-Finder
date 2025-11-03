@@ -13,9 +13,9 @@ function createClubs() {
 
   },
   {
-    "staff": "Armey, Julie",
+    "staff": "Armey, Julie & Lyons, Suzanne",
     "club": "Orchestra Club",
-    "email": "jarmey@hse.k12.in.us",
+    "email": "jarmey@hse.k12.in.us & slyons@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
@@ -75,7 +75,7 @@ function createClubs() {
     "description" : "This club will meet Wednesday mornings (dates communicated through StudentSquare) to play variations of the traditional game, Poker. In Poker club, no gambling is involved. Instead, members will play recreationally, with allergy-safe candy as a prize.  The poker chips, playing cards, etc. will be supplied by the club.",
     "Time" : "Before",
     "Type" : "Games",
-    "Day" : "Wedneday",
+    "Day" : "Wednesday",
   },
   {
     "staff": "Carson, Beth",
@@ -198,10 +198,10 @@ function createClubs() {
     "staff": "French, Brigham",
     "club": "Chess Club",
     "email": "bfrench@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
   },
   {
     "staff": "French, Brigham",
@@ -230,10 +230,19 @@ function createClubs() {
     "Type" : "Arts",
     "Day" : "Varies",
   },
+   {
+    "staff": "Schuh, Tori",
+    "club": "Best Buddies",
+    "email": "vschuh@hse.k12.in.us",
+    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Thursday",
+  },
   {
-    "staff": "Goodwin, Danielle",
+    "staff": "Goodwin, Danielle & Gutting, Stephanie",
     "club": "Unified Dance",
-    "email": "dgoodwin@hse.k12.in.us",
+    "email": "dgoodwin@hse.k12.in.us & sgutting@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
@@ -249,23 +258,15 @@ function createClubs() {
     "Day" : "",
   },
   {
-    "staff": "Gutting, Stephanie",
+    "staff": "Gutting, Stephanie & Helmkamp, Michelle",
     "club": "Spanish Club",
-    "email": "sgutting@hse.k12.in.us",
+    "email": "sgutting@hse.k12.in.us & mhelmkamp@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
     "Day" : "",
   },
-  {
-    "staff": "Gutting, Stephanie",
-    "club": "Unified Dance",
-    "email": "sgutting@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
+ 
   {
     "staff": "Hamilton, Terri",
     "club": "Student Organ Donor Advocates (SODA)",
@@ -277,7 +278,7 @@ function createClubs() {
   },
   {
     "staff": "Harris, Ryan",
-    "club": "Badminton Cub",
+    "club": "Badminton Club",
     "email": "rharris@hse.k12.in.us",
     "description" : "",
     "Time" : "",
@@ -320,15 +321,7 @@ function createClubs() {
     "Type" : "",
     "Day" : "",
   },
-  {
-    "staff": "Helmkamp, Michelle",
-    "club": "Spanish Club",
-    "email": "mhelmkamp@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
+  
   {
     "staff": "Huppenthal, Suzie",
     "club": "Do Something Club",
@@ -536,19 +529,11 @@ function createClubs() {
     "Type" : "",
     "Day" : "",
   },
-  {
-    "staff": "Lyons, Suzanne",
-    "club": "Orchestra Club",
-    "email": "slyons@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
-  },
+  
   {
     "staff": "Macmillan, Jordan",
     "club": "FHS \"Pubs\" Club (Publications)",
-    "email": "jmacmillan@hse.k12.in,us",
+    "email": "jmacmillan@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
@@ -672,15 +657,7 @@ function createClubs() {
     "Type" : "",
     "Day" : "",
   },
-  {
-    "staff": "Schuh, Tori",
-    "club": "Best Buddies",
-    "email": "vschuh@hse.k12.in.us",
-    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
-    "Time" : "After",
-    "Type" : "Service",
-    "Day" : "Thursday",
-  },
+ 
   {
     "staff": "Schulhof, Beth",
     "club": "Pickleball Club",
@@ -932,6 +909,15 @@ function createClubs() {
     "Time" : "After",
     "Type" : "Sports",
     "Days" : "Varies",
+  },
+  {
+    "staff" : "Hufty, Rebecca & Ingwersen, Erin",
+    "club" : "Math Team",
+    "email" : "Rhufty@hse.k12.in.us & Eingwersen@hse.k12.in.us",
+    "description" : "",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Days" : "Wednesday",
   },
 ]
 

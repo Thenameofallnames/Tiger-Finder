@@ -421,10 +421,10 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "staff": "French, Brigham",
     "club": "Chess Club",
     "email": "bfrench@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
+    "Time" : "After",
+    "Type" : "Games",
+    "Day" : "Tuesday",
   },
   {
     "staff": "French, Brigham",
@@ -500,7 +500,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
   },
   {
     "staff": "Harris, Ryan",
-    "club": "Badminton Club",
+    "club": "Badminton Cub",
     "email": "rharris@hse.k12.in.us",
     "description" : "",
     "Time" : "",
@@ -1156,6 +1156,15 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Type" : "Sports",
     "Days" : "Varies",
   },
+  {
+    "staff" : "Hufty, Rebecca & Ingwersen, Erin",
+    "club" : "Math Team",
+    "email" : "Rhufty@hse.k12.in.us & Eingwersen@hse.k12.in.us",
+    "description" : "",
+    "Time" : "Before",
+    "Type" : "Academic",
+    "Days" : "Wednesday",
+  },
 ]
 
   // Sort clubs alphabetically 
@@ -1176,8 +1185,22 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     const clubList = document.getElementById("clubList");
     clubList.innerHTML = "";
 
-    clubs.forEach(club => {
-     if (selectedTypes.includes(club.Type) || selectedDays.includes(club.Day) || selectedTimes.includes(club.Time)) {
+    const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
+    // Filter clubs 
+    const filteredClubs = anyFilters
+    ? clubs.filter(club =>
+        (selectedTypes.length === 0 || selectedTypes.includes(club.Type)) &&
+        (selectedTimes.length === 0 || selectedTimes.includes(club.Time)) &&
+        (selectedDays.length === 0 || selectedDays.includes(club.Day))
+      ):clubs.splice(); // No filters, show no clubs
+
+  //if no filters, show message
+  if (filteredClubs.length === 0) {
+    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>Fill out the survey to see suggested clubs!</p>";
+    return;
+  }
+
+    filteredClubs.forEach(club => {
       const liElement = document.createElement("li");
       liElement.classList.add("club-box");
 
@@ -1234,7 +1257,8 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     });
 
     clubList.appendChild(liElement);
-  }});
+  }
+  );
   const overlay = document.getElementById("descriptionOverlay");
   const closeOverlay = document.getElementById("closeOverlay");
 
