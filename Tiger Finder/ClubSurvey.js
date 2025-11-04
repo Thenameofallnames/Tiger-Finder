@@ -1191,15 +1191,15 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     ? clubs.filter(club =>
         (selectedTypes.length === 0 || selectedTypes.includes(club.Type)) &&
         (selectedTimes.length === 0 || selectedTimes.includes(club.Time)) &&
-        (selectedDays.length === 0 || selectedDays.includes(club.Day))
+        (selectedDays.length === 0 || selectedDays.includes(club.Days))
       ):clubs.splice(); // No filters, show no clubs
 
   //if no filters, show message
   if (filteredClubs.length === 0) {
-    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>Fill out the survey to see suggested clubs!</p>";
+    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>No Clubs Found</p>";
     return;
   }
-
+ 
     filteredClubs.forEach(club => {
       const liElement = document.createElement("li");
       liElement.classList.add("club-box");

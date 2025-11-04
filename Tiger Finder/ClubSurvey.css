@@ -172,7 +172,8 @@
 #surveySection #question1 li {
     display: flex;
     margin-bottom: 1%;
-    padding: 1%;
+    padding: 2.5%;
+    padding-left: 1%;
     background: #ffffff;
     border-radius: 12px;
     border: 1.5px solid black;
@@ -191,6 +192,8 @@
     background: #ffffff;
     border-radius: 12px;
     margin-bottom: 1%;
+    padding: 2.5%;
+    padding-left: 1%;
     border: 1.5px solid black;
     font-size: 3vw;
     height: 6vh;
@@ -205,7 +208,8 @@
 #surveySection #question3 li {
     display: flex;
     margin-bottom: 1%;
-    padding: 1%;
+    padding: 2.5%;
+    padding-left: 1%;
     background: #ffffff;
     border-radius: 12px;
     border: 1.5px solid black;
@@ -260,6 +264,7 @@ a.buttons {
 #logoBig{
   display: flex;
   position: relative;
-  left: 43%;
-  height: 90px;
+  justify-content: center;
+  left: 45%;
+  height: 10vh;
 }
