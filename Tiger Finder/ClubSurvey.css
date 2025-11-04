@@ -252,9 +252,11 @@
 a.buttons {
     text-decoration: none;
 }  
+
 .topBar{
   height:fit-content;
 }
+
 #logoBig{
   display: flex;
   position: relative;
