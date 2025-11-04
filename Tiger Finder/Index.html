@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <div class="topBar">
+    <header class="topBar">
         <!--Drop Down Menu-->
         <button onclick="dropDown()" id="dropDownButton">
-            <img src="dropdownMain.png" id="dropDownButton" width="50" height="50">
+            <img src="dropdownMain.png" id="dropDownButton">
         </button>
         <nav>
             <ul class="level1">
@@ -34,13 +34,14 @@
             </ul>
         </nav>
 
+        <!--<img src="images/FHSLogo.png" id="tigerIcon" alt="The Fishers High School logo">-->
 
         <!--Search Bar-->
-        <input id="searchBar" type="text" placeholder="Search for clubs">
+        <input class="searchBar" type="text" placeholder="Search for clubs">
 
         <!--Filter Icon-->
         <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-
+        <!--Somebody is gonna die for this, it's probably gonna be me but there's death all over this putrid code, if it doesn't work by the end of today I will deliver myself as a sacrifice to the god that lives inside my RAM-->
         <!--Filter Overlay-->
         <div id="filterOverlay">
             <div class="filter-grid">
@@ -79,17 +80,88 @@
         </div>
 
         <div id = "topPadding"></div>
-    </div>
+    </header>
 
     <!--Main body starts here-->
     <div class="mainBody blur" id="headBody">
-        <!--
-        <div>
-            <img src="images/PH1.jpg" class="topImage">
-            <img src="images/PH2.jpg" class="topImage">
-            <img src="images/PH3.jpg" class="topImage">
-            <img src="images/PH4.jpg" class="topImage">
-            <img src="images/PH5.jpg" class="topImage">
+        <section class="carousel" aria-label="Gallery">
+  <ul class="carouselViewport">
+    <li id="carouselSlide1" tabindex="0" class="carouselSlide">
+        <img src="images/ClubClap.jpg" class="cImages">
+      <div class="carouselSnapper">
+        <a href="#carouselSlide4"
+           class="carouselPrev"></a>
+        <a href="#carouselSlide2"
+           class="carouselNext"></a>
+      
+      </div>
+    </li>
+    <li id="carouselSlide2"
+        tabindex="0"
+        class="carouselSlide">
+      <div class="carouselSnapper">
+        <img src="images/ClubMusic.jpg" class="cImages">
+      </div>
+      
+      <a href="#carouselSlide1"
+         class="carouselPrev"></a>
+      <a href="#carouselSlide3"
+         class="carouselNext"></a>
+    </li>
+    <li id="carouselSlide3"
+        tabindex="0"
+        class="carouselSlide">
+      <div class="carouselSnapper">
+              <img src="images/ClubRandomGuy.jpeg" class="cImages">
+      </div>
+      <a href="#carouselSlide2"
+         class="carouselPrev"></a>
+      <a href="#carouselSlide4"
+         class="carouselNext"></a>
+    </li>
+    <li id="carouselSlide4"
+        tabindex="0"
+        class="carouselSlide">
+      <div class="carouselSnapper">
+            <img src="images/RoboticsClub.jpeg" class="cImages">
+      </div>
+      <a href="#carouselSlide3"
+         class="carouselPrev"></a>
+      <a href="#carouselSlide1"
+         class="carouselNext"></a>
+    </li>
+  </ul>
+  <!--
+  <aside class="carouselNavigation">
+    <ul class="carouselNavigation-list">
+      <li class="carouselNavigation-item">
+        <a href="#carouselSlide1"
+           class="carouselNavigation-button"></a>
+      </li>
+      <li class="carouselNavigation-item">
+        <a href="#carouselSlide2"
+           class="carouselNavigation-button"></a>
+      </li>
+      <li class="carouselNavigation-item">
+        <a href="#carouselSlide3"
+           class="carouselNavigation-button"></a>
+      </li>
+      <li class="carouselNavigation-item">
+        <a href="#carouselSlide4"
+           class="carouselNavigation-button"></a>
+      </li>
+    </ul>
+  </aside>
+-->
+</section>
+
+
+        <!--<div>
+            <img src="images/ClubClap.jpg" class="topImage">
+            <img src="images/ClubMusic.jpg" class="topImage">
+            <img src="images/RoboticsClub.jpeg" class="topImage">
+            <img src="images/ManufacturingClub.jpg" class="topImage">
+            <img src="images/ClubRandomGuy.jpeg" class="topImage">
         </div>
     -->
         <div class="bigButtons">
