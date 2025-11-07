@@ -59,3 +59,30 @@ Nov 03 - Nov 07 - Finalize project
 
 
 -search by teacher name
+
+Detailed plans for the next month and a half- 
+
+Nov 11th - Fix UI issues ; visibility on mobile (fix nav, homepage not ahh, survey page touch up, dark mode, footer)
+
+Nov 13th - Fix UI issues ; visibility on mobile
+
+Nov 17th- Fix UI issues ; visibility on mobile
+
+Nov 19th- Adam & Eric: create account/login/sign up page Bo & Ben: notifications (in-app + email)
+
+Nov 21st- Adam & Eric: create account/login/sign up page Bo & Ben: notifications (in-app + email)
+
+Nov 25th- Adam & Eric: create account/login/sign up page Bo & Ben: notifications (in-app + email)
+
+Dec 2nd- Adam & Eric: create account/login/sign up page Bo & Ben: notifications (in-app + email)
+
+Dec 4th- implement Firebase (can be pushed up in login finished early)
+
+Dec 8th- buffer day for firebase/demo
+
+Dec 10th- demo product for feedback
+
+Dec 12th- finalize changes before dealine prepare presentation ; ver. 0.2
+
+(all is subject to change)
+You will present your project to the class for the final. 
