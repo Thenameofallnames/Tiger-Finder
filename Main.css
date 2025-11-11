@@ -1,7 +1,7 @@
-body {
+/*body {
     font-style: Helvetica;
 }
-
+*/
 .topBar {
     position: absolute;
     top: 0;
@@ -31,7 +31,7 @@ body {
     flex: 1;
     margin: 0 1rem;
     padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 12px;
     border: none;
     outline: none;
@@ -271,14 +271,19 @@ nav ul.level1 li.sub:hover ul.level2 {
     position: relative;
     z-index: 100;
 }
-
+#aboutUs{
+    margin-left: 8vw;
+    text-align: left;
+    width: 40vw;
+    height: auto;
+}
 /* Big Buttons */
 .bigButtons {
     display: relative;
     text-align: center;
     margin: 0 auto;
     width: 85%;
-    padding-top: 30%;
+    /*padding-top: 30%;*/
 }
 
 .bigButtons #surveyButton {
