@@ -3,8 +3,8 @@ body {
   display: block;
   justify-content: center;
   align-items: center;
-  margin: 10;
-  background: white;
+  margin: 10px;
+  background: #f3f3f3;
   margin-top: 100px;
 }
 
@@ -13,37 +13,45 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  background:  #db0032;
-  padding: 20px;
+  gap: 24px;
+  background: #f3efef;
+  padding: 40px;
   border-radius: 20px;
-  margin: 10px;
+  margin: 20px;
   position: relative;
-  border: 1px solid black;
+  border: 3px solid #bb4a60;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 
 /* Individual club box styling */
 .container li {
-  background-color: white;
+  background-color: #ffffff;
   color: black;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-radius: 15px;
-  height: 300px;
+  border-radius: 20px ;
+  height: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 15px;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 3px solid #bb4a60;
+}
+.container li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 /* Club title styling */
 #clubTitle {
-  display: flex;
-  justify-content: center;
-  font-size: 50pt;
-  font-style: helvetica;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  color: #900;
+  letter-spacing: 1px;
 }
 /* Club name font size styling */
 .clubBoxesFontSize {
@@ -58,7 +66,7 @@ body {
 /* Favorite button styling */
 .favorite-btn {
   display: flex;
-  position: right;
+  position: absolute;
   top: 5px;
   right: 10px;
   border: none;
@@ -149,14 +157,25 @@ body {
   font-size: 30px;
   
 }
-.btn {
-  background-color: white;
-  border: 10px;
+.clubForm button {
+  background-color: #b30000;     /* deep red */
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.clubForm button:hover {
+  background-color: #d11a1a;     /* slightly brighter red */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.clubForm button:active {
+  transform: scale(0.98);
 }
