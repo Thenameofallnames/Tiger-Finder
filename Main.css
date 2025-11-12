@@ -283,7 +283,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     width: auto;
     height: 5vh;
     cursor: pointer;
-    background-color: #72a4ff;
+    background-color: white;
     border: #000 solid 1px;
     border-radius: 8px;
     justify-content: center;
@@ -301,9 +301,8 @@ a:active, a:focus, a:hover, a:visited, a:link{
 .dropDownMenu {
     display: none;
     position: absolute;
-    top: 11vh;
-    left: auto;
-    width: 32vw;
+    top: 12vh;
+    width: 25%;
     height: auto;
     background: white;
     border: 1px solid #000;
@@ -316,8 +315,8 @@ a:active, a:focus, a:hover, a:visited, a:link{
     position: relative;
     display: grid;
     margin: 0;
-    padding: none;
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
 }
 
 .dropDownList li {

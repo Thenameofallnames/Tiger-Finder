@@ -1,14 +1,16 @@
 //dropdown menu function
 function dropDown() {
     const nav = document.querySelector('nav');
+    const main = document.querySelector(".blur");
     if (nav.style.display === 'block') {
         nav.style.display = 'none';
+        document.getElementById('dropDownButton').style.backgroundColor = 'white';
+        main.style.filter = 'none';
     } else {
         nav.style.display = 'block';
+        document.getElementById('dropDownButton').style.backgroundColor = '#8caeffff';
+        main.style.filter = 'blur(5px)';
     }
-
-    const main = document.querySelector(".blur");
-    main.classList.toggle('blurred');
 }
 function filterOverlay() {
     const overlay = document.getElementById('filterOverlay');
