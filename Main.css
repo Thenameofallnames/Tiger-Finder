@@ -246,6 +246,9 @@ a:active, a:focus, a:hover, a:visited, a:link{
     font-size: 2vh;
     flex-direction: column;
 }
+#aboutUs{
+    
+}
 
 /* Big Buttons */
 .bigButtons {
