@@ -258,8 +258,18 @@ a:active, a:focus, a:hover, a:visited, a:link{
     font-size: 2vh;
     flex-direction: column;
 }
-#aboutUs{
-    
+.aboutTabs{
+    border-radius: 20px;
+    border-color: #bb4a60;
+    background-color: #f3efef;
+    border-width: 5px;
+    border-style: solid;
+    width: 25vw;
+    display: grid;
+}
+#aboutSec{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Big Buttons */
