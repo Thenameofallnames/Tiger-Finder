@@ -6,11 +6,13 @@ function dropDown() {
         nav.style.display = 'none';
         document.getElementById('dropDownButton').style.color = '';
         document.getElementById('dropDownButton').style.borderColor = '';
+        document.getElementById('dropDownImage').src = 'dropDownMain.png';
         main.style.filter = 'none';
     } else {
         nav.style.display = 'block';
         document.getElementById('dropDownButton').style.color = '#db0032';
         document.getElementById('dropDownButton').style.borderColor = '#db0032';
+        document.getElementById('dropDownImage').src = 'dropDownImageRed.png';
         main.style.filter = 'blur(5px)';
     }
 }
