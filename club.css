@@ -165,6 +165,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: all 0.2s ease;
+  text-align: right;
 }
 
 .clubForm button:hover {
