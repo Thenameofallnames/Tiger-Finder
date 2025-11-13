@@ -42,8 +42,8 @@ function checkClickedQ1() {
 
         if (arts.checked) {
           selectedTypes.push("Arts");
-          ans2.style.color = "#bb4a60";
-          ans2.style.borderColor = "#bb4a60";
+          ans2.style.color = "#99001c";
+          ans2.style.borderColor = "#99001c";
         } else {
           const index = selectedTypes.indexOf("Arts");
           if (index > -1) {
@@ -55,46 +55,54 @@ function checkClickedQ1() {
 
         if (sports.checked) { 
           selectedTypes.push("Sports"); 
-          ans1.style.backgroundColor = "#70a2ff7a";
+          ans1.style.color = "#99001c";
+          ans1.style.borderColor = "#99001c";
         } else {
           const index = selectedTypes.indexOf("Sports");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
-          ans1.style.backgroundColor = "";
+          ans1.style.color = "";
+          ans1.style.borderColor = "";
         }
 
         if (games.checked) {
           selectedTypes.push("Games"); 
-          ans3.style.backgroundColor = "#70a2ff7a";
+          ans3.style.color = "#99001c";
+          ans3.style.borderColor = "#99001c";
         } else {
           const index = selectedTypes.indexOf("Games");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
-          ans3.style.backgroundColor = "";
+          ans3.style.color = "";
+          ans3.style.borderColor = "";
         }
 
         if (academic.checked) {
           selectedTypes.push("Academic");
-          ans4.style.backgroundColor = "#70a2ff7a";
+          ans4.style.color = "#99001c";
+          ans4.style.borderColor = "#99001c";
         } else {
           const index = selectedTypes.indexOf("Academic");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
-          ans4.style.backgroundColor = "";
+          ans4.style.color = "";
+          ans4.style.borderColor = "";
         }
 
         if (volunteer.checked) {
           selectedTypes.push("Service");
-          ans5.style.backgroundColor = "#70a2ff7a";
+          ans5.style.color = "#99001c";
+          ans5.style.borderColor = "#99001c";
         } else {
           const index = selectedTypes.indexOf("Service");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
-          ans5.style.backgroundColor = "";
+          ans5.style.color = "";
+          ans5.style.borderColor = "";
         }
 
 }
@@ -109,24 +117,27 @@ function checkClickedQ2(){
 
     if (mornings.checked) {
       selectedTimes.push("Before");
-      ans6.style.backgroundColor = "#70a2ff7a";
+      ans6.style.color = "#99001c";
+      ans6.style.borderColor = "#99001c";
     } else {
       const index = selectedTimes.indexOf("Before");
       if (index > -1) {
         selectedTimes.splice(index, 1);
       }
-      ans6.style.backgroundColor = "";
+      ans6.style.color = "";
     }
 
     if (afternoons.checked) {
       selectedTimes.push("After");
-      ans7.style.backgroundColor = "#70a2ff7a";
+      ans7.style.color = "#99001c";
+      ans7.style.borderColor = "#99001c";
     } else {
       const index = selectedTimes.indexOf("After");
       if (index > -1) {
         selectedTimes.splice(index, 1);
       }
-      ans7.style.backgroundColor = "";
+      ans7.style.color = "";
+      ans7.style.borderColor = "";
     }
 
 }
@@ -150,68 +161,80 @@ function checkClickedQ3(){
 
     if (mondays.checked) {
       selectedDays.push("Monday");
-      ans8.style.backgroundColor = "#70a2ff7a";
+      ans8.style.color = "#99001c";
+      ans8.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Monday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans8.style.backgroundColor = "";
+      ans8.style.color = "";
+      ans8.style.borderColor = "";
     }
 
     if (tuesdays.checked) {
       selectedDays.push("Tuesday");
-      ans9.style.backgroundColor = "#70a2ff7a";
+      ans9.style.color = "#99001c";
+      ans9.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Tuesday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans9.style.backgroundColor = "";
+      ans9.style.color = "";
+      ans9.style.borderColor = "";
     }
 
     if (wednesdays.checked) {
       selectedDays.push("Wednesday");
-      ans10.style.backgroundColor = "#70a2ff7a";
+      ans10.style.color = "#99001c";
+      ans10.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Wednesday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans10.style.backgroundColor = "";
+      ans10.style.color = "";
+      ans10.style.borderColor = "";
     }
 
     if (thursdays.checked) {
       selectedDays.push("Thursday");
-      ans11.style.backgroundColor = "#70a2ff7a";
+      ans11.style.color = "#99001c";
+      ans11.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Thursday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans11.style.backgroundColor = "";
+      ans11.style.color = "";
+      ans11.style.borderColor = "";
     }
 
     if (fridays.checked) {
       selectedDays.push("Friday");
-      ans12.style.backgroundColor = "#70a2ff7a";
+      ans12.style.color = "#99001c";
+      ans12.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Friday");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans12.style.backgroundColor = "";
+      ans12.style.color = "";
+      ans12.style.borderColor = "";
     }
 
     if (weekends.checked) {
       selectedDays.push("Weekend");
-      ans13.style.backgroundColor = "#70a2ff7a";
+      ans13.style.color = "#99001c";
+      ans13.style.borderColor = "#99001c";
     } else {
       const index = selectedDays.indexOf("Weekend");
       if (index > -1) {
         selectedDays.splice(index, 1);
       }
-      ans13.style.backgroundColor = "";
+      ans13.style.color = "";
+      ans13.style.borderColor = "";
     }
 
 }

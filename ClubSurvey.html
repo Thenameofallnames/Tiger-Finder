@@ -11,12 +11,14 @@
 </head>
 
 <body>
-    <div class="topBar">
-    <!--Drop Down Menu-->
-    <button onclick="dropDown()" id="dropDownButton">
-        <img src="dropdownMain.png" id="dropDownImage" width="50" height="50"> Menu
-    </button>
-    <nav id="dropDownMenu" class="dropDownMenu">
+    <header class="topBar">
+        <!--Drop Down Menu-->
+        <div class="leftItems">
+        </div>
+        <button onclick="dropDown()" id="dropDownButton">
+            <img src="dropdownMain.png" id="dropDownImage"> Menu
+        </button>
+        <nav id="dropDownMenu" class="dropDownMenu">
             <ul class="dropDownList">
                 <a href="index.html" class="dropDownLocations"><li>Home</li></a>
                 <a href="ClubSurvey.html" class="dropDownLocations"><li>Club Survey</li></a>
@@ -26,8 +28,44 @@
                 <a href="Login.html" class="dropDownLocations"><li>Log In</li></a>
             </ul>
         </nav>
+    </div>
 
-    <img src="images/FHSLogoBig.png" id="logoBig">
+        <!--<img src="images/FHSLogo.png" id="tigerIcon" alt="The Fishers High School logo">-->
+
+        <img src="images/FHSLogoBig.png" id="logoBig">
+
+        <!--Somebody is gonna die for this, it's probably gonna be me but there's death all over this putrid code, if it doesn't work by the end of today I will deliver myself as a sacrifice to the god that lives inside my RAM-->
+        <!--Filter Overlay-->
+        <div id="filterOverlay">
+            <div class="filter-grid">
+                <div class="filter-catagory">
+                    <h3>Club Type</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAcademic" onclick = "saveCheckboxStates()">Academic</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxService" onclick = "saveCheckboxStates()">Service</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSports" onclick = "saveCheckboxStates()">Sports</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxArt" onclick = "saveCheckboxStates()">Art</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxGames" onclick = "saveCheckboxStates()">Games</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Meeting Time</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxBefore" onclick = "saveCheckboxStates()">Before School</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAfter" onclick = "saveCheckboxStates()">After School</label>
+                </div>
+                <div class="filter-catagory">
+                    <h3>Meeting Days</h3>
+                    <label><input type="checkbox" class="filterBox" id="checkboxMonday" onclick = "saveCheckboxStates()"> Monday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxTuesday" onclick = "saveCheckboxStates()"> Tuesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWednesday" onclick = "saveCheckboxStates()"> Wednesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxThursday" onclick = "saveCheckboxStates()"> Thursday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxFriday" onclick = "saveCheckboxStates()"> Friday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWeekend" onclick = "saveCheckboxStates()"> Weekend</label>
+                </div>
+            </div>
+        </div>
+
+        <div id = "topPadding"></div>
+    </header>
+
     </div>
     <div class="mainBody blur" id="headBody">
         <div class="Info">

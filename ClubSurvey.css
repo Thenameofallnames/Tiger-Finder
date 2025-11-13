@@ -23,7 +23,7 @@
   border-radius: 20px;
   margin-top: 10px;
   position: relative;
-  border: 1.5px solid black;
+  border: 2.0px solid black;
 }
 
 
@@ -171,14 +171,20 @@
     padding-left: 1%;
     background: #ffffff;
     border-radius: 12px;
-    border: 1.5px solid black;
+    border: 2.0px solid black;
     font-size: 3vw;
     height: 6vh;
     align-items: center;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+  display: none;
 }
 
 #surveySection #question1 li:hover {
-    background: #70a2ffad;
+    transform: scale(1.025);
 }
 
 #surveySection #question2 li {
@@ -189,14 +195,16 @@
     margin-bottom: 1%;
     padding: 2.5%;
     padding-left: 1%;
-    border: 1.5px solid black;
+    border: 2.0px solid black;
     font-size: 3vw;
     height: 6vh;
     align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
 #surveySection #question2 li:hover {
-    background: #70a2ffad;
+    transform: scale(1.025);
 }
 
 
@@ -207,14 +215,16 @@
     padding-left: 1%;
     background: #ffffff;
     border-radius: 12px;
-    border: 1.5px solid black;
+    border: 2.0px solid black;
     font-size: 3vw;
     height: 6vh;
     align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
 #surveySection #question3 li:hover {
-    background: #70a2ff7a;
+    transform: scale(1.01);
 }
 
 /* Question Title Styling */
@@ -245,7 +255,7 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    border: 1.5px solid black;
+    border: 2.0px solid black;
 }
 
 a.buttons {
@@ -253,13 +263,13 @@ a.buttons {
 }  
 
 .topBar{
-  height:fit-content;
+  height: auto;
 }
 
 #logoBig{
-  display: flex;
   position: relative;
-  justify-content: center;
-  left: 45%;
+  width: 20vh;
   height: 10vh;
+  margin: 0 auto;
+  transform: translate(-35%);
 }

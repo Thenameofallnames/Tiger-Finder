@@ -2,18 +2,24 @@
     font-style: Helvetica;
 }
 */
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
 .topBar {
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #99001c;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 2vw;
     z-index: 999999999;
     box-sizing: border-box;
+    background: black;
 }
 
 /*Search Bar*/
@@ -28,39 +34,44 @@
     border: none;
     outline: none;
     min-width: 200px;
-    max-width: 85%;
-    height: 50px;
+    max-width: 80%;
+    height: 3vw;
 }
 
 #tigerIcon {
-    height: 3vw;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     cursor: pointer;
     position: relative;
     display: flex;
-    margin: auto;
-    top: .25vh;
-    width: 4vw;
-    left: 12vh;
+    margin-left: 3vh;
+    margin-right: 1.5vh;
+    width: 4.5vw;
+    left: 0vh;
     max-width: none;
     min-width: 50px;
     z-index: 999999999999;
+   
 }
 
 /*Filter*/
 #filterIcon {
     position: relative;
     display: flex;
-    top: .25vh;
     margin: auto;
-    padding: 8px;
+    padding: 4px;
     aspect-ratio: 1/1;
-    width: 4vw;
-    height: auto;
+    width: 3.75vw;
     cursor: pointer;
     border: none;
     z-index: 999999999999;
+    max-width: none;
+    min-width: 40px;
+    background-color: transparent;
+    border-radius: 12px;
+    border: #000 solid 0px;
+    margin-left: 5px;
+    filter: invert(100%);
 }
 
 #filterOverlay {
@@ -69,8 +80,8 @@
     height: auto;
     background-color: floralwhite;
     position: absolute;
-    right: 0;
-    top: 100%;
+    right: 5px;
+    top: 105%;
     border-radius: .5rem;
     border-color: #99001c;
     border-width: .5rem;
@@ -79,7 +90,7 @@
     box-sizing: border-box;
     z-index: 10;
     max-width: 500px;
-    min-width: 225px;
+    min-width: 200px;
     overflow-wrap: break-word;
 }
 
@@ -105,7 +116,7 @@
 
 .filterBox {
     aspect-ratio: 1/1;
-    width: 1.5vw;
+    width: 1em;
     margin-right: 5px;
 }
 
@@ -218,10 +229,10 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: none;
     position: absolute;
     top: 12vh;
-    width: 25%;
+    width: auto;
     height: auto;
     background: white;
-    border: 1px solid #000;
+    border: 1.5px solid #99001c;
     border-radius: 8px;
     z-index: 1000;
     padding: 1vh;
@@ -232,13 +243,14 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: grid;
     margin: 0;
     grid-template-columns: repeat(2, 1fr);
+    background: white;
     padding: 0;
 }
 
 .dropDownList li {
     position: relative;
     list-style: none;
-    border: #000 solid 1px;
+    border: #99001c solid 1.5px;
     border-radius: 8px;
     padding: 2vh;
     margin: 1vh;
