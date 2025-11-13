@@ -42,13 +42,15 @@ function checkClickedQ1() {
 
         if (arts.checked) {
           selectedTypes.push("Arts");
-          ans2.style.backgroundColor = "#70a2ff7a";
+          ans2.style.color = "#bb4a60";
+          ans2.style.borderColor = "#bb4a60";
         } else {
           const index = selectedTypes.indexOf("Arts");
           if (index > -1) {
             selectedTypes.splice(index, 1);
           }
-          ans2.style.backgroundColor = "";
+          ans2.style.color = "";
+          ans2.style.borderColor = "";
         }
 
         if (sports.checked) { 

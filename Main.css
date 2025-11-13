@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 2vw;
-    z-index: 9999999999;
+    z-index: 999999999;
     box-sizing: border-box;
 }
 
@@ -45,6 +45,7 @@
     left: 12vh;
     max-width: none;
     min-width: 50px;
+    z-index: 999999999999;
 }
 
 /*Filter*/
@@ -186,91 +187,6 @@
 #White {
     color: #F2F3F4
 }
-
-
-/* Dropdown Nav Bar 
-a:active, a:focus, a:hover, a:visited, a:link{
-    color: black;
-}
-
-#dropDownButton {
-    display: flex;
-    position: absolute;
-    top: 1%;
-    left: 1.25%;
-    aspect-ratio: 1/1;
-    width: 5vw;
-    height: 10vh;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
-nav {
-    display: none;
-    float: left;
-    width: 5vw;
-    position: absolute;
-    z-index: 100;
-    top: 5vw;
-    left: 1%;
-    font-size: 1.25vw;
-}
-
-nav ul{
-    margin: 0;
-    padding: 0;
-    width: 6vw;
-    background: white;
-    border: 1px solid black;
-    border-bottom: none;
-}
-
-nav li {
-    position: relative;
-    list-style: none;
-}
-
-nav ul.level1 li {
-    border-bottom: 1px solid black;
-}
-
-nav ul.level2 {
-    border-left: none;
-}
-
-nav ul.level2 li {
-    border-bottom: 1px solid black;
-}
-
-nav ul ul {
-    position: relative;
-    top: 0;
-    left: 6vw;
-    display: none;
-}
-
-nav li a {
-    display: block;
-    padding: 0.25vw 0 0.25vw 0.5vw;
-    text-decoration: none;
-}
-
-nav li:hover {
-    background: #cccccc;
-}
-
-nav ul.level1 li.sub:hover ul.level2 {
-    display: block;
-    position: relative;
-    z-index: 100;
-}
-#aboutUs{
-    margin-left: 8vw;
-    text-align: left;
-    width: 40vw;
-    height: auto;
-}*/
 
 /* Dropdown Menu */
 a:active, a:focus, a:hover, a:visited, a:link{
