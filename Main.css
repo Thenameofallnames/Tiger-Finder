@@ -14,6 +14,7 @@
     padding: 0.5rem 2vw;
     z-index: 999999999;
     box-sizing: border-box;
+    background: black;
 }
 
 /*Search Bar*/
@@ -40,7 +41,6 @@
     display: flex;
     margin-left: 3vh;
     margin-right: 1.5vh;
-    top: .25vh;
     width: 4.5vw;
     left: 0vh;
     max-width: none;
@@ -52,9 +52,8 @@
 #filterIcon {
     position: relative;
     display: flex;
-    top: .25vh;
     margin: auto;
-    padding: 8px;
+    padding: 4px;
     aspect-ratio: 1/1;
     width: 3.75vw;
     cursor: pointer;
@@ -62,6 +61,11 @@
     z-index: 999999999999;
     max-width: none;
     min-width: 40px;
+    background-color: transparent;
+    border-radius: 12px;
+    border: #000 solid 0px;
+    margin-left: 5px;
+    filter: invert(100%);
 }
 
 #filterOverlay {
