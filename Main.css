@@ -7,19 +7,20 @@ html, body{
     margin: 0;
     padding: 0;
 }
-.topBar {
+.topBar{
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: black;
+    /*background-color: #99001c;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 2vw;
     z-index: 999999999;
     box-sizing: border-box;
-    background: black;
+    background: #000;
+    /*background: #db0032;*/
 }
 
 /*Search Bar*/
