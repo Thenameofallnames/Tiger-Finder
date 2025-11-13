@@ -266,6 +266,9 @@ a:active, a:focus, a:hover, a:visited, a:link{
     border-style: solid;
     width: 25vw;
     display: grid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 #aboutSec{
     display: grid;
