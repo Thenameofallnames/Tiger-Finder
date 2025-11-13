@@ -29,7 +29,6 @@
     outline: none;
     min-width: 200px;
     max-width: 85%;
-    left: 7%;
     height: 50px;
 }
 
@@ -51,11 +50,11 @@
     position: relative;
     display: flex;
     top: .25vh;
-    left: 50px;
     margin: auto;
     padding: 8px;
     aspect-ratio: 1/1;
     width: 4vw;
+    height: auto;
     cursor: pointer;
     border: none;
     z-index: 999999999999;
@@ -279,14 +278,13 @@ a:active, a:focus, a:hover, a:visited, a:link{
 
 #dropDownButton {
     display: flex;
-    position: absolute;
+    position: relative;
     width: auto;
-    height: 5vh;
+    height: 4vw;
     cursor: pointer;
     background-color: white;
     border: #000 solid 1px;
     border-radius: 8px;
-    justify-content: center;
     align-items: center;
     padding: 1.5vh;
     font-size: 2.5vh;
