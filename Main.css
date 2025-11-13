@@ -2,8 +2,13 @@
     font-style: Helvetica;
 }
 */
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
 .topBar {
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -218,10 +223,10 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: none;
     position: absolute;
     top: 12vh;
-    width: 25%;
+    width: auto;
     height: auto;
     background: white;
-    border: 1px solid #000;
+    border: 1.5px solid #99001c;
     border-radius: 8px;
     z-index: 1000;
     padding: 1vh;
@@ -232,13 +237,14 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: grid;
     margin: 0;
     grid-template-columns: repeat(2, 1fr);
+    background: white;
     padding: 0;
 }
 
 .dropDownList li {
     position: relative;
     list-style: none;
-    border: #000 solid 1px;
+    border: #99001c solid 1.5px;
     border-radius: 8px;
     padding: 2vh;
     margin: 1vh;
