@@ -40,9 +40,11 @@
     position: relative;
     display: flex;
     margin: auto;
-    top: 90%;
-    height: 5%;
+    top: .25vh;
+    width: 4vw;
     left: 12vh;
+    max-width: none;
+    min-width: 50px;
 }
 
 /*Filter*/

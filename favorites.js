@@ -1,5 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const favoriteList = document.getElementById("favoriteList");
+  const overlay = document.getElementById("descriptionOverlay");
+  const closeOverlay = document.getElementById("closeOverlay");
 
   function renderFavorites() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -7,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     favorites.forEach(fav => {
       const li = document.createElement("li");
+      li.classList.add("club-box"); // match main page style
       li.innerHTML = `
         <img 
           src="goldStar.jpeg" 
@@ -20,14 +23,23 @@ window.addEventListener("DOMContentLoaded", () => {
       `;
 
       const star = li.querySelector(".favorite-star");
-      star.addEventListener("click", () => {
-        // Remove this club from localStorage
+      star.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent opening overlay
         let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
         favorites = favorites.filter(f => f.club !== fav.club);
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        renderFavorites(); // refresh list
+      });
 
-        // Re-render list so it disappears immediately
-        renderFavorites();
+      // 📦 Add overlay click event (same as main page)
+      li.addEventListener("click", () => {
+        document.getElementById("overlayTitle").textContent = fav.club;
+        document.getElementById("overlayStaff").textContent = `Staff: ${fav.staff}`;
+        document.getElementById("overlayEmail").textContent = `Email: ${fav.email}`;
+        document.getElementById("overlayDescription").textContent =
+          fav.description || "No description available.";
+
+        overlay.classList.remove("hidden");
       });
 
       favoriteList.appendChild(li);
@@ -35,4 +47,14 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   renderFavorites();
+
+  // close overlay when X is clicked
+  closeOverlay.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+  });
+
+  // close overlay when clicking outside box
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
 });
