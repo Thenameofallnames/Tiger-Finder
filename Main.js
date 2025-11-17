@@ -74,3 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+var whole = document.getElementsByTagName("BODY")[0];
+const menu = document.getElementById("dropDownButton");
+if(
+    whole.style.width<"867px"
+){
+    menu.innerHTML = '<img src="dropdownMain.png" id="dropDownImage">';
+}

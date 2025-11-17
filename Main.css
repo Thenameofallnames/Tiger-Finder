@@ -207,7 +207,11 @@ a:active, a:focus, a:hover, a:visited, a:link{
     color: black;
     text-decoration: none;
 }
-
+@media (min-width: 876px){
+    #menuText{
+        display: none;
+    }
+}
 #dropDownButton {
     display: flex;
     position: relative;
