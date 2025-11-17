@@ -7,7 +7,6 @@ html, body{
     margin: 0;
     padding: 0;
     background: #f3f3f3;
-
 }
 .topBar{
     position: sticky;
@@ -212,7 +211,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: flex;
     position: relative;
     width: auto;
-    height: 4vw;
+    height: 7vh;
     cursor: pointer;
     background-color: white;
     border: #000 solid 1px;
@@ -224,7 +223,6 @@ a:active, a:focus, a:hover, a:visited, a:link{
 
 #dropDownImage {
     width: 4vh;
-    height: 4vh;
     aspect-ratio: 1/1;
 }
 
@@ -260,7 +258,13 @@ a:active, a:focus, a:hover, a:visited, a:link{
     text-decoration: none;
     font-size: 2vh;
     flex-direction: column;
+    transition: transform 0.25s ease-in-out;
 }
+
+.dropDownList li:hover {
+    transform: scale(1.025);
+}
+
 .aboutTabs{
     border-radius: 20px;
     border-color: #bb4a60;

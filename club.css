@@ -37,6 +37,7 @@ body {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 3px solid #bb4a60;
+  cursor: pointer;
 }
 .container li:hover {
   transform: translateY(-5px);

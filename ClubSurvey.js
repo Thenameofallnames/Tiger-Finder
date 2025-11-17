@@ -1,25 +1,20 @@
 //dropdown menu function
 function dropDown() {
     const nav = document.querySelector('nav');
+    const main = document.querySelector(".blur");
     if (nav.style.display === 'block') {
         nav.style.display = 'none';
+        document.getElementById('dropDownButton').style.color = '';
+        document.getElementById('dropDownButton').style.borderColor = '';
+        document.getElementById('dropDownImage').src = 'dropDownMain.png';
+        main.style.filter = 'none';
     } else {
         nav.style.display = 'block';
+        document.getElementById('dropDownButton').style.color = '#db0032';
+        document.getElementById('dropDownButton').style.borderColor = '#db0032';
+        document.getElementById('dropDownImage').src = 'dropDownImageRed.png';
+        main.style.filter = 'blur(5px)';
     }
-
-    const main = document.querySelector(".blur");
-    main.classList.toggle('blurred');
-}
-function filterOverlay() {
-    const overlay = document.getElementById('filterOverlay');
-    if (overlay.style.display === 'block') {
-        overlay.style.display = 'none';
-    } else {
-        overlay.style.display = 'block';
-    }
-
-    const main = document.querySelector(".blur");
-    main.classList.toggle('blurred');
 }
 
 const selectedTypes = [];
