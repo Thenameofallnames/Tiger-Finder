@@ -16,10 +16,10 @@ function createClubs() {
     "staff": "Armey, Julie & Lyons, Suzanne",
     "club": "Orchestra Club",
     "email": "jarmey@hse.k12.in.us & slyons@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Day" : "",
+    "description" : "Orchestra club is a group of students from all of FHS's orchestras.  They meet on Red Wednesdays/Thursdays and learn a variety of music which they perform at places like assisted living facilities and the FHS Craft Fair.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
   },
   /*
   {
