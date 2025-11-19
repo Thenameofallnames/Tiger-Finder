@@ -252,7 +252,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description": "We are a competitive high school girls rugby club open to all backgrounds and skill levels for FHS, HSE, and other Fishers area students. Through its fun and fast paced action, we believe that rugby can shape student athletes into strong, confident, and capable individuals, both on and off the field. Our USA Rugby certified coaches will teach you this game from ground up, improve your fitness, and help you compete in games against teams across the state. We have two main seasons: Fall 7s and Spring 15s. Practices commonly run after school on Mondays and Wednesdays with games on the weekends. For more information on our club and how you can be a part of it, go to rugby.myathletics.com or email mudsockrugby@gmail.com. You can also find us on Instagram and Facebook @mudsockhsgirlsrugby",
     "Time": "After",
     "Type": "Sports",
-    "Day": "Monday"
+    "Days": "Monday"
 
   },
   {
@@ -262,7 +262,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Orchestra club is a group of students from all of FHS's orchestras.  They meet on Red Wednesdays/Thursdays and learn a variety of music which they perform at places like assisted living facilities and the FHS Craft Fair.",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   /*
   {
@@ -272,7 +272,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   */
   {
@@ -282,7 +282,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Black, Scott",
@@ -291,7 +291,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Bockenfeld, Matt",
@@ -300,7 +300,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "MSA is a club where students gather to learn more about Islam, plan community events and service projects, and enjoy one another's company. The club is open to all students. ",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Brown, Lisa",
@@ -309,7 +309,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Buckman, Bill",
@@ -318,7 +318,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "This club will meet Wednesday mornings (dates communicated through StudentSquare) to play variations of the traditional game, Poker. In Poker club, no gambling is involved. Instead, members will play recreationally, with allergy-safe candy as a prize.  The poker chips, playing cards, etc. will be supplied by the club.",
     "Time" : "Before",
     "Type" : "Games",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Carson, Beth",
@@ -327,7 +327,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Chan, Brooke",
@@ -336,7 +336,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students play the Disney Lorcana trading card game and socialize",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "Chan, Brooke",
@@ -345,7 +345,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students play the Magic: The Gathering trading card game, discuss strategies and cards, and socialize.",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Chop, Dahnya",
@@ -354,7 +354,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Curtis, Liz",
@@ -363,7 +363,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Curtis, Steven & Kapitan, Jacob",
@@ -372,7 +372,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students gather every other week after school until 4:30 to play in Dungeons and Dragons campaigns.  Campaigns are run by fellow club members in small groups.  All levels of expertise are welcome so if you’ve ever wanted to learn how to play, please come join us!",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff": "Czech, Mike",
@@ -381,7 +381,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Delucenay, Katie",
@@ -390,7 +390,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students meet and work in groups to make baked-type items.  There is a fee for joining to purchase food. ",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Thursday",
+    "Days" : "Thursday",
   },
   {
     "staff": "Delucenay, Katie",
@@ -399,7 +399,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students meet after school to unwind.  Play games, take walks and other activities to unwind from school.",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "Druelinger, Sarah",
@@ -408,7 +408,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We play ping pong on most Red Mondays.  The club is for anyone who would like to play!",
     "Time" : "After",
     "Type" : "Sports",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "Farrand, Angela",
@@ -417,7 +417,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Manoharan, Vennila",
@@ -426,7 +426,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Ferguson, Heather & Noyes, Summer",
@@ -435,7 +435,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Our club creates art and writes letters to residents in nursing/assisted living homes.",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Friday",
+    "Days" : "Friday",
   },
   {
     "staff": "French, Brigham",
@@ -444,7 +444,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Chess club allows students to play in casual and competitive chess play. Student can make friends and compete with each other. The club is open to all students regardless of skill level. ",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff": "French, Brigham",
@@ -453,7 +453,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Gastineau, Chelley",
@@ -462,7 +462,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Greisinger, Jessica & Geisinger, Robin",
@@ -471,7 +471,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "For French and German students. We blend the best of French and German culture via foods, Field trips, movies, games",
     "Time" : "Before" || "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
    {
     "staff": "Schuh, Tori",
@@ -480,7 +480,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Thursday",
+    "Days" : "Thursday",
   },
   {
     "staff": "Goodwin, Danielle & Gutting, Stephanie",
@@ -489,7 +489,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Gutting, Stephanie",
@@ -498,7 +498,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Gutting, Stephanie & Helmkamp, Michelle",
@@ -507,7 +507,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
  
   {
@@ -517,7 +517,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Harris, Ryan",
@@ -526,7 +526,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Harris, Ryan",
@@ -535,7 +535,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Harris, Ryan",
@@ -544,7 +544,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Harris, Ryan",
@@ -553,7 +553,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Harris, Ryan",
@@ -562,7 +562,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   
   {
@@ -572,7 +572,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "It is based on DoSomething.org which empowers young people who want to build a better world. Instead of complaining, you do \"something\" to fix the problem. We have cleaned the school, done clothing drives, helped at the humane society and nursing homes. Be the change!",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff": "Isom, Renee",
@@ -581,7 +581,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We work to share 3D designs and printing those on the school 3d printers",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Isom, Renee",
@@ -590,7 +590,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "The Cultural Connections Club celebrates the varied cultures here at FHS and creates an International Fair in the Spring.",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Isom, Renee",
@@ -599,7 +599,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Isom, Renee",
@@ -608,7 +608,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We are a club that promotes leadership, building community through service.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Isom, Renee",
@@ -617,7 +617,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Jacobs, Kelli",
@@ -626,7 +626,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Jordan, Monica",
@@ -635,7 +635,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Kapitan, Jacob",
@@ -644,7 +644,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Students can meet together to read and discuss passages from the Bible. Sometimes a leader has prepared a passage to discuss, and other times involve walking through a text together. Students are welcome to bring their own Bible or Bible app, and any faith or level of involvement is welcome.",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "Kapitan, Jacob",
@@ -653,7 +653,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We have an opportunity to build teams for different competitive eSports games, compete in leagues, and play together at the school. Students can make new friends that share interests and hone their skills throughout the year. ",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Thursday",
+    "Days" : "Thursday",
   },
   {
     "staff": "Kapitan, Jacob",
@@ -662,7 +662,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Come join some fellow fanatics to play and discuss everything Pokemon! Students can bring a copy of a game from any generation and are welcome to play together or link up for battling, trading, shiny hunting, and adventuring. Students can also play and plan outings for Pokemon GO, or bring physical TCG cards or the TCG Pocket app to join the fun in other ways. ",
     "Time" : "After",
     "Type" : "Games",
-    "Day" : "Friday",
+    "Days" : "Friday",
   },
   {
     "staff": "Keithley, Maxwell",
@@ -671,7 +671,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Kixmiller, Lori",
@@ -680,7 +680,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Knapp, Erin",
@@ -689,7 +689,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Knapp, Erin",
@@ -698,7 +698,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Knapp, Erin",
@@ -707,7 +707,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Kohler, Chad",
@@ -716,7 +716,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Horn, Sara",
@@ -725,7 +725,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Women in STEM intends to empower young women who are actively pursuing STEM careers by inviting female speakers who have underwent similar experiences. This club also strives to encourage younger students in the school district to be confident in math and science by promoting STEM education.",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Friday",
+    "Days" : "Friday",
   },
   {
     "staff": "Kuhn, Lance",
@@ -734,7 +734,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Chemistry Club does demonstrations and experiments not done in chemistry classes and prepares for a springtime chemistry competition that is open to all students.",
     "Time" : "Before",
     "Type" : "Academic",
-    "Day" : "Friday",
+    "Days" : "Friday",
   },
   {
     "staff": "Laffin, Bill",
@@ -743,7 +743,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Lawrence, Samuel",
@@ -752,7 +752,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Lidy, Shelley",
@@ -761,7 +761,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Luna, Madeleine",
@@ -770,7 +770,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   
   {
@@ -780,7 +780,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Masterson, Ray",
@@ -789,7 +789,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "McCabe, Shanna",
@@ -798,7 +798,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "This organization is dedicated to teaching K-6th grade students in HSE school district about service and how they can become active members of their community. ",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "McCabe, Shanna",
@@ -807,7 +807,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Meador, Taylor",
@@ -816,7 +816,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Meador, Taylor",
@@ -825,7 +825,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Meador, Taylor",
@@ -834,7 +834,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "ENL Ambassadors is a service-based leadership program designed to engage ENL and immigrant students as leaders at FHS. The main goals of the club are to assist newly enrolled students who do not speak English fluently, tutor English learners, and promote cultural awareness in our community. Members must be bilingual and have been enrolled in an ENL program at some point.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Miller, Audra",
@@ -843,7 +843,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Ondish, Kelsey",
@@ -852,7 +852,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description": "",
     "Time": "After",
     "Type": "Arts",
-    "Day": "Tuesday"
+    "Days": "Tuesday"
 
   },
   {
@@ -862,7 +862,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "LLS is a nonprofit organization dedicated to fighting blood cancers (leukemia, lymphoma, hodgkin’s disease, and myeloma)We raise money to fund research, patient support services, and advocacy efforts. We also spread awareness about LLS as well play games and make new friends. Teams across Indiana who have raised the most money for LLS are crowned Student Visionary of the Year.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff": "Paternoster, Liz",
@@ -871,7 +871,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Placzek, Sharon",
@@ -880,7 +880,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Rund, Emma",
@@ -889,7 +889,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Drama Club is club for students who like theatre, do theatre, or want to learn more about theatre. We do workshops and themed events to create opportunities to learn more about theatre outside of what we do at school.",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Schooley, Patrick",
@@ -898,7 +898,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
  
   {
@@ -908,7 +908,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Seland, Glenn",
@@ -917,7 +917,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Seland, Glenn",
@@ -926,7 +926,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Shafer, Gretchen",
@@ -935,7 +935,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Shuck, Jamison",
@@ -944,7 +944,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "This club is a space for any Africans, students of African descent, or anyone who simply wants to learn more about African culture. It’s open to all. The goal is to bring people together for community and education. We play games, learn from each other, share cultural foods, watch African movies, find ways to help local African businesses, etc.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff": "Smith, Andy",
@@ -953,7 +953,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Snyder, Tammy",
@@ -962,7 +962,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Snyder, Tammy",
@@ -971,7 +971,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Who We Are: Cru is a caring community of people who want to help each other take the next step in their journey toward Jesus. Whether you’re exploring faith or looking to grow deeper, you’re welcome here.What We Do at Our Weekly MeetingsEach week, we gather in small groups to connect, grow, and encourage one another. We spend time building meaningful relationships, talking about life, reading the Bible, and having honest conversations about faith. It’s a space to be real, ask questions, and experience how Jesus makes a difference in everyday life.Wherever you are on your journey, we’d love to walk with you.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Monday",
+    "Days" : "Monday",
   },
   {
     "staff": "Spencer, Tammie",
@@ -980,7 +980,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Animal Alliance is a club that exposes its members to a variety of animal-based volunteer opportunities in the greater Indianapolis area. We typically volunteer twice a month (with a varying schedule). We have hosted volunteer opportunities at the Hamilton County Humane Society, Oinking Acres, Koteewi Stables, and others!Join the Remind (@animala) for information on club meetings/volunteer opportunities!",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Strange, Susanne",
@@ -989,7 +989,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We train for Gymnastics, condition and choreograph routines on all 4 women's apparatus. We do weight training at FHS. We practice x2 days off site at a gymnastics club. Pre- season starts September/October. Official season starts in November. Meets/ competitions run Jan. - March/ April. ",
     "Time" : "After",
     "Type" : "Sports",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Swaim, Matt",
@@ -998,7 +998,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : " Tiger Ambassadors is a student-run organization that helps new students feel welcome at FHS. Ambassadors are matched with new students to help these students make a positive connection at FHS. We want to make new students feel welcome and to make FHS an inclusive environment.",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Thomas, William",
@@ -1007,7 +1007,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Thompson-Mejias, Terri",
@@ -1016,7 +1016,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Thompson-Mejias, Terri",
@@ -1025,7 +1025,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Tribolet, Braden",
@@ -1034,7 +1034,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Our club oversees the student body during athletic events or other events that we organize. We plan, organize, and execute everything that happens at sporting events. We help bring the school together and provide a great experience for our students.",
     "Time" : "Before",
     "Type" : "Sports",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff": "Turner, Dave",
@@ -1043,7 +1043,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Turner, Dave",
@@ -1052,7 +1052,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Tysen, Jessica",
@@ -1061,7 +1061,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "We are the FHS Bowling Team that consists of an all girls team & an all boys team. We are competing in the White River Valley 1 conference against 11 other Indiana High Schools and our season is from September to February. Practices occur on Tuesdays at Pinheads from 4:30-6:00 pm.  The estimated cost is $150 per student and gently used equipment is available upon request. Find us on instagram at fishershighschoolbowling for more information.",
     "Time" : "After",
     "Type" : "Sports",
-    "Day" : "Friday",
+    "Days" : "Friday",
   },
   {
     "staff": "Vanlandingham, Renee",
@@ -1070,7 +1070,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description": "FHS Tutors is a club that connects tutors with kids across HSE Schools. We tutor at Riverside JH every Wednesday from 4-5pm, and at Fishers JH from 4-5pm. Additionally, you can sign up to be an in-school tutor and be paired with a high school student who requests a tutor. Please join the Remind with code @tutorsfhs",
     "Time": "After",
     "Type": "Service",
-    "Day": "Varies"
+    "Days": "Varies"
   },
   {
     "staff": "VanTrees, Leah",
@@ -1079,7 +1079,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Vaughn, Alisa",
@@ -1088,7 +1088,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Votaw, Lauren",
@@ -1097,7 +1097,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "F.C.A. is open to any student looking for fellowship with other students who enjoy sports through games, a devotional, and prayer. Donuts are always free! ",
     "Time" : "Before",
     "Type" : "Service",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
   {
     "staff": "Walker, Sarah",
@@ -1106,7 +1106,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Werbe, Jim",
@@ -1115,7 +1115,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "White, Jessica",
@@ -1124,16 +1124,16 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "",
     "Type" : "",
-    "Day" : "",
+    "Days" : "",
   },
   {
     "staff": "Young, Kate",
     "club": "Million Meal Movement",
     "email": "kyoung@hse.k12.in.us",
-    "description" : "Million Meal Movement works to raise money and supplies to help food insecure people in Hamilton County and beyond. We raise money throughout the year to hold a meal packing event on the Day of Service, where we pack 15-20,000 meals in one day!",
+    "description" : "Million Meal Movement works to raise money and supplies to help food insecure people in Hamilton County and beyond. We raise money throughout the year to hold a meal packing event on the Days of Service, where we pack 15-20,000 meals in one Days!",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Tuesday",
+    "Days" : "Tuesday",
   },
   {
     "staff" : "Horn, Sarah & Rund, Emma",
@@ -1151,7 +1151,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "After",
     "Type" : "Sports",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff" : "Hufty, Rebecca & Ingwersen, Erin",
@@ -1160,7 +1160,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "Before",
     "Type" : "Academic",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
 ]
 
@@ -1265,7 +1265,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     }
     document.getElementById("overlayTime").textContent = timeText;
     document.getElementById("overlayType").textContent = `Type: ${club.Type || "Not available"}`;
-    document.getElementById("overlayDays").textContent = `Days: ${club.Day || "Not available"}`;
+    document.getElementById("overlayDays").textContent = `Days: ${club.Days || "Not available"}`;
     document.getElementById("overlayDescription").textContent = club.description || "No description available.";
 
     document.getElementById("descriptionOverlay").classList.remove("hidden");
