@@ -147,35 +147,8 @@
   cursor: pointer;
   color: #333;
 }
-.clubForm {
-  position: Left;
-  font-size: 30px;
-  
-}
-.clubForm button {
-  background-color: #b30000;     /* deep red */
-  color: white;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.2s ease;
-  text-align: right;
-}
 
-.clubForm button:hover {
-  background-color: #d11a1a;     /* slightly brighter red */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.clubForm button:active {
-  transform: scale(0.98);
-}
-
+/* Results Section */
 #resultsSection {
     text-align: center;
     display: none;
