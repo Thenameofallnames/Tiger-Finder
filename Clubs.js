@@ -1024,17 +1024,19 @@ function createClubs() {
 
     // Description overlay (click anywhere else on box)
     liElement.addEventListener("click", () => {
-      document.getElementById("overlayTitle").textContent = club.club;
-      document.getElementById("overlayStaff").textContent = `Staff: ${club.staff}`;
-      document.getElementById("overlayEmail").textContent = `Email: ${club.email}`;
-      document.getElementById("overlayTime").textContent = `Time: ${club.Time}` + " school";
-      document.getElementById("overlayType").textContent = `Type: ${club.Type}`;
-      document.getElementById("overlayDays").textContent = `Days: ${club.Day}`;
-      document.getElementById("overlayDescription").textContent =
-      club.description || "No description available.";
-
-      document.getElementById("descriptionOverlay").classList.remove("hidden");
-    });
+     document.getElementById("overlayTitle").textContent = club.club || "No title available";
+     document.getElementById("overlayStaff").textContent = `Staff: ${club.staff || "Not available"}`;
+     document.getElementById("overlayEmail").textContent = `Email: ${club.email || "Not available"}`;
+    let timeText = `Time: ${club.Time || "Not available"}`;
+    if (club.Time) { 
+      timeText += " School"; 
+    }
+    document.getElementById("overlayTime").textContent = timeText;
+    document.getElementById("overlayType").textContent = `Type: ${club.Type || "Not available"}`;
+    document.getElementById("overlayDays").textContent = `Days: ${club.Day || "Not available"}`;
+    document.getElementById("overlayDescription").textContent = club.description || "No description available.";
+    document.getElementById("descriptionOverlay").classList.remove("hidden");
+});
 
     clubList.appendChild(liElement);
   });

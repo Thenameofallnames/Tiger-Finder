@@ -256,13 +256,13 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
 
   },
   {
-    "staff": "Armey, Julie",
+    "staff": "Armey, Julie & Lyons, Suzanne",
     "club": "Orchestra Club",
-    "email": "jarmey@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Days" : "",
+    "email": "jarmey@hse.k12.in.us & slyons@hse.k12.in.us",
+    "description" : "Orchestra club is a group of students from all of FHS's orchestras.  They meet on Red Wednesdays/Thursdays and learn a variety of music which they perform at places like assisted living facilities and the FHS Craft Fair.",
+    "Time" : "After",
+    "Type" : "Arts",
+    "Day" : "Varies",
   },
   /*
   {
@@ -471,12 +471,21 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "For French and German students. We blend the best of French and German culture via foods, Field trips, movies, games",
     "Time" : "Before" || "After",
     "Type" : "Arts",
-    "Days" : "Varies",
+    "Day" : "Varies",
+  },
+   {
+    "staff": "Schuh, Tori",
+    "club": "Best Buddies",
+    "email": "vschuh@hse.k12.in.us",
+    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
+    "Time" : "After",
+    "Type" : "Service",
+    "Day" : "Thursday",
   },
   {
-    "staff": "Goodwin, Danielle",
+    "staff": "Goodwin, Danielle & Gutting, Stephanie",
     "club": "Unified Dance",
-    "email": "dgoodwin@hse.k12.in.us",
+    "email": "dgoodwin@hse.k12.in.us & sgutting@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
@@ -492,23 +501,15 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Days" : "",
   },
   {
-    "staff": "Gutting, Stephanie",
+    "staff": "Gutting, Stephanie & Helmkamp, Michelle",
     "club": "Spanish Club",
-    "email": "sgutting@hse.k12.in.us",
+    "email": "sgutting@hse.k12.in.us & mhelmkamp@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
     "Days" : "",
   },
-  {
-    "staff": "Gutting, Stephanie",
-    "club": "Unified Dance",
-    "email": "sgutting@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Days" : "",
-  },
+ 
   {
     "staff": "Hamilton, Terri",
     "club": "Student Organ Donor Advocates (SODA)",
@@ -520,7 +521,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
   },
   {
     "staff": "Harris, Ryan",
-    "club": "Badminton Cub",
+    "club": "Badminton Club",
     "email": "rharris@hse.k12.in.us",
     "description" : "",
     "Time" : "",
@@ -563,15 +564,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Type" : "",
     "Days" : "",
   },
-  {
-    "staff": "Helmkamp, Michelle",
-    "club": "Spanish Club",
-    "email": "mhelmkamp@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Days" : "",
-  },
+  
   {
     "staff": "Huppenthal, Suzie",
     "club": "Do Something Club",
@@ -779,19 +772,11 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Type" : "",
     "Days" : "",
   },
-  {
-    "staff": "Lyons, Suzanne",
-    "club": "Orchestra Club",
-    "email": "slyons@hse.k12.in.us",
-    "description" : "",
-    "Time" : "",
-    "Type" : "",
-    "Days" : "",
-  },
+  
   {
     "staff": "Macmillan, Jordan",
     "club": "FHS \"Pubs\" Club (Publications)",
-    "email": "jmacmillan@hse.k12.in,us",
+    "email": "jmacmillan@hse.k12.in.us",
     "description" : "",
     "Time" : "",
     "Type" : "",
@@ -915,15 +900,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "Type" : "",
     "Days" : "",
   },
-  {
-    "staff": "Schuh, Tori",
-    "club": "Best Buddies",
-    "email": "vschuh@hse.k12.in.us",
-    "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
-    "Time" : "After",
-    "Type" : "Service",
-    "Days" : "Thursday",
-  },
+ 
   {
     "staff": "Schulhof, Beth",
     "club": "Pickleball Club",
@@ -1174,7 +1151,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "After",
     "Type" : "Sports",
-    "Days" : "Varies",
+    "Day" : "Varies",
   },
   {
     "staff" : "Hufty, Rebecca & Ingwersen, Erin",
@@ -1183,7 +1160,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "Before",
     "Type" : "Academic",
-    "Days" : "Wednesday",
+    "Day" : "Wednesday",
   },
 ]
 
@@ -1265,16 +1242,34 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
       localStorage.setItem("favorites", JSON.stringify(favorites));
     });
 
-    // Description overlay (click anywhere else on box)
+    
+    // Description overlay (click anywhere else on box) number 1
     liElement.addEventListener("click", () => {
       document.getElementById("overlayTitle").textContent = club.club;
       document.getElementById("overlayStaff").textContent = `Staff: ${club.staff}`;
       document.getElementById("overlayEmail").textContent = `Email: ${club.email}`;
       document.getElementById("overlayDescription").textContent =
         club.description || "No description available.";
-
       document.getElementById("descriptionOverlay").classList.remove("hidden");
     });
+    
+
+    // Description overlay (click anywhere else on box) nunmber 2
+    liElement.addEventListener("click", () => {
+     document.getElementById("overlayTitle").textContent = club.club || "No title available";
+     document.getElementById("overlayStaff").textContent = `Staff: ${club.staff || "Not available"}`;
+     document.getElementById("overlayEmail").textContent = `Email: ${club.email || "Not available"}`;
+    let timeText = `Time: ${club.Time || "Not available"}`;
+    if (club.Time) { 
+      timeText += " School"; 
+    }
+    document.getElementById("overlayTime").textContent = timeText;
+    document.getElementById("overlayType").textContent = `Type: ${club.Type || "Not available"}`;
+    document.getElementById("overlayDays").textContent = `Days: ${club.Day || "Not available"}`;
+    document.getElementById("overlayDescription").textContent = club.description || "No description available.";
+
+    document.getElementById("descriptionOverlay").classList.remove("hidden");
+});
 
     clubList.appendChild(liElement);
   }
