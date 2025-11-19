@@ -262,7 +262,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Orchestra club is a group of students from all of FHS's orchestras.  They meet on Red Wednesdays/Thursdays and learn a variety of music which they perform at places like assisted living facilities and the FHS Craft Fair.",
     "Time" : "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   /*
   {
@@ -471,7 +471,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "For French and German students. We blend the best of French and German culture via foods, Field trips, movies, games",
     "Time" : "Before" || "After",
     "Type" : "Arts",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
    {
     "staff": "Schuh, Tori",
@@ -480,7 +480,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "Best Buddies promotes inclusion for students at Fishers High School.  Mostly event based, Best Buddies hosts events and forms friendships with students who have intellectual and developmental delays.",
     "Time" : "After",
     "Type" : "Service",
-    "Day" : "Thursday",
+    "Days" : "Thursday",
   },
   {
     "staff": "Goodwin, Danielle & Gutting, Stephanie",
@@ -1151,7 +1151,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "After",
     "Type" : "Sports",
-    "Day" : "Varies",
+    "Days" : "Varies",
   },
   {
     "staff" : "Hufty, Rebecca & Ingwersen, Erin",
@@ -1160,7 +1160,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     "description" : "",
     "Time" : "Before",
     "Type" : "Academic",
-    "Day" : "Wednesday",
+    "Days" : "Wednesday",
   },
 ]
 
@@ -1265,7 +1265,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
     }
     document.getElementById("overlayTime").textContent = timeText;
     document.getElementById("overlayType").textContent = `Type: ${club.Type || "Not available"}`;
-    document.getElementById("overlayDays").textContent = `Days: ${club.Day || "Not available"}`;
+    document.getElementById("overlayDays").textContent = `Days: ${club.Days || "Not available"}`;
     document.getElementById("overlayDescription").textContent = club.description || "No description available.";
 
     document.getElementById("descriptionOverlay").classList.remove("hidden");
