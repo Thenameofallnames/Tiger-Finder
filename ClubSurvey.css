@@ -13,7 +13,6 @@
     font-size: 1.2em;
 }
 
-/* Grid container for club boxes */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -21,6 +20,7 @@
   background: #f3efef;
   padding: 40px;
   border-radius: 20px;
+  margin: 20px;
   position: relative;
   border: 3px solid #bb4a60;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -49,19 +49,24 @@
   transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
-
+/* Club title styling */
+#clubTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  color: #900;
+  letter-spacing: 1px;
+}
 /* Club name font size styling */
 .clubBoxesFontSize {
 
   font-size: clamp(16px, 4vw, 18px);
 
 }
-
 /* Club email styling */
 .clubBoxesEmailSize {
   font-size: clamp(12px, 3vw, 16px);
 }
-
 /* Favorite button styling */
 .favorite-btn {
   display: flex;
@@ -79,7 +84,11 @@
   color: gold;
 }
 
-/* Popup box styling */
+
+
+
+
+
 #popup-box {
   display: none;
   position: fixed;
@@ -104,7 +113,6 @@
   color: white;
   cursor: pointer;
 }
-
 /* Overlay background */
 .overlay {
   position: fixed;
@@ -119,6 +127,7 @@
   align-items: center;
   justify-content: center;
 }
+
 
 .hidden {
   display: none;
