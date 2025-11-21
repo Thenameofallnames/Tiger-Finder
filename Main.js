@@ -97,7 +97,8 @@ function submitNotification(){
 
         const newNotification = document.createElement('div');
         newNotification.className = 'notificationItem';
-        newNotification.innerHTML = `<li>
+        newNotification.innerHTML = `
+            <li>
                 <h3>${clubName}</h3>
                 <h4>${staffName}</h4>
                 <p>${description}</p>
