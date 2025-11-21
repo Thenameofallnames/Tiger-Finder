@@ -1,0 +1,19 @@
+{
+  "name": "tiger-finder",
+  "version": "1.0.0",
+  "description": "Awsome freaking club finder project",
+  "main": "Account.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^12.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
