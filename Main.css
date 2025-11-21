@@ -210,7 +210,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
 #dropDownButton {
     display: flex;
     position: relative;
-    width: auto;
+    width: 14vh;
     height: 7vh;
     cursor: pointer;
     background-color: white;
@@ -438,7 +438,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
   flex-direction: column;
   justify-content: flex-start;
   border-radius: 20px ;
-  height: 125px;
+  height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 15px;

@@ -92,16 +92,16 @@
         </div>
 
         <div id="clubNotifications" class="divContainer">
-            <p id="notificationsTitle" onclick="displayNotifications()">Club Notifications</p>
+            <p id="notificationsTitle" onclick="displayNotifications()">View Club Notifications</p>
+            <div id="notificationSurvey">
+                <input type="text" class="notificationInput" id="notificationClubName" placeholder="Club Name">
+                <input type="text" class="notificationInput" id="notificationStaffName" placeholder="Staff Name">
+                <input type="text" class="notificationInput" id="notificationDescription" placeholder="What would you like to say?">
+                <button class="notificationButton" onclick="submitNotification()">Submit Notification</button>
+            </div>
             <ul id="notificationsList" class="notificationContainer">
-                <li class="notificationItem">Art Club is hosting a painting workshop on Friday after school!</li>
-                <li class="notificationItem">The Robotics Club has a meeting tomorrow morning at 7:30 AM in Room 204.</li>
-                <li class="notificationItem">Join the Volunteer Club this weekend for a community clean-up event!</li>
-                <li class="notificationItem">The Drama Club is holding auditions for the spring play next Wednesday after school.</li>
-                <li class="notificationItem">Chess Club tournament scheduled for next Monday during lunch in the library.</li>
             </ul>
         </div>
-
 
     </div>
 </body>

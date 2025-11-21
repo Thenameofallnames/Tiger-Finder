@@ -236,14 +236,14 @@ function checkClickedQ3(){
 
 
 function results() {
-    createClubs(selectedTypes, selectedTimes, selectedDays);
+    createClubs();
     document.getElementById("resultsSection").style.display = "block";
     
     const scrollTarget = document.getElementById("resultsSection");
     scrollTarget.scrollIntoView({ behavior: "smooth" });
 }
 
-function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) {
+function createClubs() {
   const clubs = [
   {
     "staff": "Antoni, Austin & Gardner, Elijah",
