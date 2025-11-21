@@ -1193,7 +1193,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
 
   //if no filters, show message
   if (filteredClubs.length === 0) {
-    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>No Clubs Found</p>";
+    clubList.innerHTML = "<p class='no-results' style='color: #bb4a60; font-size: 3vh;'>No Clubs Found</p>";
     return;
   }
  

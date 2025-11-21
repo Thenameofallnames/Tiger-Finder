@@ -77,11 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayNotifications(){
     if (document.getElementById('notificationsList').style.display === 'grid'){
+        document.getElementById('headBody').scrollIntoView({ behavior: 'smooth' });
         document.getElementById('notificationsList').style.display = 'none';
-        return;
     } else {
         document.getElementById('notificationsList').style.display = 'grid';
+        document.getElementById('clubNotifications').scrollIntoView({ behavior: 'smooth' });
     }
 
-    document.getElementById('clubNotifications').scrollIntoView({ behavior: 'smooth' });
+
 }
