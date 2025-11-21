@@ -210,13 +210,13 @@ a:active, a:focus, a:hover, a:visited, a:link{
         display: none;
     }
 }
+
 #dropDownButton {
     display: flex;
     position: relative;
-    width: 14vh;
-    height: 7vh;
-    width: auto;
     height: 4vw;
+    aspect-ratio: 2/1;
+    width: auto;
     cursor: pointer;
     background-color: white;
     border: #000 solid 1px;
