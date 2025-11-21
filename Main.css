@@ -31,11 +31,11 @@ html, body{
     flex: 1;
     margin: 0 1rem;
     padding: 0.5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 12px;
     border: none;
     outline: none;
-    min-width: 200px;
+    min-width: 120px;
     max-width: 80%;
     height: 3vw;
 }
@@ -46,12 +46,11 @@ html, body{
     cursor: pointer;
     position: relative;
     display: flex;
-    margin-left: 3vh;
-    margin-right: 1.5vh;
+    margin-left: 1rem;
     width: 4.5vw;
     left: 0vh;
     max-width: none;
-    min-width: 50px;
+    min-width: 30px;
     z-index: 999999999999;
    
 }
@@ -61,18 +60,17 @@ html, body{
     position: relative;
     display: flex;
     margin: auto;
-    padding: 4px;
+    padding: 0px;
     aspect-ratio: 1/1;
     width: 3.75vw;
     cursor: pointer;
     border: none;
     z-index: 999999999999;
     max-width: none;
-    min-width: 40px;
+    min-width: 30px;
     background-color: transparent;
     border-radius: 12px;
     border: #000 solid 0px;
-    margin-left: 5px;
     filter: invert(100%);
 }
 
@@ -133,9 +131,10 @@ html, body{
 .mainBody {
     display: absolute;
     Justify-content: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 7%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 3%;
+    
 }
 
 .mainBody {
@@ -206,7 +205,11 @@ a:active, a:focus, a:hover, a:visited, a:link{
     color: black;
     text-decoration: none;
 }
-
+@media (min-width: 876px){
+    #menuText{
+        display: none;
+    }
+}
 #dropDownButton {
     display: flex;
     position: relative;
@@ -218,7 +221,13 @@ a:active, a:focus, a:hover, a:visited, a:link{
     border-radius: 8px;
     align-items: center;
     padding: 1.5vh;
-    font-size: 2.5vh;
+    font-size: 3vh;
+}
+
+@media (max-width: 600px) {
+    #dropDownButton {
+        font-size: 0px;
+    }
 }
 
 #dropDownImage {
@@ -276,11 +285,15 @@ a:active, a:focus, a:hover, a:visited, a:link{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.6vw;
+    
 }
 #aboutSec{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+
 
 /* Big Buttons */
 .bigButtons {
@@ -310,7 +323,6 @@ a:active, a:focus, a:hover, a:visited, a:link{
     cursor: pointer;
     border-radius: 12px;
 }
-
 .bigButtons .inlineButtons {
     display: flex;
     text-align: center;
@@ -318,10 +330,9 @@ a:active, a:focus, a:hover, a:visited, a:link{
     margin-top: 0.5%;
     width: 100%;
 }
-
-.bigButtons .inlineButtons #clubListButton {
+ .inlineButtons #clubListButton {
     display: flex;
-    width: 50%;
+    width: 100%;
     height: 10%;
     justify-content: left;
     text-decoration: none;
@@ -343,7 +354,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
 
 .bigButtons .inlineButtons #favoritesButton {
     display: flex;
-    width: 50%;
+    width: 100%;
     height: 10%;
     justify-content: right;
     text-decoration: none;
@@ -391,4 +402,34 @@ a:active, a:focus, a:hover, a:visited, a:link{
 #clubsBody {
     margin-top: 15vh;
     z-index: 0;
+}
+
+@media (max-width: 600px) {
+
+    #aboutSec {
+        display: block;
+    }
+    .aboutTabs {
+        font-size: 3vw; 
+        width: 80vw;
+        margin-bottom: 10px;
+    }
+    .bigButtons {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    #surveyButton button,
+    #clubListButton button,
+    #favoritesButton button {
+        padding: 4vw;
+        width: 100%;
+        font-size: 6vw;
+    }
+    .inlineButtons {
+        flex-direction: column;
+    }
+    .bigButtons .inlineButtons #favoritesButton{
+        margin-top: .5%;
+    }
 }
