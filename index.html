@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Main.css" />
-    <script src="main.js"></script>
+    <script src="Main.js"></script>
     <title>Clubs</title>
 </head>
 
@@ -90,6 +90,19 @@
                 </a>
             </div>
         </div>
+
+        <div id="clubNotifications" class="divContainer">
+            <p id="notificationsTitle" onclick="displayNotifications()">View Club Notifications</p>
+            <div id="notificationSurvey">
+                <input type="text" class="notificationInput" id="notificationClubName" placeholder="Club Name">
+                <input type="text" class="notificationInput" id="notificationStaffName" placeholder="Staff Name">
+                <input type="text" class="notificationInput" id="notificationDescription" placeholder="What would you like to say?">
+                <button class="notificationButton" onclick="submitNotification()">Submit Notification</button>
+            </div>
+            <ul id="notificationsList" class="notificationContainer">
+            </ul>
+        </div>
+
     </div>
 </body>
 

@@ -6,13 +6,13 @@ function dropDown() {
         nav.style.display = 'none';
         document.getElementById('dropDownButton').style.color = '';
         document.getElementById('dropDownButton').style.borderColor = '';
-        document.getElementById('dropDownImage').src = 'dropDownMain.png';
+                document.getElementById('dropDownButton').innerHTML = '<img src="dropdownMain.png" id="dropDownImage"> Menu';
         main.style.filter = 'none';
     } else {
         nav.style.display = 'block';
         document.getElementById('dropDownButton').style.color = '#db0032';
         document.getElementById('dropDownButton').style.borderColor = '#db0032';
-        document.getElementById('dropDownImage').src = 'dropDownImageRed.png';
+        document.getElementById('dropDownButton').innerHTML = '<img src="images/menuClose.png" id="dropDownImage"> Close';
         main.style.filter = 'blur(5px)';
     }
 }
@@ -109,3 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function displayNotifications(){
+    if (document.getElementById('notificationsList').style.display === 'grid'){
+        document.getElementById('headBody').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('notificationsList').style.display = 'none';
+    } else {
+        document.getElementById('notificationsList').style.display = 'grid';
+        document.getElementById('clubNotifications').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    
+}
+
+function submitNotification(){
+    const clubName = document.getElementById('notificationClubName').value;
+    const staffName = document.getElementById('notificationStaffName').value;
+    const description = document.getElementById('notificationDescription').value;
+
+    if (clubName && staffName && description) {
+        const notificationList = document.getElementById('notificationsList');
+
+        const newNotification = document.createElement('div');
+        newNotification.className = 'notificationItem';
+        newNotification.innerHTML = `
+            <li>
+                <h3>${clubName}</h3>
+                <h4>${staffName}</h4>
+                <p>${description}</p>
+            </li>
+        `;
+
+        notificationList.appendChild(newNotification);
+
+        // Clear input fields
+        document.getElementById('notificationClubName').value = '';
+        document.getElementById('notificationStaffName').value = '';
+        document.getElementById('notificationDescription').value = '';
+
+        alert('Notification submitted successfully!');
+    } else {
+        alert('Please fill in all fields before submitting.');
+    }
+}
