@@ -1,81 +1,90 @@
 <!DOCTYPE html>
-<html lang = en>
-    <head> <meta charset="UTF-8">
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>login page</title>
-<link rel="stylesheet" href="login.css">
-<script src="login.js" defer></script>
+    <title>login page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="ClubSurvey.css">
+    <script src="login.js" defer></script>
+    <script src="main.js"></script>
+    <script type="nosniff" src="bundle.js"></script>
 </head>
+
 <body>
-    <div class = "topBar">
+    <header class="topBar">
         <!--Drop Down Menu-->
+        <div class="leftItems">
+        </div>
         <button onclick="dropDown()" id="dropDownButton">
-            <img src="dropdownMain.png" id = "dropDownImage" width="50" height="50"> Menu
+            <img src="dropdownMain.png" id="dropDownImage"> Menu
         </button>
         <nav id="dropDownMenu" class="dropDownMenu">
             <ul class="dropDownList">
-                <a href="index.html" class="dropDownLocations"><li>Home</li></a>
-                <a href="ClubSurvey.html" class="dropDownLocations"><li>Club Survey</li></a>
-                <a href="Clubs.html" class="dropDownLocations"><li>Club List</li></a>
-                <a href="Favorites.html" class="dropDownLocations"><li>My Favorites</li></a>
-                <a href="Account.html" class="dropDownLocations"><li>My Account</li></a>
-                <a href="Login.html" class="dropDownLocations"><li>Log In</li></a>
+                <a href="index.html" class="dropDownLocations">
+                    <li>Home</li>
+                </a>
+                <a href="ClubSurvey.html" class="dropDownLocations">
+                    <li>Club Survey</li>
+                </a>
+                <a href="Clubs.html" class="dropDownLocations">
+                    <li>Club List</li>
+                </a>
+                <a href="Favorites.html" class="dropDownLocations">
+                    <li>My Favorites</li>
+                </a>
+                <a href="Account.html" class="dropDownLocations">
+                    <li>My Account</li>
+                </a>
+                <a href="Login.html" class="dropDownLocations">
+                    <li>Log In</li>
+                </a>
             </ul>
         </nav>
-
-
-        <!--Search Bar-->
-        <input id="searchBar" type="text" placeholder="Search for clubs">
-
-
-        <!--Filter Icon-->
-        <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
-        
-        <!--Filter Overlay-->
-        <div id="filterOverlay">
-            <h2>Filter Clubs</h2>
-            <div class="filter-grid">
-                <div class="filter-catagory">
-                    <h3>Catagory1</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                </div>
-                <div class="filter-catagory">
-                    <h3>Catagory2</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                </div>
-                <div class="filter-catagory">
-                    <h3>Catagory3</h3>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                    <label><input type="checkbox" class="filterBox">Placeholder</label>
-                </div>
-                <div class="filter-catagory">
-                    <h3>Days</h3>
-                    <label><input type="checkbox" class="filterBox"> Monday</label>
-                    <label><input type="checkbox" class="filterBox"> Tuesday</label>
-                    <label><input type="checkbox" class="filterBox"> Wednesday</label>
-                    <label><input type="checkbox" class="filterBox"> Thursday</label>
-                    <label><input type="checkbox" class="filterBox"> Friday</label>
-                    <label><input type="checkbox" class="filterBox"> Saturday</label>
-                    <label><input type="checkbox" class="filterBox"> Sunday</label>
-                </div>
-            </div>
         </div>
+        <a href="index.html">
+            <img src="images/FHSLogo.png" id="tigerIcon" alt="The Fishers High School logo">
+        </a>
+
+        <img src="images/FHSLogoBig.png" id="logoBig" alt="Logo Big">
+
+        <div id="topPadding"></div>
+    </header>
+
+    </div>
 
     <!--Main body starts here-->
     <div class="mainBody blur" id="headBody">
-        <a href="Index.html" id="loginButton">
-             <button>Log In</button>
-        </a>
-        <a href="Login.html" id="logoutButton">
-             <button>Log Out</button>
-        </a>
-    
+        <div class="logInBox" id="signInBox">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email" class="email">
+            <input type="password" placeholder="Password" class="password">
+            <button class="signInBtn">Login</button>
+            <button class="switchBtn" onclick="switchPageCreate()">Create Account</button>
+        </div>
+
+        <div class="logInBox" id="staffBox">
+            <h2>Create Club Staff Account</h2>
+            <input type="email" placeholder="Email" class="email">
+            <input type="password" placeholder="Password" class="password">
+            <input type="password" placeholder="Confirm Password" class="password">
+            <button class="signInBtn">Sign In as a Club Owner</button>
+            <button class="switchBtn" onclick="switchPageCreate()">Create Regular Account</button>
+        </div>
+
+        <div class="logInBox" id="createAccountBox">
+            <h2>Create Account</h2>
+            <input type="email" placeholder="Email" class="email">
+            <input type="password" placeholder="Password" class="password">
+            <input type="password" placeholder="Confirm Password" class="password">
+            <button class="signInBtn">Create Account</button>
+            <button class="switchBtn" onclick="switchPageOwner()">Create Club Staff Account</button>
+            <button class="switchBtn" onclick="switchPageSign()">Login</button>
+        </div>
     </div>
+
 </body>
-    
+
 </html>
