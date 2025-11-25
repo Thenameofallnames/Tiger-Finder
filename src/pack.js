@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { connectAuthEmulator, getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -20,3 +20,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(firebaseApp);
+connectAuthEmulator(auth, "http://localhost:9099");
+
+const loginEmailPassword = async () => {
+  const loginEmail = txtEmail.value;
+  const loginPassword   = txtPassword.value;
+
+  const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+  console.log(userCredential.user);
+
+}
+
+btnLogin.addEventListener("click", loginEmailPassword);
