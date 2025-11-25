@@ -22,13 +22,15 @@ const analytics = getAnalytics(app);
 const auth = getAuth(firebaseApp);
 connectAuthEmulator(auth, "http://localhost:9099");
 
+const emailInput = document.getElementsByClassName(email);
+const passInput = document.getElementsByClassName(password);
+
 const loginEmailPassword = async () => {
-  const loginEmail = txtEmail.value;
-  const loginPassword   = txtPassword.value;
+  const loginEmail = emailInput.value;
+  const loginPassword   = passInput.value;
 
   const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
   console.log(userCredential.user);
-
 }
 
 btnLogin.addEventListener("click", loginEmailPassword);

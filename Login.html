@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" type="text/css" href="Main.css" />
     <link rel="stylesheet" type="text/css" href="ClubSurvey.css">
-    <script src="login.js" defer></script>
+    <script src="login.js" type="nosniff" defer></script>
     <script src="main.js"></script>
     <script type="nosniff" src="bundle.js"></script>
 </head>
@@ -59,8 +59,8 @@
     <div class="mainBody blur" id="headBody">
         <div class="logInBox" id="signInBox">
             <h2>Login</h2>
-            <input type="email" placeholder="Email" class="email">
-            <input type="password" placeholder="Password" class="password">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
             <button class="signInBtn">Login</button>
             <button class="switchBtn" onclick="switchPageCreate()">Create Account</button>
         </div>
@@ -69,7 +69,7 @@
             <h2>Create Club Staff Account</h2>
             <input type="email" placeholder="Email" class="email">
             <input type="password" placeholder="Password" class="password">
-            <input type="password" placeholder="Confirm Password" class="password">
+            <input type="password" placeholder="Confirm Password">
             <button class="signInBtn">Sign In as a Club Owner</button>
             <button class="switchBtn" onclick="switchPageCreate()">Create Regular Account</button>
         </div>
@@ -78,7 +78,7 @@
             <h2>Create Account</h2>
             <input type="email" placeholder="Email" class="email">
             <input type="password" placeholder="Password" class="password">
-            <input type="password" placeholder="Confirm Password" class="password">
+            <input type="password" placeholder="Confirm Password">
             <button class="signInBtn">Create Account</button>
             <button class="switchBtn" onclick="switchPageOwner()">Create Club Staff Account</button>
             <button class="switchBtn" onclick="switchPageSign()">Login</button>
