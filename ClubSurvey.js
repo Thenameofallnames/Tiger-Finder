@@ -1,18 +1,22 @@
 //dropdown menu function
 function dropDown() {
-    const nav = document.querySelector('nav');
     const main = document.querySelector(".blur");
-    if (nav.style.display === 'block') {
-        nav.style.display = 'none';
-        document.getElementById('dropDownButton').style.color = '';
-        document.getElementById('dropDownButton').style.borderColor = '';
-                document.getElementById('dropDownButton').innerHTML = '<img src="dropdownMain.png" id="dropDownImage"> Menu';
+    const container = document.querySelector(".dropDownMenu");
+    const button = document.getElementById('dropDownButton');
+
+    if (container.style.opacity === '1') {
+        container.style.opacity = '0';
+        container.style.pointerEvents = 'none';
+        button.style.color = '';
+        button.style.borderColor = '';
+        button.innerHTML = '<img src="dropdownMain.png" id="dropDownImage"> Menu';
         main.style.filter = 'none';
     } else {
-        nav.style.display = 'block';
-        document.getElementById('dropDownButton').style.color = '#db0032';
-        document.getElementById('dropDownButton').style.borderColor = '#db0032';
-        document.getElementById('dropDownButton').innerHTML = '<img src="images/menuClose.png" id="dropDownImage"> Close';
+        container.style.opacity = '1';
+        container.style.pointerEvents = 'auto';
+        button.style.color = '#db0032';
+        button.style.borderColor = '#db0032';
+        button.innerHTML = '<img src="images/menuClose.png" id="dropDownImage"> Close';
         main.style.filter = 'blur(5px)';
     }
 }

@@ -75,15 +75,15 @@ html, body{
 }
 
 #filterOverlay {
-    display: none;
+    display: flex;
     width: 90%;
     height: auto;
-    background-color: floralwhite;
+    background-color: #f3efef;
     position: absolute;
     right: 5px;
     top: 105%;
     border-radius: 12px;
-    border-color: #99001c;
+    border-color: #bb4a60;
     border-width: .5rem;
     border-style: solid;
     padding: .75rem;
@@ -92,6 +92,14 @@ html, body{
     max-width: 500px;
     min-width: 200px;
     overflow-wrap: anywhere;
+    transition: opacity 0.4s ease;
+    opacity: 0; 
+    pointer-events: none;
+}
+
+#filterOverlay.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .filter-grid {
@@ -101,7 +109,7 @@ html, body{
 }
 
 .filter-catagory {
-    background: floralwhite;
+    background: #f3efef;
     padding: .6rem;
     border-radius: .6rem;
     display: flex;
@@ -239,16 +247,18 @@ a:active, a:focus, a:hover, a:visited, a:link{
 }
 
 .dropDownMenu {
-    display: none;
     position: absolute;
     top: 12vh;
-    width: auto;
-    height: auto;
-    background: white;
     border: 1.5px solid #99001c;
     border-radius: 8px;
-    z-index: 1000;
     padding: 1vh;
+    transition: opacity 0.4s ease;
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    background-color: white;
 }
 
 .dropDownList {
@@ -258,6 +268,8 @@ a:active, a:focus, a:hover, a:visited, a:link{
     grid-template-columns: repeat(2, 1fr);
     background: white;
     padding: 0;
+    opacity: 1;
+    transition: opacity 0.4s ease;
 }
 
 .dropDownList li {
