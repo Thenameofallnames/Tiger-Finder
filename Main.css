@@ -8,6 +8,7 @@ html, body{
     padding: 0;
     background: #f3f3f3;
 }
+
 .topBar{
     position: sticky;
     top: 0;
@@ -266,7 +267,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     display: grid;
     margin: 0;
     grid-template-columns: repeat(2, 1fr);
-    background: white;
+    background: #f3efef;
     padding: 0;
     opacity: 1;
     transition: opacity 0.4s ease;
@@ -283,6 +284,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     font-size: 2vh;
     flex-direction: column;
     transition: transform 0.25s ease-in-out;
+    background: white;
 }
 
 .dropDownList li:hover {
