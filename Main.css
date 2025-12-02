@@ -259,7 +259,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-    background-color: white;
+    background-color: #f3efef;
 }
 
 .dropDownList {
