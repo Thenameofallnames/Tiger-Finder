@@ -33,4 +33,4 @@ const loginEmailPassword = async () => {
   console.log(userCredential.user);
 }
 
-btnLogin.addEventListener("click", loginEmailPassword);
+logInBtn.addEventListener("click", loginEmailPassword);
