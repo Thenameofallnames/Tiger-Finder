@@ -16,14 +16,18 @@ const firebaseConfig = {
   measurementId: "G-MYDZG3038D"
 };
 
+function createAccount(){
+  const emailInput = document.getElementsByElementId(emailInput);
+  const passInput = document.getElementsByElementId(passInput);
+}
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(firebaseApp);
 connectAuthEmulator(auth, "http://localhost:9099");
 
-const emailInput = document.getElementsByClassName(email);
-const passInput = document.getElementsByClassName(password);
+
 
 const loginEmailPassword = async () => {
   const loginEmail = emailInput.value;
