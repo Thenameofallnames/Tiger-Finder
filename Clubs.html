@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +16,7 @@
 </head>
 
 <body>
-    
+
     <header class="topBar">
         <!--Drop Down Menu-->
         <div class="leftItems">
@@ -22,20 +26,32 @@
         </button>
         <nav id="dropDownMenu" class="dropDownMenu">
             <ul class="dropDownList">
-                <a href="index.html" class="dropDownLocations"><li>Home</li></a>
-                <a href="ClubSurvey.html" class="dropDownLocations"><li>Club Survey</li></a>
-                <a href="Clubs.html" class="dropDownLocations"><li>Club List</li></a>
-                <a href="Favorites.html" class="dropDownLocations"><li>My Favorites</li></a>
-                <a href="Account.html" class="dropDownLocations"><li>My Account</li></a>
-                <a href="Login.html" class="dropDownLocations"><li>Log In</li></a>
+                <a href="index.html" class="dropDownLocations">
+                    <li>Home</li>
+                </a>
+                <a href="ClubSurvey.html" class="dropDownLocations">
+                    <li>Club Survey</li>
+                </a>
+                <a href="Clubs.html" class="dropDownLocations">
+                    <li>Club List</li>
+                </a>
+                <a href="Favorites.html" class="dropDownLocations">
+                    <li>My Favorites</li>
+                </a>
+                <a href="Account.html" class="dropDownLocations">
+                    <li>My Account</li>
+                </a>
+                <a href="Login.html" class="dropDownLocations">
+                    <li>Log In</li>
+                </a>
             </ul>
         </nav>
-    </div>
-        <a href = "index.html">
-        <img src="images/FHSLogo.png" id="tigerIcon" alt="The Fishers High School logo">
+        </div>
+        <a href="index.html">
+            <img src="images/FHSLogo.png" id="tigerIcon" alt="The Fishers High School logo">
         </a>
         <!--Search Bar-->
-        <input id="searchBar"class="searchBar" type="text" placeholder="Search for clubs">
+        <input id="searchBar" class="searchBar" type="text" placeholder="Search for clubs">
 
         <!--Filter Icon-->
         <img src="filter-icon.webp" id="filterIcon" onclick="filterOverlay()" alt="Filter Icon">
@@ -45,93 +61,110 @@
             <div class="filter-grid">
                 <div class="filter-catagory">
                     <h3>Club Type</h3>
-                    <label><input type="checkbox" class="filterBox" id="checkboxAcademic" onclick = "saveCheckboxStates()">Academic</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxService" onclick = "saveCheckboxStates()">Service</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxSports" onclick = "saveCheckboxStates()">Sports</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxArt" onclick = "saveCheckboxStates()">Art</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxGames" onclick = "saveCheckboxStates()">Games</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAcademic"
+                            onclick="saveCheckboxStates()">Academic</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxService"
+                            onclick="saveCheckboxStates()">Service</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxSports"
+                            onclick="saveCheckboxStates()">Sports</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxArt"
+                            onclick="saveCheckboxStates()">Art</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxGames"
+                            onclick="saveCheckboxStates()">Games</label>
                 </div>
                 <div class="filter-catagory">
                     <h3>Meeting Time</h3>
-                    <label><input type="checkbox" class="filterBox" id="checkboxBefore" onclick = "saveCheckboxStates()">Before School</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxAfter" onclick = "saveCheckboxStates()">After School</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxBefore"
+                            onclick="saveCheckboxStates()">Before School</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxAfter"
+                            onclick="saveCheckboxStates()">After School</label>
                 </div>
                 <div class="filter-catagory">
                     <h3>Meeting Days</h3>
-                    <label><input type="checkbox" class="filterBox" id="checkboxMonday" onclick = "saveCheckboxStates()"> Monday</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxTuesday" onclick = "saveCheckboxStates()"> Tuesday</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxWednesday" onclick = "saveCheckboxStates()"> Wednesday</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxThursday" onclick = "saveCheckboxStates()"> Thursday</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxFriday" onclick = "saveCheckboxStates()"> Friday</label>
-                    <label><input type="checkbox" class="filterBox" id="checkboxWeekend" onclick = "saveCheckboxStates()"> Weekend</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxMonday" onclick="saveCheckboxStates()">
+                        Monday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxTuesday" onclick="saveCheckboxStates()">
+                        Tuesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWednesday"
+                            onclick="saveCheckboxStates()"> Wednesday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxThursday"
+                            onclick="saveCheckboxStates()"> Thursday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxFriday" onclick="saveCheckboxStates()">
+                        Friday</label>
+                    <label><input type="checkbox" class="filterBox" id="checkboxWeekend" onclick="saveCheckboxStates()">
+                        Weekend</label>
                 </div>
             </div>
         </div>
 
-        <div id = "topPadding"></div>
+        <div id="topPadding"></div>
+        <button id="showFavoritesBtn" class="hidden">⭐ My Favorites</button>
+        <button id="backToAllClubs" class="hidden">← Back to All Clubs</button>
     </header>
 
+    <br>
+
+    <div class="blur">
+        <h1 id="clubTitle">Clubs</h1>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfONSdvX3OYml32AFaBjTFnT3xYBy98PFyc02U0ttxBHCQocQ/viewform"
+            target="_blank" class="clubForm button">
+            <button id="clubForm button">If your club is not present or does not have details fill out this
+                form</button>
+        </a>
+
         <br>
-            
-        <div class="blur">
-            <h1 id="clubTitle">Clubs</h1>
-            
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfONSdvX3OYml32AFaBjTFnT3xYBy98PFyc02U0ttxBHCQocQ/viewform" target="_blank" class="clubForm button"> 
-                    <button id="clubForm button">If your club is not present or does not have details fill out this form</button>
-                </a>
-            
-            <br>
-            <ul id="clubList" class="container"></ul>
-            <script>
-                createClubs();
-            </script>
-            <!--Search Bar Functionality -->
-            <script>
-                window.addEventListener("DOMContentLoaded", () => {
-                    const searchBar = document.getElementById("searchBar");
-                    const clubList = document.getElementById("clubList");
+        <ul id="clubList" class="container"></ul>
+        <script>
+            createClubs();
+        </script>
+        <!--Search Bar Functionality -->
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const searchBar = document.getElementById("searchBar");
+                const clubList = document.getElementById("clubList");
 
-                    function filterClubs(term) {
-                        const searchTerm = term.toLowerCase();
-                        const clubItems = clubList.querySelectorAll("li");
+                function filterClubs(term) {
+                    const searchTerm = term.toLowerCase();
+                    const clubItems = clubList.querySelectorAll("li");
 
-                        clubItems.forEach(item => {
-                            const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
-                            const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
+                    clubItems.forEach(item => {
+                        const clubName = item.querySelector("h3")?.textContent.toLowerCase() || "";
+                        const staffName = item.querySelector("p")?.textContent.toLowerCase() || "";
 
-                            if (clubName.includes(searchTerm) || staffName.includes(searchTerm)) {
-                                item.style.display = "flex";
-                            } else {
-                                item.style.display = "none";
-                            }
-                        });
-                    }
-
-                    // Load saved search term and immediately filter
-                    const savedSearch = localStorage.getItem("searchTerm") || "";
-                    searchBar.value = savedSearch;
-                    filterClubs(savedSearch);
-
-                    // Save and re-filter when typing
-                    searchBar.addEventListener("input", (e) => {
-                        const term = e.target.value;
-                        localStorage.setItem("searchTerm", term);
-                        filterClubs(term);
+                        if (clubName.includes(searchTerm) || staffName.includes(searchTerm)) {
+                            item.style.display = "flex";
+                        } else {
+                            item.style.display = "none";
+                        }
                     });
+                }
+
+                // Load saved search term and immediately filter
+                const savedSearch = localStorage.getItem("searchTerm") || "";
+                searchBar.value = savedSearch;
+                filterClubs(savedSearch);
+
+                // Save and re-filter when typing
+                searchBar.addEventListener("input", (e) => {
+                    const term = e.target.value;
+                    localStorage.setItem("searchTerm", term);
+                    filterClubs(term);
                 });
-            </script>
+            });
+        </script>
+    </div>
+    <!-- Overlay for club description -->
+    <div id="descriptionOverlay" class="overlay hidden">
+        <div class="overlay-content">
+            <span id="closeOverlay" class="close-btn">&times;</span>
+            <h2 id="overlayTitle"></h2>
+            <p id="overlayStaff"></p>
+            <p id="overlayEmail"></p>
+            <p id="overlayTime"></p>
+            <p id="overlayType"></p>
+            <p id="overlayDays"></p>
+            <div id="overlayDescription"></div>
         </div>
-        <!-- Overlay for club description -->
-<div id="descriptionOverlay" class="overlay hidden">
-  <div class="overlay-content">
-    <span id="closeOverlay" class="close-btn">&times;</span>
-    <h2 id="overlayTitle"></h2>
-    <p id="overlayStaff"></p>
-    <p id="overlayEmail"></p>
-    <p id="overlayTime"></p>
-      <p id="overlayType"></p>
-      <p id="overlayDays"></p>
-    <div id="overlayDescription"></div>
-  </div>
-</div>
+    </div>
 </body>
