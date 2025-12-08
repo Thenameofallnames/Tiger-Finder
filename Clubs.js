@@ -12,16 +12,16 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-
 let clubs = [];
 let currentUser = null;
 let userFavorites = [];
 
 
+const LOCAL_FAVORITES_KEY = 'favorites';
+
 async function loadClubs() {
   const response = await fetch("clubs.json");
   clubs = await response.json();
-
 
   clubs.sort((a, b) => {
     const nameA = a.club.toLowerCase();
@@ -41,19 +41,25 @@ async function loadClubs() {
 
 async function loadUserFavorites() {
   if (!auth.currentUser) {
-    userFavorites = [];
+
+    userFavorites = getLocalFavorites();
     return;
   }
 
   try {
+
     const userDoc = await db.collection('users').doc(auth.currentUser.uid).get();
 
     if (userDoc.exists) {
       userFavorites = userDoc.data().favorites || [];
+
+      saveLocalFavorites(userFavorites);
     } else {
       userFavorites = [];
+      saveLocalFavorites([]);
     }
 
+    syncLocalFavoritesToFirebase();
 
     if (document.getElementById("clubList")) {
       createClubs();
@@ -61,18 +67,93 @@ async function loadUserFavorites() {
 
   } catch (error) {
     console.error("Error loading favorites:", error);
-    userFavorites = [];
+
+    userFavorites = getLocalFavorites();
+  }
+}
+
+
+function getLocalFavorites() {
+  try {
+    const favorites = localStorage.getItem(LOCAL_FAVORITES_KEY);
+    return favorites ? JSON.parse(favorites) : [];
+  } catch (error) {
+    console.error("Error reading local favorites:", error);
+    return [];
+  }
+}
+
+function saveLocalFavorites(favorites) {
+  try {
+    localStorage.setItem(LOCAL_FAVORITES_KEY, JSON.stringify(favorites));
+  } catch (error) {
+    console.error("Error saving local favorites:", error);
+  }
+}
+
+function updateLocalFavorites(club, action) {
+  let localFavorites = getLocalFavorites();
+
+  if (action === 'add') {
+
+    if (!localFavorites.some(fav => fav.club === club.club)) {
+      localFavorites.push(club);
+    }
+  } else if (action === 'remove') {
+    localFavorites = localFavorites.filter(fav => fav.club !== club.club);
+  }
+
+  saveLocalFavorites(localFavorites);
+  return localFavorites;
+}
+
+
+async function syncLocalFavoritesToFirebase() {
+  if (!auth.currentUser) return;
+
+  const localFavorites = getLocalFavorites();
+  if (localFavorites.length === 0) return;
+
+  try {
+    const userRef = db.collection('users').doc(auth.currentUser.uid);
+    const userDoc = await userRef.get();
+
+    let currentFavorites = [];
+    if (userDoc.exists) {
+      currentFavorites = userDoc.data().favorites || [];
+    }
+
+
+    const mergedFavorites = [...currentFavorites];
+    localFavorites.forEach(localFav => {
+      if (!mergedFavorites.some(fav => fav.club === localFav.club)) {
+        mergedFavorites.push(localFav);
+      }
+    });
+
+
+    await userRef.set({
+      favorites: mergedFavorites
+    }, { merge: true });
+
+
+    saveLocalFavorites(mergedFavorites);
+
+    console.log("Local favorites synced to Firebase");
+  } catch (error) {
+    console.error("Error syncing favorites:", error);
   }
 }
 
 function createClubs() {
   const clubList = document.getElementById("clubList");
+  if (!clubList) return;
+
   clubList.innerHTML = "";
 
   const selectedTypes = [];
   const selectedTimes = [];
   const selectedDays = [];
-
 
   if (document.getElementById("checkboxAcademic").checked) selectedTypes.push("Academic");
   if (document.getElementById("checkboxService").checked) selectedTypes.push("Service");
@@ -80,10 +161,8 @@ function createClubs() {
   if (document.getElementById("checkboxArt").checked) selectedTypes.push("Arts");
   if (document.getElementById("checkboxGames").checked) selectedTypes.push("Games");
 
-
   if (document.getElementById("checkboxBefore").checked) selectedTimes.push("Before");
   if (document.getElementById("checkboxAfter").checked) selectedTimes.push("After");
-
 
   if (document.getElementById("checkboxMonday").checked) selectedDays.push("Monday");
   if (document.getElementById("checkboxTuesday").checked) selectedDays.push("Tuesday");
@@ -108,7 +187,6 @@ function createClubs() {
     return;
   }
 
-
   filteredClubs.forEach(club => {
     const liElement = document.createElement("li");
     liElement.classList.add("club-box");
@@ -128,22 +206,41 @@ function createClubs() {
 
     const star = liElement.querySelector(".favorite-star");
 
-
-    if (userFavorites.some(fav => fav.club === club.club)) {
+    // Check if club is favorited
+    const isFavorited = userFavorites.some(fav => fav.club === club.club);
+    if (isFavorited) {
       star.src = "goldStar.jpeg";
       star.classList.add("favorited");
     }
-
 
     star.addEventListener("click", async (e) => {
       e.stopPropagation();
       const target = e.target;
 
-
       if (!auth.currentUser) {
-        alert("Please login to save favorites!");
+
+        target.classList.toggle("favorited");
+
+        if (target.classList.contains("favorited")) {
+          target.src = "goldStar.jpeg";
+
+          userFavorites = updateLocalFavorites({
+            club: club.club,
+            staff: club.staff,
+            email: club.email,
+            Type: club.Type,
+            Time: club.Time,
+            Day: club.Day,
+            description: club.description || "No description available."
+          }, 'add');
+        } else {
+          target.src = "star.png";
+
+          userFavorites = updateLocalFavorites(club, 'remove');
+        }
         return;
       }
+
 
       target.classList.toggle("favorited");
 
@@ -151,7 +248,6 @@ function createClubs() {
         const userRef = db.collection('users').doc(auth.currentUser.uid);
 
         if (target.classList.contains("favorited")) {
-
           target.src = "goldStar.jpeg";
 
           await userRef.set({
@@ -162,12 +258,12 @@ function createClubs() {
               Type: club.Type,
               Time: club.Time,
               Day: club.Day,
-              description: club.description
+              description: club.description || "No description available."
             })
+
           }, { merge: true });
 
         } else {
-
           target.src = "star.png";
 
           await userRef.set({
@@ -178,7 +274,7 @@ function createClubs() {
               Type: club.Type,
               Time: club.Time,
               Day: club.Day,
-              description: club.description
+              description: club.description || "No description available."
             })
           }, { merge: true });
         }
@@ -192,7 +288,6 @@ function createClubs() {
         target.classList.toggle("favorited");
       }
     });
-
 
     liElement.addEventListener("click", () => {
       document.getElementById("overlayTitle").textContent = club.club || "No title available";
@@ -216,19 +311,15 @@ function createClubs() {
 
 
 function showFavoritesOnly() {
-  if (!auth.currentUser) {
-    alert("Please login to view favorites!");
-    return;
-  }
-
   const clubList = document.getElementById("clubList");
+  if (!clubList) return;
+
   clubList.innerHTML = "";
 
   if (userFavorites.length === 0) {
     clubList.innerHTML = "<p class='no-results'>No favorites saved yet.</p>";
     return;
   }
-
 
   userFavorites.forEach(favClub => {
     const liElement = document.createElement("li");
@@ -249,19 +340,22 @@ function showFavoritesOnly() {
 
     const star = liElement.querySelector(".favorite-star");
 
-
     star.addEventListener("click", async (e) => {
       e.stopPropagation();
       const target = e.target;
 
       if (!auth.currentUser) {
-        alert("Please login to modify favorites!");
+
+        target.src = "star.png";
+        target.classList.remove("favorited");
+        userFavorites = updateLocalFavorites(favClub, 'remove');
+
+        showFavoritesOnly();
         return;
       }
 
       try {
         const userRef = db.collection('users').doc(auth.currentUser.uid);
-
 
         target.src = "star.png";
         target.classList.remove("favorited");
@@ -274,10 +368,9 @@ function showFavoritesOnly() {
             Type: favClub.Type,
             Time: favClub.Time,
             Day: favClub.Day,
-            description: favClub.description
+            description: favClub.description || "No description available."
           })
         }, { merge: true });
-
 
         await loadUserFavorites();
         showFavoritesOnly();
@@ -287,7 +380,6 @@ function showFavoritesOnly() {
         alert("Error removing favorite. Please try again.");
       }
     });
-
 
     liElement.addEventListener("click", () => {
       document.getElementById("overlayTitle").textContent = favClub.club || "No title available";
@@ -311,64 +403,123 @@ function showFavoritesOnly() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const clubList = document.getElementById("clubList");
+  const favoriteList = document.getElementById("favoriteList");
 
-  loadClubs();
+  if (clubList) {
+    loadClubs();
 
-
-  auth.onAuthStateChanged((user) => {
-    currentUser = user;
-    if (user) {
-
-      loadUserFavorites();
-
-
-      const favoritesBtn = document.getElementById("showFavoritesBtn");
-      if (favoritesBtn) {
-        favoritesBtn.classList.remove("hidden");
-        favoritesBtn.addEventListener("click", showFavoritesOnly);
-      }
-
-
-      const backBtn = document.getElementById("backToAllClubs");
-      if (backBtn) {
-        backBtn.classList.remove("hidden");
-        backBtn.addEventListener("click", () => {
-          createClubs();
-        });
-      }
-    } else {
-
-      userFavorites = [];
-
-
-      const favoritesBtn = document.getElementById("showFavoritesBtn");
-      if (favoritesBtn) {
-        favoritesBtn.classList.add("hidden");
-      }
-    }
-  });
-
-
-  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
-    cb.addEventListener("change", () => {
-      localStorage.setItem(cb.id, cb.checked);
-      createClubs();
+    auth.onAuthStateChanged((user) => {
+      currentUser = user;
+      loadUserFavorites().then(() => {
+        createClubs();
+      });
     });
 
 
-    const saved = localStorage.getItem(cb.id);
-    if (saved !== null) cb.checked = saved === "true";
-  });
+    document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+      cb.addEventListener("change", () => {
+        localStorage.setItem(cb.id, cb.checked);
+        createClubs();
+      });
+
+      const saved = localStorage.getItem(cb.id);
+      if (saved !== null) cb.checked = saved === "true";
+    });
 
 
-  const overlay = document.getElementById("descriptionOverlay");
-  const closeOverlay = document.getElementById("closeOverlay");
+    const overlay = document.getElementById("descriptionOverlay");
+    const closeOverlay = document.getElementById("closeOverlay");
 
-  closeOverlay.addEventListener("click", () => {
-    overlay.classList.add("hidden");
-  });
+    if (closeOverlay) {
+      closeOverlay.addEventListener("click", () => {
+        overlay.classList.add("hidden");
+      });
+    }
 
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) overlay.classList.add("hidden");
-  });
+    if (overlay) {
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.classList.add("hidden");
+      });
+    }
+  }
+
+
+  if (favoriteList) {
+
+    renderFavorites();
+
+
+    const overlay = document.getElementById("descriptionOverlay");
+    const closeOverlay = document.getElementById("closeOverlay");
+
+    if (closeOverlay) {
+      closeOverlay.addEventListener("click", () => {
+        overlay.classList.add("hidden");
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.classList.add("hidden");
+      });
+    }
+  }
 });
+
+
+function renderFavorites() {
+  const favoriteList = document.getElementById("favoriteList");
+  if (!favoriteList) return;
+
+
+  const favorites = getLocalFavorites();
+  favoriteList.innerHTML = "";
+
+  if (favorites.length === 0) {
+    favoriteList.innerHTML = "<p class='no-results'>No favorites saved yet.</p>";
+    return;
+  }
+
+  favorites.forEach(fav => {
+    const li = document.createElement("li");
+    li.classList.add("club-box");
+    li.innerHTML = `
+      <img 
+        src="goldStar.jpeg" 
+        alt="favorite star" 
+        class="favorite-star" 
+        style="width:25px; height:25px; cursor:pointer;"
+      >
+      <h3 class="clubBoxesFontSize">${fav.club}</h3>
+      <p class="clubBoxesFontSize">${fav.staff}</p>
+      <p class="clubBoxesEmailSize">${fav.email}</p>
+    `;
+
+    const star = li.querySelector(".favorite-star");
+    star.addEventListener("click", (e) => {
+      e.stopPropagation();
+      let favorites = getLocalFavorites();
+      favorites = favorites.filter(f => f.club !== fav.club);
+      saveLocalFavorites(favorites);
+      renderFavorites();
+    });
+
+    li.addEventListener("click", () => {
+      document.getElementById("overlayTitle").textContent = fav.club;
+      document.getElementById("overlayStaff").textContent = `Staff: ${fav.staff}`;
+      document.getElementById("overlayEmail").textContent = `Email: ${fav.email}`;
+      document.getElementById("overlayTime").textContent = `Time: ${fav.Time || "Not available"}`;
+      document.getElementById("overlayType").textContent = `Type: ${fav.Type || "Not available"}`;
+      document.getElementById("overlayDays").textContent = `Days: ${fav.Day || "Not available"}`;
+      document.getElementById("overlayDescription").textContent = fav.description || "No description available.";
+
+      const overlay = document.getElementById("descriptionOverlay");
+      if (overlay) {
+        overlay.classList.remove("hidden");
+      }
+    });
+
+    favoriteList.appendChild(li);
+  });
+}
