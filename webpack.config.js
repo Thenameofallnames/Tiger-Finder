@@ -14,7 +14,7 @@ module.exports = {
     watch: true,
     plugins: [
         new HtmlWebpackPlugin({
-            Template: './src/index.html'
+            Template: 'login.html'
         })
     ],
     }
