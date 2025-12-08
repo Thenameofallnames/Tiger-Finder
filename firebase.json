@@ -5,14 +5,19 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "port": 5000
   },
   "emulators": {
     "hosting": {
+      "port": 5000
+    },
+    "auth": {
       "port": 9099
     },
     "ui": {
-      "enabled": true
+      "enabled": true,
+      "port": 4000
     },
     "singleProjectMode": true
   }
