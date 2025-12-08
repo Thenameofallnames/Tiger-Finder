@@ -16,6 +16,11 @@ const firebaseConfig = {
   measurementId: "G-MYDZG3038D"
 };
 
+function createAccount(){
+  const emailInput = document.getElementsByElementId(emailInput);
+  const passInput = document.getElementsByElementId(passInput);
+}
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

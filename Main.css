@@ -303,7 +303,7 @@ a:active, a:focus, a:hover, a:visited, a:link{
     margin-left: auto;
     margin-right: auto;
     font-size: 1.6vw;
-    
+    padding: 10px;
 }
 #aboutSec{
     display: grid;
@@ -447,12 +447,11 @@ a:active, a:focus, a:hover, a:visited, a:link{
     font-weight: bold;
     margin: auto;
     text-align: center;
-    cursor: pointer;
     padding: 10px;
 }
 
 .notificationContainer {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 24px;
     text-align: center;
@@ -482,4 +481,13 @@ a:active, a:focus, a:hover, a:visited, a:link{
 .notificationContainer li:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.notificationInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid #bb4a60;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: block;
 }

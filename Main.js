@@ -122,21 +122,21 @@ function displayNotifications(){
     
 }
 
+//notification submission function
 function submitNotification(){
-    const clubName = document.getElementById('notificationClubName').value;
-    const staffName = document.getElementById('notificationStaffName').value;
-    const description = document.getElementById('notificationDescription').value;
-
-    if (clubName && staffName && description) {
+    const clubNameVal = document.getElementById('notificationClubName').value;
+    const staffNameVal = document.getElementById('notificationStaffName').value;
+    const descriptionVal = document.getElementById('notificationDescription').value;
+    if (clubNameVal && staffNameVal && descriptionVal) {
         const notificationList = document.getElementById('notificationsList');
 
         const newNotification = document.createElement('div');
         newNotification.className = 'notificationItem';
         newNotification.innerHTML = `
             <li>
-                <h3>${clubName}</h3>
-                <h4>${staffName}</h4>
-                <p>${description}</p>
+                <h3>${clubNameVal}</h3>
+                <h4>${staffNameVal}</h4>
+                <p>${descriptionVal}</p>
             </li>
         `;
 
@@ -152,3 +152,43 @@ function submitNotification(){
         alert('Please fill in all fields before submitting.');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // This code will now only run AFTER the HTML elements are ready.
+
+    const clubName = document.getElementById('notificationClubName');
+    const staffName = document.getElementById('notificationStaffName');
+    const description = document.getElementById('notificationDescription');
+
+    // Check to ensure the elements were actually found (a good practice)
+    if (clubName && staffName && description) {
+        clubName.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitNotification();
+                console.log("Enter pressed on Club Name");
+            }
+        });
+        
+        staffName.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitNotification();
+                console.log("Enter pressed on Staff Name");
+            }
+        });
+        
+        description.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitNotification();
+                console.log("Enter pressed on Description");
+            }
+        });
+    } else {
+        console.error("One or more notification input elements were not found.");
+    }
+    
+    // Your submitNotification function definition should also be accessible here
+    // or defined globally above this section.
+});
