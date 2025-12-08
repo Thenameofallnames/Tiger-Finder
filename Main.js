@@ -192,3 +192,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Your submitNotification function definition should also be accessible here
     // or defined globally above this section.
 });
+
+/*
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+    //Notifications firebase integration
+    async function createNotification(club, staff, desc) {
+        const db = getFirestore();
+        try {
+            const docRef = await addDoc(collection(db, "notifications"), {
+                club: club,
+                staff: staff,
+                desc: desc,
+                timestamp: new Date()
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
+*/

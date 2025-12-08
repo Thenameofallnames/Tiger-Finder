@@ -491,3 +491,18 @@ a:active, a:focus, a:hover, a:visited, a:link{
     font-size: 1rem;
     display: block;
 }
+
+#notificationButton {
+    background-color: #db0032;
+    color: white;
+    border: solid 2px black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#notificationButton:hover {
+    background-color: #99001c;
+}
