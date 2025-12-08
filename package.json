@@ -4,8 +4,10 @@
   "description": "Awsome freaking club finder project",
   "main": "Account.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,3 +20,4 @@
     "webpack-cli": "^6.0.1"
   }
 }
+
