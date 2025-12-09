@@ -31,11 +31,15 @@ const emailInput = document.getElementById('emailLogin');
 const passInput = document.getElementById('passLogin');
 
 const loginEmailPassword = async () => {
+  try{
   const loginEmail = emailInput.value;
   const loginPassword  = passInput.value;
 
   const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
   console.log(userCredential.user);
+  }catch (error){
+    document.getElementById("logError").innerText = 'Incorrect email or password, please try again.';
+  }
 }
 
 document.getElementById("logInBtn").addEventListener("click", loginEmailPassword);

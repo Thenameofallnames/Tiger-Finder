@@ -4,6 +4,7 @@ const { Template } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    cache: false,
     mode: 'development',
     devtool: 'eval-source-map',
     entry: '/src/pack.js',
@@ -17,4 +18,4 @@ module.exports = {
             Template: 'login.html'
         })
     ],
-    }
+}
