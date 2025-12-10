@@ -282,6 +282,28 @@ async function results() {
     }
 }
 
+async function retake(){
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const liElement = document.querySelectorAll('li');
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  liElement.forEach((li) => {
+    li.style.color = "Black";
+    li.style.borderColor = "Black";
+  });
+  const resultsSection = document.getElementById("resultsSection");
+  const body = document.body
+  if (resultsSection) {
+    resultsSection.style.display = "none";
+    body.scrollIntoView({ behavior: "smooth" });
+  }
+
+  selectedTypes.length = 0;
+  selectedTimes.length = 0;
+  selectedDays.length = 0;
+}
+
 function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) {
 
   const clubList = document.getElementById("clubList");
@@ -321,7 +343,7 @@ function createClubs(selectedTypes = [], selectedTimes = [], selectedDays = []) 
 
   // If no clubs match filters, show message
   if (filteredClubs.length === 0) {
-    clubList.innerHTML = "<p class='no-results' style='color: white; font-size: 3vh;'>No Clubs Found</p>";
+    clubList.innerHTML = "<p class='no-results' style='color: Black; font-size: 3vh;'>No Clubs Found</p>";
     return;
   }
 
