@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
+
+<script src="src/firebase-config.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Main.css" />
     <script src="Main.js"></script>
-    <script src="pack.js" defer></script>
+    <script type="module" src="src/pack.js" defer></script>
     <title>Clubs</title>
 </head>
 
@@ -99,7 +104,7 @@
                 <input type="text" class="notificationInput" id="notificationClubName" placeholder="Club Name">
                 <input type="text" class="notificationInput" id="notificationStaffName" placeholder="Staff Name">
                 <input type="text" class="notificationInput" id="notificationDescription" placeholder="What would you like to say?">
-                <button class="notificationInput" id="notificationButton" onclick="submitNotification()">Submit Notification</button>
+                <button class="notificationInput" id="notificationButton" onclick="submitNotification();">Submit Notification</button>
             </div>
             <ul id="notificationsList" class="notificationContainer">
             </ul>
