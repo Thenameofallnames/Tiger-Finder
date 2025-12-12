@@ -1,5 +1,5 @@
-const auth = firebase.auth();
-const db = firebase.firestore();
+//const auth = firebase.auth();
+//const db = firebase.firestore();
 
 //dropdown menu function
 function dropDown() {
@@ -57,7 +57,7 @@ function switchPageSign() {
     sign.style.pointerEvents = 'auto';
 }
 
-function switchPageOwner(){
+function switchPageOwner() {
     const create = document.getElementById('createAccountBox');
     const staff = document.getElementById('staffBox');
     create.style.opacity = '0';
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function displayNotifications(){
-    if (document.getElementById('notificationsList').style.display === 'grid'){
+function displayNotifications() {
+    if (document.getElementById('notificationsList').style.display === 'grid') {
         document.getElementById('headBody').scrollIntoView({ behavior: 'smooth' });
         document.getElementById('notificationsList').style.display = 'none';
     } else {
@@ -122,29 +122,29 @@ function displayNotifications(){
         document.getElementById('clubNotifications').scrollIntoView({ behavior: 'smooth' });
     }
 
-    
+
 }
 
 //notification submission function
-function submitNotification(){
+function submitNotification() {
     const clubNameVal = document.getElementById('notificationClubName').value;
     const staffNameVal = document.getElementById('notificationStaffName').value;
     const descriptionVal = document.getElementById('notificationDescription').value;
     if (clubNameVal && staffNameVal && descriptionVal) {
-            // ---- SAVE TO FIREBASE ----
+        // ---- SAVE TO FIREBASE ----
         db.collection("notifications").add({
             clubName: clubNameVal,
             staffName: staffNameVal,
             description: descriptionVal,
             timestamp: new Date()
         })
-        .then(() => {
+            .then(() => {
 
-        const notificationList = document.getElementById('notificationsList');
+                const notificationList = document.getElementById('notificationsList');
 
-        const newNotification = document.createElement('div');
-        newNotification.className = 'notificationItem';
-        newNotification.innerHTML = `
+                const newNotification = document.createElement('div');
+                newNotification.className = 'notificationItem';
+                newNotification.innerHTML = `
             <li>
                 <h3>${clubNameVal}</h3>
                 <h4>${staffNameVal}</h4>
@@ -152,24 +152,24 @@ function submitNotification(){
             </li>
         `;
 
-        notificationList.appendChild(newNotification);
+                notificationList.appendChild(newNotification);
 
-        // Clear input fields
-        document.getElementById('notificationClubName').value = '';
-        document.getElementById('notificationStaffName').value = '';
-        document.getElementById('notificationDescription').value = '';
+                // Clear input fields
+                document.getElementById('notificationClubName').value = '';
+                document.getElementById('notificationStaffName').value = '';
+                document.getElementById('notificationDescription').value = '';
 
-        alert('Notification submitted successfully!');
-        }) .catch((error) => {
-            console.error("Error adding notification: ", error);
-            alert('Failed to submit notification. Please try again.' + error);
-        });
+                alert('Notification submitted successfully!');
+            }).catch((error) => {
+                console.error("Error adding notification: ", error);
+                alert('Failed to submit notification. Please try again.' + error);
+            });
     } else {
         alert('Please fill in all fields before submitting the notification.');
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const clubName = document.getElementById('notificationClubName');
     const staffName = document.getElementById('notificationStaffName');
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Enter pressed on Club Name");
             }
         });
-        
+
         staffName.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Enter pressed on Staff Name");
             }
         });
-        
+
         description.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error("One or more notification input elements were not found.");
     }
-    
+
     // Your submitNotification function definition should also be accessible here
     // or defined globally above this section.
 });

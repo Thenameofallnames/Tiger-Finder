@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { connectAuthEmulator, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { connectAuthEmulator, getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -25,10 +25,15 @@ function createAccount(){
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 connectAuthEmulator(auth, "http://localhost:9099");
+connectFirestoreEmulator(db , "http://localhost:8080");
 //Receive login information to send and check with firebase
 const emailInput = document.getElementById('emailLogin');
 const passInput = document.getElementById('passLogin');
+
+const emailSignUp = document.getElementById('emailSignUp');
+const passSignUp = document.getElementById('passSignUp');
 
 const loginEmailPassword = async () => {
   try{
@@ -41,5 +46,18 @@ const loginEmailPassword = async () => {
     document.getElementById("logError").innerText = 'Incorrect email or password, please try again.';
   }
 }
+const signUpEmailPassword = async () => {
+  try{
+  const loginEmail = emailSignUp.value;
+  const loginPassword  = passSignUp.value;
+
+  const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
+  console.log(userCredential.user);
+  }catch(error){
+    document.getElementById("logError").innerText = 'Incorrect email or password, please try again.';
+  }
+}
 //Send login information off
 document.getElementById("logInBtn").addEventListener("click", loginEmailPassword);
+document.getElementById("createAccBtn").addEventListener("click", signUpEmailPassword);
+
