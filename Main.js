@@ -1,5 +1,5 @@
-//const auth = firebase.auth();
-//const db = firebase.firestore();
+const auth = firebase.auth();
+const db = firebase.firestore();
 
 //dropdown menu function
 function dropDown() {
