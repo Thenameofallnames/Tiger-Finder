@@ -26,7 +26,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 connectAuthEmulator(auth, "http://localhost:9099");
-
+//Receive login information to send and check with firebase
 const emailInput = document.getElementById('emailLogin');
 const passInput = document.getElementById('passLogin');
 
@@ -37,9 +37,9 @@ const loginEmailPassword = async () => {
 
   const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
   console.log(userCredential.user);
-  }catch (error){
+  }catch(error){
     document.getElementById("logError").innerText = 'Incorrect email or password, please try again.';
   }
 }
-
+//Send login information off
 document.getElementById("logInBtn").addEventListener("click", loginEmailPassword);
