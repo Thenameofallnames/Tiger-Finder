@@ -1,3 +1,6 @@
+const auth = firebase.auth();
+const db = firebase.firestore();
+
 //dropdown menu function
 function dropDown() {
     const main = document.querySelector(".blur");
@@ -128,6 +131,15 @@ function submitNotification(){
     const staffNameVal = document.getElementById('notificationStaffName').value;
     const descriptionVal = document.getElementById('notificationDescription').value;
     if (clubNameVal && staffNameVal && descriptionVal) {
+            // ---- SAVE TO FIREBASE ----
+        db.collection("notifications").add({
+            clubName: clubNameVal,
+            staffName: staffNameVal,
+            description: descriptionVal,
+            timestamp: new Date()
+        })
+        .then(() => {
+
         const notificationList = document.getElementById('notificationsList');
 
         const newNotification = document.createElement('div');
@@ -148,19 +160,22 @@ function submitNotification(){
         document.getElementById('notificationDescription').value = '';
 
         alert('Notification submitted successfully!');
+        }) .catch((error) => {
+            console.error("Error adding notification: ", error);
+            alert('Failed to submit notification. Please try again.' + error);
+        });
     } else {
-        alert('Please fill in all fields before submitting.');
+        alert('Please fill in all fields before submitting the notification.');
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // This code will now only run AFTER the HTML elements are ready.
 
     const clubName = document.getElementById('notificationClubName');
     const staffName = document.getElementById('notificationStaffName');
     const description = document.getElementById('notificationDescription');
 
-    // Check to ensure the elements were actually found (a good practice)
+    // Check to ensure the elements were actually found
     if (clubName && staffName && description) {
         clubName.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
@@ -192,22 +207,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Your submitNotification function definition should also be accessible here
     // or defined globally above this section.
 });
-
-/*
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-    //Notifications firebase integration
-    async function createNotification(club, staff, desc) {
-        const db = getFirestore();
-        try {
-            const docRef = await addDoc(collection(db, "notifications"), {
-                club: club,
-                staff: staff,
-                desc: desc,
-                timestamp: new Date()
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
-    }
-*/

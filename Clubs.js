@@ -1,4 +1,3 @@
-
 const auth = firebase.auth();
 const db = firebase.firestore();
 
@@ -146,21 +145,21 @@ function createClubs() {
     const selectedTimes = [];
     const selectedDays = [];
 
-    if (document.getElementById("checkboxAcademic")) selectedTypes.push("Academic");
-    if (document.getElementById("checkboxService")) selectedTypes.push("Service");
-    if (document.getElementById("checkboxSports")) selectedTypes.push("Sports");
-    if (document.getElementById("checkboxArt")) selectedTypes.push("Arts");
-    if (document.getElementById("checkboxGames")) selectedTypes.push("Games");
+    if (document.getElementById("checkboxAcademic").checked) selectedTypes.push("Academic");
+    if (document.getElementById("checkboxService").checked) selectedTypes.push("Service");
+    if (document.getElementById("checkboxSports").checked) selectedTypes.push("Sports");
+    if (document.getElementById("checkboxArt").checked) selectedTypes.push("Arts");
+    if (document.getElementById("checkboxGames").checked) selectedTypes.push("Games");
 
-    if (document.getElementById("checkboxBefore")) selectedTimes.push("Before");
-    if (document.getElementById("checkboxAfter")) selectedTimes.push("After");
+    if (document.getElementById("checkboxBefore").checked) selectedTimes.push("Before");
+    if (document.getElementById("checkboxAfter").checked) selectedTimes.push("After");
 
-    if (document.getElementById("checkboxMonday")) selectedDays.push("Monday");
-    if (document.getElementById("checkboxTuesday")) selectedDays.push("Tuesday");
-    if (document.getElementById("checkboxWednesday")) selectedDays.push("Wednesday");
-    if (document.getElementById("checkboxThursday")) selectedDays.push("Thursday");
-    if (document.getElementById("checkboxFriday")) selectedDays.push("Friday");
-    if (document.getElementById("checkboxWeekend")) selectedDays.push("Weekend");
+    if (document.getElementById("checkboxMonday").checked) selectedDays.push("Monday");
+    if (document.getElementById("checkboxTuesday").checked) selectedDays.push("Tuesday");
+    if (document.getElementById("checkboxWednesday").checked) selectedDays.push("Wednesday");
+    if (document.getElementById("checkboxThursday").checked) selectedDays.push("Thursday");
+    if (document.getElementById("checkboxFriday").checked) selectedDays.push("Friday");
+    if (document.getElementById("checkboxWeekend").checked) selectedDays.push("Weekend");
 
     const anyFilters = selectedTypes.length || selectedTimes.length || selectedDays.length;
 
@@ -213,6 +212,7 @@ function createClubs() {
 
                 if (target.classList.contains("favorited")) {
                     target.src = "goldStar.jpeg";
+                    // Save ALL club data to localStorage
                     userFavorites = updateLocalFavorites({
                         club: club.club,
                         staff: club.staff,
@@ -275,19 +275,30 @@ function createClubs() {
         });
 
         liElement.addEventListener("click", () => {
-            document.getElementById("overlayTitle").textContent = club.club || "No title available";
-            document.getElementById("overlayStaff").textContent = `Staff: ${club.staff || "Not available"}`;
-            document.getElementById("overlayEmail").textContent = `Email: ${club.email || "Not available"}`;
+            const overlayTitle = document.getElementById("overlayTitle");
+            const overlayStaff = document.getElementById("overlayStaff");
+            const overlayEmail = document.getElementById("overlayEmail");
+            const overlayTime = document.getElementById("overlayTime");
+            const overlayType = document.getElementById("overlayType");
+            const overlayDays = document.getElementById("overlayDays");
+            const overlayDescription = document.getElementById("overlayDescription");
+            const overlay = document.getElementById("descriptionOverlay");
+
+            if (overlayTitle) overlayTitle.textContent = club.club || "No title available";
+            if (overlayStaff) overlayStaff.textContent = `Staff: ${club.staff || "Not available"}`;
+            if (overlayEmail) overlayEmail.textContent = `Email: ${club.email || "Not available"}`;
 
             let timeText = `Time: ${club.Time || "Not available"}`;
             if (club.Time) timeText += " School";
 
-            document.getElementById("overlayTime").textContent = timeText;
-            document.getElementById("overlayType").textContent = `Type: ${club.Type || "Not available"}`;
-            document.getElementById("overlayDays").textContent = `Days: ${club.Day || "Not available"}`;
-            document.getElementById("overlayDescription").textContent = club.description || "No description available.";
+            if (overlayTime) overlayTime.textContent = timeText;
+            if (overlayType) overlayType.textContent = `Type: ${club.Type || "Not available"}`;
+            if (overlayDays) overlayDays.textContent = `Days: ${club.Day || "Not available"}`;
+            if (overlayDescription) overlayDescription.textContent = club.description || "No description available.";
 
-            document.getElementById("descriptionOverlay").classList.remove("hidden");
+            if (overlay) {
+                overlay.classList.remove("hidden");
+            }
         });
 
         clubList.appendChild(liElement);
@@ -365,25 +376,117 @@ function showFavoritesOnly() {
         });
 
         liElement.addEventListener("click", () => {
-            document.getElementById("overlayTitle").textContent = favClub.club || "No title available";
-            document.getElementById("overlayStaff").textContent = `Staff: ${favClub.staff || "Not available"}`;
-            document.getElementById("overlayEmail").textContent = `Email: ${favClub.email || "Not available"}`;
+            const overlayTitle = document.getElementById("overlayTitle");
+            const overlayStaff = document.getElementById("overlayStaff");
+            const overlayEmail = document.getElementById("overlayEmail");
+            const overlayTime = document.getElementById("overlayTime");
+            const overlayType = document.getElementById("overlayType");
+            const overlayDays = document.getElementById("overlayDays");
+            const overlayDescription = document.getElementById("overlayDescription");
+            const overlay = document.getElementById("descriptionOverlay");
+
+            if (overlayTitle) overlayTitle.textContent = favClub.club || "No title available";
+            if (overlayStaff) overlayStaff.textContent = `Staff: ${favClub.staff || "Not available"}`;
+            if (overlayEmail) overlayEmail.textContent = `Email: ${favClub.email || "Not available"}`;
 
             let timeText = `Time: ${favClub.Time || "Not available"}`;
             if (favClub.Time) timeText += " School";
 
-            document.getElementById("overlayTime").textContent = timeText;
-            document.getElementById("overlayType").textContent = `Type: ${favClub.Type || "Not available"}`;
-            document.getElementById("overlayDays").textContent = `Days: ${favClub.Day || "Not available"}`;
-            document.getElementById("overlayDescription").textContent = favClub.description || "No description available.";
+            if (overlayTime) overlayTime.textContent = timeText;
+            if (overlayType) overlayType.textContent = `Type: ${favClub.Type || "Not available"}`;
+            if (overlayDays) overlayDays.textContent = `Days: ${favClub.Day || "Not available"}`;
+            if (overlayDescription) overlayDescription.textContent = favClub.description || "No description available.";
 
-            document.getElementById("descriptionOverlay").classList.remove("hidden");
+            if (overlay) {
+                overlay.classList.remove("hidden");
+            }
         });
 
         clubList.appendChild(liElement);
     });
 }
 
+async function renderFavorites() {
+    const favoriteList = document.getElementById("favoriteList");
+    if (!favoriteList) return;
+
+    // Load clubs data to get full descriptions
+    let allClubs = [];
+    try {
+        const response = await fetch("clubs.json");
+        if (response.ok) {
+            allClubs = await response.json();
+        }
+    } catch (error) {
+        console.error("Error loading clubs for favorites page:", error);
+    }
+
+    const favorites = getLocalFavorites();
+    favoriteList.innerHTML = "";
+
+    if (favorites.length === 0) {
+        favoriteList.innerHTML = "<p class='no-results'>No favorites saved yet.</p>";
+        return;
+    }
+
+    favorites.forEach(fav => {
+        // Try to find the full club data from allClubs
+        const fullClubData = allClubs.find(club => club.club === fav.club);
+        const displayClub = fullClubData || fav; // Use full data if found, otherwise use saved data
+
+        const li = document.createElement("li");
+        li.classList.add("club-box");
+        li.innerHTML = `
+            <img 
+                src="goldStar.jpeg" 
+                alt="favorite star" 
+                class="favorite-star" 
+                style="width:25px; height:25px; cursor:pointer;"
+            >
+            <h3 class="clubBoxesFontSize">${displayClub.club}</h3>
+            <p class="clubBoxesFontSize">${displayClub.staff}</p>
+            <p class="clubBoxesEmailSize">${displayClub.email}</p>
+        `;
+
+        const star = li.querySelector(".favorite-star");
+        star.addEventListener("click", (e) => {
+            e.stopPropagation();
+            let favorites = getLocalFavorites();
+            favorites = favorites.filter(f => f.club !== fav.club);
+            saveLocalFavorites(favorites);
+            renderFavorites();
+        });
+
+        li.addEventListener("click", () => {
+            const overlayTitle = document.getElementById("overlayTitle");
+            const overlayStaff = document.getElementById("overlayStaff");
+            const overlayEmail = document.getElementById("overlayEmail");
+            const overlayTime = document.getElementById("overlayTime");
+            const overlayType = document.getElementById("overlayType");
+            const overlayDays = document.getElementById("overlayDays");
+            const overlayDescription = document.getElementById("overlayDescription");
+            const overlay = document.getElementById("descriptionOverlay");
+
+            if (overlayTitle) overlayTitle.textContent = displayClub.club || "No title available";
+            if (overlayStaff) overlayStaff.textContent = `Staff: ${displayClub.staff || "Not available"}`;
+            if (overlayEmail) overlayEmail.textContent = `Email: ${displayClub.email || "Not available"}`;
+
+            let timeText = `Time: ${displayClub.Time || "Not available"}`;
+            if (displayClub.Time) timeText += " School";
+
+            if (overlayTime) overlayTime.textContent = timeText;
+            if (overlayType) overlayType.textContent = `Type: ${displayClub.Type || "Not available"}`;
+            if (overlayDays) overlayDays.textContent = `Days: ${displayClub.Day || "Not available"}`;
+            if (overlayDescription) overlayDescription.textContent = displayClub.description || "No description available.";
+
+            if (overlay) {
+                overlay.classList.remove("hidden");
+            }
+        });
+
+        favoriteList.appendChild(li);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const clubList = document.getElementById("clubList");
@@ -392,7 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (clubList) {
         loadClubs();
 
-      
         auth.onAuthStateChanged((user) => {
             currentUser = user;
             loadUserFavorites().then(() => {
@@ -410,13 +512,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (saved !== null) cb.checked = saved === "true";
         });
 
-
         const overlay = document.getElementById("descriptionOverlay");
         const closeOverlay = document.getElementById("closeOverlay");
 
         if (closeOverlay) {
             closeOverlay.addEventListener("click", () => {
-                overlay.classList.add("hidden");
+                if (overlay) overlay.classList.add("hidden");
             });
         }
 
@@ -435,7 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (closeOverlay) {
             closeOverlay.addEventListener("click", () => {
-                overlay.classList.add("hidden");
+                if (overlay) overlay.classList.add("hidden");
             });
         }
 
@@ -446,58 +547,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-
-function renderFavorites() {
-    const favoriteList = document.getElementById("favoriteList");
-    if (!favoriteList) return;
-
-    const favorites = getLocalFavorites();
-    favoriteList.innerHTML = "";
-
-    if (favorites.length === 0) {
-        favoriteList.innerHTML = "<p class='no-results'>No favorites saved yet.</p>";
-        return;
-    }
-
-    favorites.forEach(fav => {
-        const li = document.createElement("li");
-        li.classList.add("club-box");
-        li.innerHTML = `
-            <img 
-                src="goldStar.jpeg" 
-                alt="favorite star" 
-                class="favorite-star" 
-                style="width:25px; height:25px; cursor:pointer;"
-            >
-            <h3 class="clubBoxesFontSize">${fav.club}</h3>
-            <p class="clubBoxesFontSize">${fav.staff}</p>
-            <p class="clubBoxesEmailSize">${fav.email}</p>
-        `;
-
-        const star = li.querySelector(".favorite-star");
-        star.addEventListener("click", (e) => {
-            e.stopPropagation();
-            let favorites = getLocalFavorites();
-            favorites = favorites.filter(f => f.club !== fav.club);
-            saveLocalFavorites(favorites);
-            renderFavorites();
-        });
-
-        li.addEventListener("click", () => {
-            document.getElementById("overlayTitle").textContent = fav.club;
-            document.getElementById("overlayStaff").textContent = `Staff: ${fav.staff}`;
-            document.getElementById("overlayEmail").textContent = `Email: ${fav.email}`;
-            document.getElementById("overlayTime").textContent = `Time: ${fav.Time || "Not available"}`;
-            document.getElementById("overlayType").textContent = `Type: ${fav.Type || "Not available"}`;
-            document.getElementById("overlayDays").textContent = `Days: ${fav.Day || "Not available"}`;
-            document.getElementById("overlayDescription").textContent = fav.description || "No description available.";
-
-            const overlay = document.getElementById("descriptionOverlay");
-            if (overlay) {
-                overlay.classList.remove("hidden");
-            }
-        });
-
-        favoriteList.appendChild(li);
-    });
-}
