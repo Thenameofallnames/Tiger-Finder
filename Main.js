@@ -1,6 +1,3 @@
-const auth = firebase.auth();
-const db = firebase.firestore();
-
 //dropdown menu function
 function dropDown() {
     const main = document.querySelector(".blur");
@@ -127,6 +124,8 @@ function displayNotifications() {
 
 //notification submission function
 function submitNotification() {
+    const auth = firebase.auth();
+    const db = firebase.firestore();
     const clubNameVal = document.getElementById('notificationClubName').value;
     const staffNameVal = document.getElementById('notificationStaffName').value;
     const descriptionVal = document.getElementById('notificationDescription').value;
